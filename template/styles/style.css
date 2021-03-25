@@ -1,0 +1,142 @@
+@font-face {
+  font-family: "PT Sans";
+  src: url("./fonts/PT_Sans/PTSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PT Sans';
+  src: url("./fonts/PT_Sans/PTSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Literata 7pt';
+  src: url("./fonts/Literata_7pt/Literata_7pt-Bold.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #080808;
+  cursor: url(images/cursor_default.png), auto;
+}
+
+h1 {
+  font-family: "PT Sans";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 40px;
+  line-height: 56px;
+}
+
+h1.serif {
+  font-family: "Literata 7pt";
+  font-size: 80px;
+  line-height: 112px;
+}
+
+h2 {
+  font-family: "PT Sans";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 34px;
+}
+
+h2.serif {
+  font-family: "Literata 7pt";
+  font-size: 60px;
+  line-height: 84px;
+}
+
+h3 {
+  font-family: "PT Sans";
+  font-weight: 700;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 34px;
+}
+
+p, label, input {
+  font-family: "PT Sans";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+small {
+  font-family: "PT Sans";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+button {
+  border-radius: 6px;
+  display: block;
+  padding: 15px 41px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #68CD5F;
+  font-family: "PT Sans";
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
+  letter-spacing: 1px;
+  text-align: center;
+  color: #F5F5F5;
+  border: none;
+  outline: none;
+}
+
+button:hover {
+  background-color: #5EBB55;
+}
+
+button:active {
+  padding: 10px 36px;
+  background-color: #F5F5F5;
+  border: 5px solid #68CD5F;
+  color: #68CD5F;
+}
+
+label {
+  display: block;
+  margin-bottom: 11px;
+}
+
+label.red {
+  color: #FF3322;
+}
+
+input {
+  padding-left: 10px;
+  padding-right: 10px;
+  display: block;
+  height: 64px;
+  width: 500px;
+  outline: none;
+  background-color: #F5F5F5;
+  border: 2px solid #080808;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 6px;
+  margin-bottom: 30px;
+}
+
+input.red {
+  border-color: #FF3322;
+}
+/*# sourceMappingURL=style.css.map */
