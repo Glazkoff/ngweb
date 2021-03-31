@@ -399,7 +399,7 @@ h3,
 h4,
 h5,
 h6 {
-	color: #00ccff;
+	color: #9FD3F8;
 	clear: both;
 }
 
@@ -458,7 +458,7 @@ big {
 /* Elements
 --------------------------------------------- */
 body {
-	background: #fff;
+	background: #FFFFFF;
 }
 
 hr {
@@ -545,9 +545,9 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
+	border-color: #68CD5F;
 	border-radius: 3px;
-	background: #e6e6e6;
+	background: #68CD5F;
 	color: rgba(0, 0, 0, 0.8);
 	line-height: 1;
 	padding: 0.6em 1em 0.4em;
@@ -557,7 +557,7 @@ button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
+	border-color: #5EBB55;
 }
 
 button:active, button:focus,
@@ -567,7 +567,7 @@ input[type="reset"]:active,
 input[type="reset"]:focus,
 input[type="submit"]:active,
 input[type="submit"]:focus {
-	border-color: #aaa #bbb #bbb;
+	border-color: #bbb #bbb #bbb;
 }
 
 input[type="text"],

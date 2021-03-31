@@ -1,7 +1,21 @@
-$color__background-body: #fff;
-$color__background-screen: #f1f1f1;
+// Цвета дизайна
+$black: #080808;
+$green: #68CD5F;
+$darkGreen: #5EBB55;
+$yellow: #F4DF60;
+$darkYellow: #EBD44D;
+$red: #FF3322;
+$darkRed: #E22D1E;
+$blue: #9FD3F8;
+$darkBlue: #75C2F9;
+$lightGray: #F5F5F5;
+$white: #FFFFFF;
+
+
+$color__background-body: $white;
+$color__background-screen: $lightGray;
 $color__background-hr: #ccc;
-$color__background-button: #e6e6e6;
+$color__background-button: $green;
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
 
@@ -13,8 +27,9 @@ $color__link-visited: #800080; //purple
 $color__link-hover: #191970; //midnightblue
 $color__text-main: #404040;
 
-$color__border-button: #ccc #ccc #bbb;
-$color__border-button-hover: #ccc #bbb #aaa;
-$color__border-button-focus: #aaa #bbb #bbb;
+$color__border-button: $green;
+$color__border-button-hover: $darkGreen;
+$color__border-button-focus: #bbb #bbb #bbb;
 $color__border-input: #ccc;
 $color__border-abbr: #666;
+
