@@ -7,7 +7,30 @@
  */
 
 get_header(); ?>
-<h1>Hello!</h1>
-<?php
-echo "It's OK to be ..."
-?>
+<h1 class="serif">H1 class="serif" Заголовок 1 </h1>
+    <h2 class="serif">H2 class="serif" Заголовок 2 </h1>
+    <h1>H1 - Заголовок 1</h1>
+    <h2>H2 - Заголовок 2</h2>
+    <h3>H3 - Заголовок 3</h3>
+    <a href="yandex.ru">Link!</a> 
+    <hr>
+    <p>
+      p -   
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem,
+      magnam nisi, suscipit voluptatem obcaecati quas, reprehenderit tempora aut
+      eveniet expedita necessitatibus. Dolor commodi mollitia corporis natus
+      expedita a qui hic!
+    </p>
+    
+    <small>
+      small - 
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae
+      recusandae voluptates ab ad soluta minus excepturi! Aliquid debitis
+      eligendi minima ipsam voluptatum inventore eveniet in, voluptate quibusdam
+      dignissimos sed magni!
+    </small>
+    <button>Кнопка</button>
+    <label for="input">It's label for input</label>
+    <input type="text" id="input">
+    <label for="input2" class="red">It's label for input</label>
+    <input type="text" id="input2" class="red">
