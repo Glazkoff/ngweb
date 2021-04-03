@@ -48,6 +48,146 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Alignments
 
 --------------------------------------------------------------*/
+@font-face {
+	font-family: 'Literata 7pt';
+	src: local("Literata_7pt-Black") format("truetype");
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Literata 7pt';
+	src: local("Literata_7pt-BlackItalic") format("truetype");
+	font-weight: 900;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Literata 7pt';
+	src: local("Literata_7pt-Bold") format("truetype");
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Literata 7pt';
+	src: local("Literata_7pt-BoldItalic") format("truetype");
+	font-weight: 700;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Literata 7pt';
+	src: local("./Literata_7pt-ExtraBold") format("truetype");
+	font-weight: 800;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Literata 7pt';
+	src: local("./Literata_7pt-ExtraBoldItalic") format("truetype");
+	font-weight: 800;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Literata 7pt';
+	src: local("./Literata_7pt-ExtraLight") format("truetype");
+	font-weight: 200;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Literata 7pt';
+	src: local("./Literata_7pt-ExtraLightItalic") format("truetype");
+	font-weight: 200;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Literata 7pt';
+	src: local("./Literata_7pt-Regular") format("truetype");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Literata 7pt';
+	src: local("./Literata_7pt-Italic") format("truetype");
+	font-weight: 400;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Literata 7pt';
+	src: local("./Literata_7pt-Light") format("truetype");
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Literata 7pt';
+	src: local("./Literata_7pt-LightItalic") format("truetype");
+	font-weight: 300;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Literata 7pt';
+	src: local("./Literata_7pt-Medium") format("truetype");
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Literata 7pt';
+	src: local("./Literata_7pt-MediumItalic") format("truetype");
+	font-weight: 500;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Literata 7pt';
+	src: local("./Literata_7pt-SemiBold") format("truetype");
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Literata 7pt';
+	src: local("./Literata_7pt-SemiBoldItalic") format("truetype");
+	font-weight: 600;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'PT Sans';
+	src: url("./PTSans-Regular.ttf") format("truetype");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'PT Sans';
+	src: url("./PTSans-Italic.ttf") format("truetype");
+	font-weight: 400;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'PT Sans';
+	src: url("./PTSans-Bold.ttf") format("truetype");
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'PT Sans';
+	src: url("./PTSans-BoldItalic.ttf") format("truetype");
+	font-weight: 700;
+	font-style: italic;
+}
+
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
@@ -388,7 +528,7 @@ select,
 small,
 optgroup,
 textarea {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "PT Sans", sans-serif;
 	line-height: 1.5;
 }
 
@@ -396,7 +536,7 @@ body,
 select,
 small,
 optgroup {
-	color: #404040;
+	color: #080808;
 }
 
 button {
@@ -420,6 +560,18 @@ h6 {
 	clear: both;
 }
 
+h1,
+h2 {
+	font-family: "Literata 7pt", sans-serif;
+}
+
+h3,
+h4,
+h5,
+h6 {
+	font-family: "PT Sans", sans-serif;
+}
+
 p {
 	margin-bottom: 1.5em;
 }
@@ -440,7 +592,7 @@ address {
 }
 
 pre {
-	background: #F5F5F5;
+	background: transparent;
 	font-family: "Courier 10 Pitch", courier, monospace;
 	line-height: 1.6;
 	margin-bottom: 1.6em;
@@ -458,13 +610,13 @@ var {
 
 abbr,
 acronym {
-	border-bottom: 1px dotted #666;
+	border-bottom: 1px dotted #F4DF60;
 	cursor: help;
 }
 
 mark,
 ins {
-	background: #fff9c0;
+	background: #9FD3F8;
 	text-decoration: none;
 }
 
@@ -536,15 +688,15 @@ table {
 /* Links
 --------------------------------------------- */
 a {
-	color: #4169e1;
+	color: #9FD3F8;
 }
 
 a:visited {
-	color: #800080;
+	color: #75C2F9;
 }
 
 a:hover, a:focus, a:active {
-	color: #191970;
+	color: #75C2F9;
 }
 
 a:focus {
@@ -595,8 +747,8 @@ input[type="color"],
 textarea {
 	display: block;
 	background-color: #FFFFFF;
-	color: #666;
-	border: 2px solid #ccc;
+	color: #080808;
+	border: 2px solid #080808;
 	border-radius: 6px;
 	-webkit-border-radius: 6px;
 	-moz-border-radius: 6px;
@@ -613,7 +765,7 @@ label {
 }
 
 select {
-	border: 2px solid #ccc;
+	border: 2px solid #080808;
 }
 
 textarea {
@@ -892,7 +1044,7 @@ textarea {
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	clip: auto !important;
 	clip-path: none;
-	color: #21759b;
+	color: #080808;
 	display: block;
 	font-size: 0.875rem;
 	font-weight: 700;
