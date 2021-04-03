@@ -7,4 +7,6 @@
  */
 
 get_header(); ?>
-<h1>Service!</h1>
+<?php
+	the_title( '<h1 class="entry-title">Услуга: ', '</h1>' );
+?>
