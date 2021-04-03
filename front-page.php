@@ -12,6 +12,8 @@ get_header(); ?>
     <h1>H1 - Заголовок 1</h1>
     <h2>H2 - Заголовок 2</h2>
     <h3>H3 - Заголовок 3</h3>
+    <a href="yandex.ru">Link!</a> 
+    <hr>
     <p>
       p -   
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem,
@@ -19,6 +21,7 @@ get_header(); ?>
       eveniet expedita necessitatibus. Dolor commodi mollitia corporis natus
       expedita a qui hic!
     </p>
+    
     <small>
       small - 
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae

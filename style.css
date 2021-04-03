@@ -399,7 +399,6 @@ h3,
 h4,
 h5,
 h6 {
-	color: #9FD3F8;
 	clear: both;
 }
 
@@ -464,7 +463,7 @@ body {
 hr {
 	background-color: #ccc;
 	border: 0;
-	height: 1px;
+	height: 2px;
 	margin-bottom: 1.5em;
 }
 
@@ -532,6 +531,7 @@ a:hover, a:focus, a:active {
 
 a:focus {
 	outline: thin dotted;
+	outline-color: #9FD3F8;
 }
 
 a:hover, a:active {
@@ -544,30 +544,19 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-color: #68CD5F;
-	border-radius: 3px;
+	display: block;
+	border: none;
+	border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	-ms-border-radius: 6px;
+	-o-border-radius: 6px;
 	background: #68CD5F;
-	color: rgba(0, 0, 0, 0.8);
+	color: #F5F5F5;
+	outline: none;
+	padding: 1rem 2.5em;
+	text-align: center;
 	line-height: 1;
-	padding: 0.6em 1em 0.4em;
-}
-
-button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
-	border-color: #5EBB55;
-}
-
-button:active, button:focus,
-input[type="button"]:active,
-input[type="button"]:focus,
-input[type="reset"]:active,
-input[type="reset"]:focus,
-input[type="submit"]:active,
-input[type="submit"]:focus {
-	border-color: #bbb #bbb #bbb;
 }
 
 input[type="text"],
@@ -586,33 +575,27 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
+	display: block;
+	background-color: #FFFFFF;
 	color: #666;
-	border: 1px solid #ccc;
-	border-radius: 3px;
-	padding: 3px;
+	border: 2px solid #ccc;
+	border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	-ms-border-radius: 6px;
+	-o-border-radius: 6px;
+	padding: 0.5rem;
+	outline: none;
+	min-width: 4rem;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-input[type="number"]:focus,
-input[type="tel"]:focus,
-input[type="range"]:focus,
-input[type="date"]:focus,
-input[type="month"]:focus,
-input[type="week"]:focus,
-input[type="time"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="color"]:focus,
-textarea:focus {
-	color: #111;
+label {
+	display: block;
+	margin-bottom: 0.5rem;
 }
 
 select {
-	border: 1px solid #ccc;
+	border: 2px solid #ccc;
 }
 
 textarea {
@@ -886,7 +869,7 @@ textarea {
 }
 
 .screen-reader-text:focus {
-	background-color: #f1f1f1;
+	background-color: #F5F5F5;
 	border-radius: 3px;
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	clip: auto !important;
