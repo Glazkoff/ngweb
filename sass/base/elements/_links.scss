@@ -13,6 +13,7 @@ a {
 
 	&:focus {
 		outline: thin dotted;
+		outline-color: $blue;
 	}
 
 	&:hover,

@@ -7,3 +7,15 @@ h6 {
 	color: $blue;
 	clear: both;
 }
+
+h1,
+h2 {
+	font-family: $font__heading_serif;
+}
+
+h3,
+h4,
+h5,
+h6 {
+	font-family: $font__heading;
+}
