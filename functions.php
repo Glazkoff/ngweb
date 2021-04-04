@@ -178,4 +178,11 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+// ******************************
+// Подключение своих типов постов
+// ******************************
+
+// 
 require get_template_directory() . '/custom-post-types/services-init.php';
+
+require get_template_directory() . '/custom-post-types/portfolio-init.php';
