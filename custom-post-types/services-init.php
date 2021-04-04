@@ -23,7 +23,7 @@ function service_register_post_type_init() {
 		'has_archive' => true, 
 		// 'menu_icon' => get_stylesheet_directory_uri() .'/img/function_icon.png', // иконка в меню
 		'menu_icon' => 'dashicons-money-alt', // иконка в меню
-		'menu_position' => 2, // порядок в меню
+		'menu_position' => 4, // порядок в меню
 		// 1	в самом верху меню
 		// 2-3	под «Консоль»
 		// 4-9	под «Записи»

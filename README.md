@@ -139,5 +139,5 @@ Good luck!
 ### Типы постов
 - [x] `services` - услуги
 - [x] `portfolio` - портфолио
-- [] `teammates` - команда
+- [x] `teammates` - команда
 - [] `блог` - блог
