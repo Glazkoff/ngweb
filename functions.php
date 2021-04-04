@@ -141,6 +141,9 @@ add_action( 'widgets_init', 'ngwebstudio_widgets_init' );
  */
 function ngwebstudio_scripts() {
 	wp_enqueue_style( 'ngwebstudio-style', get_stylesheet_uri(), array(), _S_VERSION );
+	
+	wp_enqueue_style( 'ngwebstudio-additional-style', get_template_directory_uri().'/dist/site.css');
+	
 	wp_style_add_data( 'ngwebstudio-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'ngwebstudio-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
