@@ -12,15 +12,15 @@ input[type="submit"] {
 	background: $color__background-button;
 	color: $lightGray;
 	outline: none;
-	padding: 1rem 2.5em;
+	padding: 1rem 2rem;
+	min-width: 10rem;
 	text-align: center;
 	line-height: 1;
-	// &:hover {
-	// 	border-color: $color__background-button-hover;
-	// }
+	&:hover{
+		background-color: $color__background-button-hover;
+	}
 
-	// &:active,
-	// &:focus {
-	// 	border-color: $color__background-button-active;
-	// }
+	&:active {
+		background-color: $color__background-button;
+	}
 }

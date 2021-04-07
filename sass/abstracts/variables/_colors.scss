@@ -9,6 +9,8 @@ $red: #ff3322;
 $darkRed: #e22d1e;
 $blue: #9fd3f8;
 $darkBlue: #75c2f9;
+$linkColor: #44AEFA;
+$darkLinkColor: #1B94EB;
 $lightGray: #f5f5f5;
 $white: #ffffff;
 
@@ -23,9 +25,9 @@ $color__background-button-active: $lightGreen;
 
 $color__text-screen: $black;
 $color__text-input: $black;
-$color__link: $blue;
-$color__link-visited: $darkBlue;
-$color__link-hover: $darkBlue;
+$color__link: $linkColor;
+$color__link-visited: $darkLinkColor;
+$color__link-hover: $darkLinkColor;
 $color__text-main: $black;
 
 $color__border-button: $green;

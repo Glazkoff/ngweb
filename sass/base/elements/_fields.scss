@@ -25,20 +25,20 @@ textarea {
 	-o-border-radius: 6px;
 	padding: 0.5rem;
 	outline: none;
-	min-width: 4rem;
+	min-width: 20rem;
 
-	// &.red {
-	// border-color: $color__border-input-error;
-	// }
+	&.red {
+	border-color: $color__border-input-error;
+	}
 }
 
 label {
 	display: block;
-	margin-bottom: 0.5rem;
+	margin-bottom: 0.3rem;
 
-	// &.red {
-	// 	color: $color__border-input-error;
-	// }
+	&.red {
+		color: $color__border-input-error;
+	}
 }
 
 select {

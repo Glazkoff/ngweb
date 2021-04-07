@@ -7,11 +7,11 @@
  */
 
 get_header(); ?>
-<h1 class="serif">H1 class="serif" Заголовок 1 </h1>
-    <h2 class="serif">H2 class="serif" Заголовок 2 </h1>
-    <h1>H1 - Заголовок 1</h1>
-    <h2>H2 - Заголовок 2</h2>
+<h1>H1 - Заголовок 1 </h1>
+    <h2>H2 - Заголовок 2 </h2>
     <h3>H3 - Заголовок 3</h3>
+    <h4>H4 - Заголовок 4</h4>
+    <h5>H5 - Заголовок 5</h5> 
     <a href="yandex.ru">Link!</a> 
     <hr>
     <p>
