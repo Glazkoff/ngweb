@@ -1,20 +1,20 @@
 <?php
-add_action( 'init', 'service_register_post_type_init' ); // Использовать функцию только внутри хука init
+add_action( 'init', 'portfolio_register_post_type_init' ); // Использовать функцию только внутри хука init
  
-function service_register_post_type_init() {
+function portfolio_register_post_type_init() {
 	$labels = array(
-		'name' => 'Услуги',
-		'singular_name' => 'Услугу', // админ панель Добавить->Функцию
-		'add_new' => 'Добавить услугу',
-		'add_new_item' => 'Добавить новую услугу', // заголовок тега <title>
-		'edit_item' => 'Редактировать услугу',
-		'new_item' => 'Новая услуга',
-		'all_items' => 'Все услуги',
-		'view_item' => 'Просмотр услуги на сайте',
-		'search_items' => 'Искать услуги',
-		'not_found' =>  'Услуг не найдено.',
-		'not_found_in_trash' => 'В корзине нет услуг.',
-		'menu_name' => 'Услуги' // ссылка в меню в админке
+		'name' => 'Портфолио',
+		'singular_name' => 'Работу в портфолио', // админ панель Добавить->Функцию
+		'add_new' => 'Добавить работу портфолио',
+		'add_new_item' => 'Добавить новую работу портфолио', // заголовок тега <title>
+		'edit_item' => 'Редактировать портфолио',
+		'new_item' => 'Новая работа портфолио',
+		'all_items' => 'Все работы портфолио',
+		'view_item' => 'Просмотр работы портфолио на сайте',
+		'search_items' => 'Искать работы портфолио',
+		'not_found' =>  'Работ портфолио не найдено.',
+		'not_found_in_trash' => 'В корзине нет работ портфолио.',
+		'menu_name' => 'Портфолио' // ссылка в меню в админке
 	);
 	$args = array(
 		'labels' => $labels,
@@ -22,8 +22,8 @@ function service_register_post_type_init() {
 		'show_ui' => true, // показывать интерфейс в админке
 		'has_archive' => true, 
 		// 'menu_icon' => get_stylesheet_directory_uri() .'/img/function_icon.png', // иконка в меню
-		'menu_icon' => 'dashicons-money-alt', // иконка в меню
-		'menu_position' => 4, // порядок в меню
+		'menu_icon' => 'dashicons-format-gallery', // иконка в меню
+		'menu_position' => 3, // порядок в меню
 		// 1	в самом верху меню
 		// 2-3	под «Консоль»
 		// 4-9	под «Записи»
@@ -39,22 +39,22 @@ function service_register_post_type_init() {
 		// больше 100	под разделителем после «Параметры»
 		'supports' => array( 'title', 'editor', 'comments', 'author', 'thumbnail'),
 	);
-	register_post_type('services', $args);
+	register_post_type('portfolio', $args);
 }
 
-add_filter( 'post_updated_messages', 'services_post_type_messages' );
+add_filter( 'post_updated_messages', 'portfolio_post_type_messages' );
  
-function services_post_type_messages( $messages ) {
+function portfolio_post_type_messages( $messages ) {
 	global $post, $post_ID;
  
-	$messages['services'] = array( // services - название созданного нами типа записей
+	$messages['portfolio'] = array( // portfolio - название созданного нами типа записей
 		0 => '', // Данный индекс не используется.
-		1 => sprintf( 'Услуга обновлена. <a href="%s">Просмотр</a>', esc_url( get_permalink($post_ID) ) ),
+		1 => sprintf( 'Работа портфолио обновлена. <a href="%s">Просмотр</a>', esc_url( get_permalink($post_ID) ) ),
 		2 => 'Параметр обновлён.',
 		3 => 'Параметр удалён.',
-		4 => 'Услуга обновлена',
-		5 => isset($_GET['revision']) ? sprintf( 'Услуга восстановлена из редакции: %s', wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
-		6 => sprintf( 'Услуга опубликована на сайте. <a href="%s">Просмотр</a>', esc_url( get_permalink($post_ID) ) ),
+		4 => 'Работа портфолио обновлена',
+		5 => isset($_GET['revision']) ? sprintf( 'Работа портфолио восстановлена из редакции: %s', wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+		6 => sprintf( 'Работа портфолио опубликована на сайте. <a href="%s">Просмотр</a>', esc_url( get_permalink($post_ID) ) ),
 		7 => 'Услуга сохранена.',
 		8 => sprintf( 'Отправлено на проверку. <a target="_blank" href="%s">Просмотр</a>', esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
 		9 => sprintf( 'Запланировано на публикацию: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Просмотр</a>', date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink($post_ID) ) ),
@@ -64,12 +64,12 @@ function services_post_type_messages( $messages ) {
 	return $messages;
 }
 
-function services_post_type_help_tab() {
+function portfolio_post_type_help_tab() {
  
 	$screen = get_current_screen();
  
 	// Прекращаем выполнение функции, если находимся на страницах других типов постов
-	if ( 'services' != $screen->post_type )
+	if ( 'portfolio' != $screen->post_type )
 		return;
  
 	// Массив параметров для первой вкладки
@@ -94,5 +94,5 @@ function services_post_type_help_tab() {
  
 }
  
-add_action('admin_head', 'services_post_type_help_tab');
+add_action('admin_head', 'portfolio_post_type_help_tab');
 ?>

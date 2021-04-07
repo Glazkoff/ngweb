@@ -4,17 +4,18 @@ h3,
 h4,
 h5,
 h6 {
-  clear: both;
+	color: $blue;
+	clear: both;
 }
 
 h1,
 h2 {
-  font-family: $font__heading_serif;
+	font-family: $font__heading_serif;
 }
 
 h3,
 h4,
 h5,
 h6 {
-  font-family: $font__heading;
+	font-family: $font__heading;
 }

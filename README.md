@@ -138,6 +138,6 @@ Good luck!
 
 ### Типы постов
 - [x] `services` - услуги
-- [] `portfolio` - портфолио
-- [] `teammates` - команда
+- [x] `portfolio` - портфолио
+- [x] `teammates` - команда
 - [] `блог` - блог
