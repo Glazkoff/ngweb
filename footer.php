@@ -1,3 +1,4 @@
+
 <?php
 /**
  * The template for displaying the footer
@@ -10,27 +11,6 @@
  */
 
 ?>
-<style>
-	.footer-custom{
-		display:grid;
-		grid-template-columns: 1fr 2fr 1fr;
-		font-weight:bold;
-	}
-	.site-footer a{
-		color: #080808 !important;
-	}
-	.site-footer li {
-    list-style-type: none;
-   }
-	.site-footer hr {
-    border: none; 
-    color: #080808;
-    background-color: #080808;
-    height: 2px;
-		width: 95%;
-   }
-
-</style>
 	<footer id="colophon" class="site-footer">
 		<div class="footer-custom"><div>
 			<ul>
@@ -63,7 +43,6 @@
 			</ul></div></div>
 			<div>
 				<hr>
-				<h6>H6 - Заголовок 6</h6>
 				<h6>NIKITA GLAZKOV 2021</h6>
 			</div>
 			<!-- <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'ngwebstudio' ) ); ?>">
