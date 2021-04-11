@@ -27,12 +27,8 @@
     color: #080808;
     background-color: #080808;
     height: 2px;
-		width: 1433px;
+		width: 95%;
    }
-	 .site-footer h1{
-		 font-size: 21px;
-		 text-align: center;
-	 }
 
 </style>
 	<footer id="colophon" class="site-footer">
@@ -67,7 +63,8 @@
 			</ul></div></div>
 			<div>
 				<hr>
-				<h1>NIKITA GLAZKOV 2021</h1>
+				<h6>H6 - Заголовок 6</h6>
+				<h6>NIKITA GLAZKOV 2021</h6>
 			</div>
 			<!-- <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'ngwebstudio' ) ); ?>">
 				<?php
