@@ -37,11 +37,11 @@ get_header(); ?>
 <hr>
 <section class="portfolio-block">
   <h2>Портфолио</h2>
-  <!-- <div class="glide">
+  <div class="glide">
     <div class="glide__track" data-glide-el="track">
       <div class="portfolio-list glide__slides">
         <div class="portfolio-card glide__slide">
-          <h3>Название</h3>
+          <h3>Название 1</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Potenti eget erat ultricies in habitant risus etiam egestas et. Ac, neque, iaculis nec vulputate tempus hendrerit. Lacus, ipsum elit nibh fusce in vel. Et faucibus mauris, accumsan, elit.</p>
           <div class="btn-block">
             <svg width="70" height="71" viewBox="0 0 70 71" fill="none" xmlns="http://www.w3.org/2000/svg" class="go-btn">
@@ -51,7 +51,7 @@ get_header(); ?>
           </div> 
         </div>
         <div class="portfolio-card glide__slide">
-          <h3>Название</h3>
+          <h3>Название 2</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Potenti eget erat ultricies in habitant risus etiam egestas et. Ac, neque, iaculis nec vulputate tempus hendrerit. Lacus, ipsum elit nibh fusce in vel. Et faucibus mauris, accumsan, elit.</p>
           <div class="btn-block">
             <svg width="70" height="71" viewBox="0 0 70 71" fill="none" xmlns="http://www.w3.org/2000/svg" class="go-btn">
@@ -61,7 +61,7 @@ get_header(); ?>
           </div> 
         </div>
         <div class="portfolio-card glide__slide">
-          <h3>Название</h3>
+          <h3>Название 3</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Potenti eget erat ultricies in habitant risus etiam egestas et. Ac, neque, iaculis nec vulputate tempus hendrerit. Lacus, ipsum elit nibh fusce in vel. Et faucibus mauris, accumsan, elit.</p>
           <div class="btn-block">
             <svg width="70" height="71" viewBox="0 0 70 71" fill="none" xmlns="http://www.w3.org/2000/svg" class="go-btn">
@@ -71,7 +71,7 @@ get_header(); ?>
           </div> 
         </div>
         <div class="portfolio-card glide__slide">
-          <h3>Название</h3>
+          <h3>Название 4</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Potenti eget erat ultricies in habitant risus etiam egestas et. Ac, neque, iaculis nec vulputate tempus hendrerit. Lacus, ipsum elit nibh fusce in vel. Et faucibus mauris, accumsan, elit.</p>
           <div class="btn-block">
             <svg width="70" height="71" viewBox="0 0 70 71" fill="none" xmlns="http://www.w3.org/2000/svg" class="go-btn">
@@ -90,8 +90,8 @@ get_header(); ?>
         next
       </button>
     </div> 
-  </div> -->
-  <div class="glide">
+  </div>
+  <!-- <div class="glide">
     <div class="glide__track" data-glide-el="track">
       <ul class="glide__slides">
         <li class="glide__slide">0</li>
@@ -107,7 +107,7 @@ get_header(); ?>
         next
       </button>
     </div> 
-  </div>
+  </div> -->
 </div>
 
 

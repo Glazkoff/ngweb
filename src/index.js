@@ -5,24 +5,18 @@
 // Global Javascript
 import "./navigation";
 
-
-// Global Styles
-import "../sass/style.scss";
-
+import "../sass/style.scss"
 
 import Glide from '@glidejs/glide'
 
-
-window.onLoad = () => {
-  console.log(document.querySelector('.glide'));
-  console.log(new Glide('.glide'));
+window.onload = ()=>{
+  new Glide('.glide', {
+    type: 'carousel',
+    startAt: 0,
+    perView: 4,
+    gap: 16
+  }).mount()
 }
-// new Glide('.glide', {
-//   type: 'carousel',
-//   autoplay: 2000,
-//   startAt: 0,
-//   perView: 3
-// }).mount()
 
 
 
