@@ -48,9 +48,10 @@ module.exports = {
     }),
   ],
   optimization: {
-    minimize: true,
+    minimize: false,
     minimizer: [
       new UglifyJsPlugin({
+        extractComments: true,
         cache: true,
         parallel: true,
         sourceMap: true,

@@ -7,12 +7,12 @@
  * @package ngwebstudio
  */
 
-if ( ! defined( '_S_VERSION' ) ) {
+if (!defined("_S_VERSION")) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define("_S_VERSION", "1.0.0");
 }
 
-if ( ! function_exists( 'ngwebstudio_setup' ) ) :
+if (!function_exists("ngwebstudio_setup")):
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -20,17 +20,21 @@ if ( ! function_exists( 'ngwebstudio_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function ngwebstudio_setup() {
+	function ngwebstudio_setup()
+	{
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
 		 * If you're building a theme based on ngwebstudio, use a find and replace
 		 * to change 'ngwebstudio' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'ngwebstudio', get_template_directory() . '/languages' );
+		load_theme_textdomain(
+			"ngwebstudio",
+			get_template_directory() . "/languages"
+		);
 
 		// Add default posts and comments RSS feed links to head.
-		add_theme_support( 'automatic-feed-links' );
+		add_theme_support("automatic-feed-links");
 
 		/*
 		 * Let WordPress manage the document title.
@@ -38,71 +42,60 @@ if ( ! function_exists( 'ngwebstudio_setup' ) ) :
 		 * hard-coded <title> tag in the document head, and expect WordPress to
 		 * provide it for us.
 		 */
-		add_theme_support( 'title-tag' );
+		add_theme_support("title-tag");
 
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
-		add_theme_support( 'post-thumbnails' );
+		add_theme_support("post-thumbnails");
 
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus(
-			array(
-				'menu-1' => esc_html__( 'Primary', 'ngwebstudio' ),
-			)
-		);
+		register_nav_menus([
+			"menu-1" => esc_html__("Primary", "ngwebstudio"),
+		]);
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
-		add_theme_support(
-			'html5',
-			array(
-				'search-form',
-				'comment-form',
-				'comment-list',
-				'gallery',
-				'caption',
-				'style',
-				'script',
-			)
-		);
+		add_theme_support("html5", [
+			"search-form",
+			"comment-form",
+			"comment-list",
+			"gallery",
+			"caption",
+			"style",
+			"script",
+		]);
 
 		// Set up the WordPress core custom background feature.
 		add_theme_support(
-			'custom-background',
-			apply_filters(
-				'ngwebstudio_custom_background_args',
-				array(
-					'default-color' => 'ffffff',
-					'default-image' => '',
-				)
-			)
+			"custom-background",
+			apply_filters("ngwebstudio_custom_background_args", [
+				"default-color" => "ffffff",
+				"default-image" => "",
+			])
 		);
 
 		// Add theme support for selective refresh for widgets.
-		add_theme_support( 'customize-selective-refresh-widgets' );
+		add_theme_support("customize-selective-refresh-widgets");
 
 		/**
 		 * Add support for core custom logo.
 		 *
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
-		add_theme_support(
-			'custom-logo',
-			array(
-				'height'      => 250,
-				'width'       => 250,
-				'flex-width'  => true,
-				'flex-height' => true,
-			)
-		);
+		add_theme_support("custom-logo", [
+			"height" => 250,
+			"width" => 250,
+			"flex-width" => true,
+			"flex-height" => true,
+		]);
 	}
 endif;
-add_action( 'after_setup_theme', 'ngwebstudio_setup' );
+add_action("after_setup_theme", "ngwebstudio_setup");
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -111,83 +104,92 @@ add_action( 'after_setup_theme', 'ngwebstudio_setup' );
  *
  * @global int $content_width
  */
-function ngwebstudio_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'ngwebstudio_content_width', 640 );
+function ngwebstudio_content_width()
+{
+	$GLOBALS["content_width"] = apply_filters("ngwebstudio_content_width", 640);
 }
-add_action( 'after_setup_theme', 'ngwebstudio_content_width', 0 );
+add_action("after_setup_theme", "ngwebstudio_content_width", 0);
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function ngwebstudio_widgets_init() {
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Sidebar', 'ngwebstudio' ),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'ngwebstudio' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
+function ngwebstudio_widgets_init()
+{
+	register_sidebar([
+		"name" => esc_html__("Sidebar", "ngwebstudio"),
+		"id" => "sidebar-1",
+		"description" => esc_html__("Add widgets here.", "ngwebstudio"),
+		"before_widget" => '<section id="%1$s" class="widget %2$s">',
+		"after_widget" => "</section>",
+		"before_title" => '<h2 class="widget-title">',
+		"after_title" => "</h2>",
+	]);
 }
-add_action( 'widgets_init', 'ngwebstudio_widgets_init' );
+add_action("widgets_init", "ngwebstudio_widgets_init");
 
 /**
  * Enqueue scripts and styles.
  */
-function ngwebstudio_scripts() {
-	wp_enqueue_style( 'ngwebstudio-style', get_stylesheet_uri(), array(), _S_VERSION );
-	
-	wp_enqueue_style( 'ngwebstudio-additional-style', get_template_directory_uri().'/dist/site.css');
-	
-	wp_style_add_data( 'ngwebstudio-style', 'rtl', 'replace' );
+function ngwebstudio_scripts()
+{
+	wp_enqueue_style("ngwebstudio-style", get_stylesheet_uri(), [], _S_VERSION);
 
-	wp_enqueue_script( 'ngwebstudio-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_style(
+		"ngwebstudio-additional-style",
+		get_template_directory_uri() . "/dist/site.css"
+	);
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
+	wp_style_add_data("ngwebstudio-style", "rtl", "replace");
+
+	wp_enqueue_script(
+		"ngwebstudio-site",
+		get_template_directory_uri() . "/dist/site.js",
+		_S_VERSION,
+		true
+	);
+
+	if (is_singular() && comments_open() && get_option("thread_comments")) {
+		wp_enqueue_script("comment-reply");
 	}
 }
-add_action( 'wp_enqueue_scripts', 'ngwebstudio_scripts' );
+add_action("wp_enqueue_scripts", "ngwebstudio_scripts");
 
 /**
  * Implement the Custom Header feature.
  */
-require get_template_directory() . '/inc/custom-header.php';
+require get_template_directory() . "/inc/custom-header.php";
 
 /**
  * Custom template tags for this theme.
  */
-require get_template_directory() . '/inc/template-tags.php';
+require get_template_directory() . "/inc/template-tags.php";
 
 /**
  * Functions which enhance the theme by hooking into WordPress.
  */
-require get_template_directory() . '/inc/template-functions.php';
+require get_template_directory() . "/inc/template-functions.php";
 
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . "/inc/customizer.php";
 
 /**
  * Load Jetpack compatibility file.
  */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
+if (defined("JETPACK__VERSION")) {
+	require get_template_directory() . "/inc/jetpack.php";
 }
 
 // ******************************
 // Подключение своих типов постов
 // ******************************
 
-// 
-require get_template_directory() . '/custom-post-types/services-init.php';
+//
+require get_template_directory() . "/custom-post-types/services-init.php";
 
-require get_template_directory() . '/custom-post-types/portfolio-init.php';
+require get_template_directory() . "/custom-post-types/portfolio-init.php";
 
-require get_template_directory() . '/custom-post-types/teammates-init.php';
+require get_template_directory() . "/custom-post-types/teammates-init.php";
