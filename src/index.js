@@ -13,7 +13,7 @@ window.onload = ()=>{
   new Glide('.glide', {
     type: 'carousel',
     startAt: 0,
-    perView: 4,
+    perView:3,
     gap: 16
   }).mount()
 }

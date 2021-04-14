@@ -22,6 +22,30 @@
 	}
 }
 
-.glide__track {
+.glide {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 
+	&__arrows {
+		display: flex !important;
+		&	button {
+			cursor: pointer;
+			padding: 0;
+			background: transparent;
+			color: #000 !important;
+			width: 100%;
+			min-width: 3rem !important;
+			display: block;
+			font-size: 2.5rem !important;
+			transition: all .2s ease-in;
+
+			&:hover {
+				text-shadow: 2px 2px 4px rgba(0,0,0,.3);
+			}
+			&:active {
+				font-size: 1.5rem !important;
+			}
+		}
+	}
 }
