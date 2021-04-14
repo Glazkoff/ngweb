@@ -13,8 +13,19 @@ window.onload = ()=>{
   new Glide('.glide', {
     type: 'carousel',
     startAt: 0,
-    perView:3,
-    gap: 16
+    perView:4,
+    gap: 16,
+    breakpoints: {
+      500: {
+        perView: 1
+      },
+      800: {
+        perView: 2
+      },
+      990: {
+        perView: 3
+      }
+    }
   }).mount()
 }
 
