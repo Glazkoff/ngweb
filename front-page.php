@@ -36,6 +36,16 @@ get_header(); ?>
     <label for="input2" class="red">It's label for input</label>
     <input type="text" id="input2" class="red">
 <hr>
+<section class="main-block">
+  <div class="dynamic-heading__block">
+    <h2 class="dynamic-heading">Разрабатываем<br>сайты, которые<br>| притягивают<br>внимание</h2>  
+  </div>
+  <div id="main-sugar">
+    <svg id="main-sugar__svg">
+    </svg>
+  </div>
+</section>
+<hr>
 <section class="portfolio-block">
   <h2>Портфолио</h2>
   <div class="glide">
@@ -90,29 +100,9 @@ get_header(); ?>
     </div>   
 
       <div class="glide__arrows" data-glide-el="controls">
-      <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
-        >
-      </button>
-    </div> 
+        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+          >
+        </button>
+      </div> 
   </div>
-  <!-- <div class="glide">
-    <div class="glide__track" data-glide-el="track">
-      <ul class="glide__slides">
-        <li class="glide__slide">0</li>
-        <li class="glide__slide">1</li>
-        <li class="glide__slide">2</li>
-      </ul>
-    </div>
-    <div class="glide__arrows" data-glide-el="controls">
-      <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
-        prev
-      </button>
-      <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
-        next
-      </button>
-    </div> 
-  </div> -->
-</div>
-
-
 </section>

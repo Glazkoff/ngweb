@@ -1,3 +1,13 @@
 body {
 	background: $color__background-body; // Fallback for when there is no custom background color defined.
 }
+
+section {
+  padding-left: 5.75rem;
+  padding-right: 5.75rem;
+	padding-top: 4.5rem;
+  padding-bottom: 4rem;
+	& h1,h2,h3,h4,h5,h6{
+    margin: 0;
+  }
+}
