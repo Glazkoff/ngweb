@@ -6,7 +6,8 @@
  * @since Underscoresme 1.0
  */
 
-get_header(); ?>
+get_header();
+include 'contact-form.php'; ?>
 <h1>H1 - Заголовок 1 </h1>
     <h2>H2 - Заголовок 2 </h2>
     <h3>H3 - Заголовок 3</h3>
