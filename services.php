@@ -19,7 +19,7 @@
 </section>
 
 <section>
-  <h2 class="heading-for-services">Услуги</h2>
+  <!-- <h2 class="heading-for-services">Услуги</h2> -->
   <div class="wrap-for-services right">
     <div class="description-for-services right">
       <h3>Название</h3>
@@ -39,7 +39,7 @@
 </section>
 
 <section>
-  <h2 class="heading-for-services">Услуги</h2>
+  <!-- <h2 class="heading-for-services">Услуги</h2> -->
   <div class="wrap-for-services left">
     <div class="description-for-services left">
       <h3>Название</h3>
