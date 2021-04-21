@@ -14,8 +14,21 @@
 		& li a{
 			font-weight: bold;
 			color:black !important;
-			&:hover{
-				border-bottom: 3px solid #FF3322;
+			position: relative;
+			line-height: 1.5;
+			text-decoration: none;
+			&:after {
+				display: block;
+				position: absolute;
+				left: 0;
+				width: 0;
+				height: 3px;
+				background-color: #FF3322;
+				content: "";
+				transition: width 0.3s ease-out;
+			}
+			&:hover:after {
+				width: 100%;
 				color:black;
 			}
 		}
@@ -30,18 +43,19 @@
 		}
 		&:hover .prompt {
         margin-top: 2.5rem;
-				margin-left: -15rem;
         opacity: 1;
         visibility: visible;
 		}
 	}
 	.prompt {
-		display: block;
-		position: absolute;
-		background: #9FD3F8;
-		width: 16rem;
-		padding: 1rem;
-		opacity: 0;
-		visibility: hidden;
-		transition: opacity 0.3s, margin-top 0.5s;
+					display: block;
+					position: absolute;
+					right: 10rem;
+					background: #9FD3F8;
+					width: 16rem;
+					padding: 1rem;
+					opacity: 0;
+					visibility: hidden;
+					transition: opacity 0.3s ease-out,
+					margin-top 0.5s ease-out;
 	}
