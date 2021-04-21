@@ -1,11 +1,11 @@
 	.site-header {
 		display: flex;
-		margin: 2.5rem 5rem 0 5rem;
+		padding: 2.5rem 5.75rem;
 		& .main-navigation {
 			margin-left: 15rem;
 		}
 		& .site-branding {
-			width: 35%;
+			width: 12.5rem;
 		}
 	} 
 	nav ul {
@@ -23,8 +23,25 @@
 	.money {
 		display: flex;
 		margin-left: 7rem;
+		cursor: pointer;
 		& span {
 			font-weight: 600;
 			margin-right: 1rem;
 		}
+		&:hover .prompt {
+        margin-top: 2.5rem;
+				margin-left: -15rem;
+        opacity: 1;
+        visibility: visible;
+		}
+	}
+	.prompt {
+		display: block;
+		position: absolute;
+		background: #9FD3F8;
+		width: 16rem;
+		padding: 1rem;
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.3s, margin-top 0.5s;
 	}

@@ -64,6 +64,7 @@
     "start": "webpack --mode development --config webpack.config.js --watch"
   },
   "dependencies": {
-    "@glidejs/glide": "^3.4.1"
+    "@glidejs/glide": "^3.4.1",
+    "headroom.js": "^0.12.0"
   }
 }
