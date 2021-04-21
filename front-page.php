@@ -6,26 +6,13 @@
  * @since Underscoresme 1.0
  */
 
-get_header(); ?>
+get_header();
 
-<section class="main-block">
-  <div class="dynamic-heading__block">
-    <h2 id="main-heading" class="dynamic-heading">Разрабатываем<br>сайты, которые<br>| притягивают<br>внимание</h2>  
-  </div>
-  <div id="main-sugar">
-    <svg id="main-sugar__svg">
-    </svg>
-  </div>
-</section>
-<hr>
+include "front-page-blocks/main-block.php";
+include "front-page-blocks/services.php";
+include "front-page-blocks/portfolio-block.php";
+include "front-page-blocks/contact-form.php";
 
-
-
-</section>
-<?php
-include "services.php";
-include "portfolio-block.php";
-include "contact-form.php";
 get_footer();
 ?>
 
