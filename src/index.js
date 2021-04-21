@@ -103,25 +103,98 @@ for (let index = 0; index < confettiPieceArr.length; index++) {
       break;
     }
 }
-  // console.log('Hi!');
   return intersects;
 }
 
+function getRelativeCoordinates(event, referenceElement) {
+  const position = {
+    x: event.pageX,
+    y: event.pageY
+  };
+  const offset = {
+    left: referenceElement.offsetLeft,
+    top: referenceElement.offsetTop
+  };
+  let reference = referenceElement.offsetParent;
+  while (reference) {
+    offset.left += reference.offsetLeft;
+    offset.top += reference.offsetTop;
+    reference = reference.offsetParent;
+  }
+  return {
+    x: position.x - offset.left,
+    y: position.y - offset.top,
+  };
+}
+
+function drawConfettiWithObj(confetti, svgElement, confettiPieceWidth, confettiPieceHeight) {
+  let newSvgChild = document.createElementNS("http://www.w3.org/2000/svg", 'rect');
+  newSvgChild.setAttribute('fill', confetti.randomColor);
+  newSvgChild.setAttribute("width", confettiPieceWidth+"");
+  newSvgChild.setAttribute("height", confettiPieceHeight+"");
+  newSvgChild.setAttribute("x", confetti.randomX + "");
+  newSvgChild.setAttribute("y", confetti.randomY + "");
+  newSvgChild.setAttribute("transform", "rotate(" + confetti.randomAngle + ")");
+  newSvgChild.setAttribute("transform-box", "fill-box");
+  newSvgChild.setAttribute("transform-origin", "center center 0");
+  newSvgChild.classList.add("confetti-piece");
+  svgElement.appendChild(newSvgChild);
+  return newSvgChild;
+}
+
+function deleteConfettiPiece(confettiIndex, confettiPieceArr) {
+  let deleteElem = confettiPieceArr[confettiIndex]
+  if (typeof deleteElem !== 'undefined') {
+    let DOMElement = deleteElem.DOMElement
+    setTimeout(() => {
+      DOMElement.classList.add("confetti-piece-deleted");
+      setTimeout(() => {
+        DOMElement.remove();
+        confettiPieceArr.splice(confettiIndex,1)
+      }, 500)
+    }, 500);
+    // DOMElement.remove();
+  }
+}
+
+
 window.onload = () => {
+  let colors = ['#FF3322', '#F4DF60', '#68CD5F', '#9FD3F8'];
+  let confettiPieceHeight = 80;
+  let confettiPieceWidth = 16;
+
+  let svg = document.getElementById("main-sugar__svg");
+  let heading = document.getElementById("main-heading");
+  let confettiPieceArr = []
+  
+  let mainSugar = document.getElementById("main-sugar");
+
+  mainSugar.onmousemove = (e) => {
+    let coordinates = getRelativeCoordinates(e, mainSugar)
+    let newConfetti = generateRandomConfettiObj(colors, svg.clientHeight, svg.clientWidth)
+    newConfetti.randomX = coordinates.x
+    newConfetti.randomY = coordinates.y
+    let notAllRules = isInElementZone(newConfetti, heading, confettiPieceHeight, confettiPieceWidth) || isCollideWithOtherConfetti(newConfetti, confettiPieceArr, confettiPieceHeight, confettiPieceWidth)
+    if (!notAllRules) {
+      newConfetti.DOMElement = drawConfettiWithObj(newConfetti, svg, confettiPieceWidth, confettiPieceHeight)
+      confettiPieceArr.push(newConfetti)
+      if (Math.random()<0.5) {
+        let randomIndex = Math.floor(confettiPieceArr.length * Math.random())
+        deleteConfettiPiece(randomIndex, confettiPieceArr)
+      }
+    }
+  }
+
+  setInterval(() => {
+    let randomIndex = Math.floor(confettiPieceArr.length * Math.random())
+    deleteConfettiPiece(randomIndex, confettiPieceArr)
+  }, 1000);
 
   function draw() {
-    let svg = document.getElementById("main-sugar__svg");
-    let heading = document.getElementById("main-heading");
 
     if (svg && heading) {
 
-      let colors = ['#FF3322', '#F4DF60', '#68CD5F', '#9FD3F8'];
-      let confettiPieceHeight = 80;
-      let confettiPieceWidth = 16;
-
-      let confettiPieceArr = []
-
-      for (let index = 0; index < 30; index++) {
+      for (let index = 0; index < 3; index++) {
         let confetti
         let notAllRules = false;
         do {
@@ -130,19 +203,10 @@ window.onload = () => {
         }
         while (notAllRules)
 
+        confetti.DOMElement = drawConfettiWithObj(confetti, svg, confettiPieceWidth, confettiPieceHeight)
+
         confettiPieceArr.push(confetti)
 
-        let newSvgChild = document.createElementNS("http://www.w3.org/2000/svg", 'rect');
-        newSvgChild.setAttribute('fill', confetti.randomColor);
-        newSvgChild.setAttribute("width", confettiPieceWidth+"");
-        newSvgChild.setAttribute("height", confettiPieceHeight+"");
-        newSvgChild.setAttribute("x", confetti.randomX + "");
-        newSvgChild.setAttribute("y", confetti.randomY + "");
-        newSvgChild.setAttribute("transform", "rotate(" + confetti.randomAngle + ")");
-        newSvgChild.setAttribute("transform-box", "fill-box");
-        newSvgChild.setAttribute("transform-origin", "center center 0");
-        newSvgChild.classList.add("confetti-piece");
-        svg.appendChild(newSvgChild);
       }
     }
   }
