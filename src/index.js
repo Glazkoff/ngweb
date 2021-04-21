@@ -157,6 +157,8 @@ function deleteConfettiPiece(confettiIndex, confettiPieceArr) {
   }
 }
 
+let confettiPieceArr = []
+
 
 window.onload = () => {
   let colors = ['#FF3322', '#F4DF60', '#68CD5F', '#9FD3F8'];
@@ -165,8 +167,6 @@ window.onload = () => {
 
   let svg = document.getElementById("main-sugar__svg");
   let heading = document.getElementById("main-heading");
-  let confettiPieceArr = []
-  
   let mainSugar = document.getElementById("main-sugar");
 
   mainSugar.onmousemove = (e) => {
@@ -194,7 +194,11 @@ window.onload = () => {
 
     if (svg && heading) {
 
-      for (let index = 0; index < 3; index++) {
+      let iterations = 16;
+      let maxSquare = (svg.clientHeight * svg.clientWidth - heading.clientHeight * heading.clientWidth) / (confettiPieceHeight * confettiPieceHeight)
+      maxSquare <= 10 ? maxSquare = 3 : maxSquare;
+      iterations = Math.floor(maxSquare / 3)
+      for (let index = 0; index < iterations; index++) {
         let confetti
         let notAllRules = false;
         do {
@@ -212,6 +216,20 @@ window.onload = () => {
   }
 
   draw()
+
+  let timeOut = false;
+  window.addEventListener('resize', function (event) {
+    if (!timeOut) {
+      timeOut = true;
+      let svg = document.getElementById("main-sugar__svg");
+      svg.textContent = '';
+      confettiPieceArr = [];
+      draw();
+      setTimeout(() => {
+        timeOut = false;
+      }, 50);
+    }
+  });
 
   new Glide('.glide', {
     type: 'carousel',
