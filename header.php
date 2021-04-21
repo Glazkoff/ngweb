@@ -42,9 +42,9 @@
 				<?php endif;
    $ngwebstudio_description = get_bloginfo("description", "display");
    if ($ngwebstudio_description || is_customize_preview()): ?>
-				<p class="site-description"><?php echo $ngwebstudio_description;
+				<!-- <p class="site-description"><?php echo $ngwebstudio_description;
    	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-   	?></p>
+   	?></p> -->
 			<?php endif;
    ?>
 		</div><!-- .site-branding -->

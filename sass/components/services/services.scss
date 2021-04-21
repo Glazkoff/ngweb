@@ -1,0 +1,83 @@
+.heading-for-services {
+  margin-bottom: 4.5rem;
+}
+.wrap-for-services {
+  display: flex;
+  align-items: center;
+  &.left {
+    flex-direction: row;
+  }
+  &.right {
+    flex-direction: row-reverse;
+  }
+  & .description-for-services {
+    width: 35%;
+    &.left {
+      margin-right: 5%;
+    }
+    &.right {
+      margin-left: 5%;
+    }
+    & p {
+      margin-top: 1.4rem;
+      margin-bottom: 3.75rem;
+    }
+    & .btn-block {
+      width: 100%;
+      & .go-btn {
+        display: block;
+        cursor: pointer;
+        transition: transform 0.4s ease;
+        &:hover {
+          transform: translateX(8px);
+        }
+        & .circle.green {
+          stroke: $green;
+        }
+        & .arrow.green {
+          fill: $green;
+        }
+        & .circle.red {
+          stroke: $red;
+        }
+        & .arrow.red {
+          fill: $red;
+        }
+        & .circle.blue {
+          stroke: $blue;
+        }
+        & .arrow.blue {
+          fill: $blue
+        }
+      }
+    }
+  }
+  & .images-for-services {
+    width: 60%;
+    display: flex;
+    &.left {
+      justify-content: flex-end;
+    }
+
+    &.right {
+      justify-content: flex-start;
+    }
+    align-items: center;
+
+      & .image1 {
+        width: 500px;
+        background-color: $blue;
+        height: 350px;
+      }
+
+      & .image2 {
+        margin-top: 150px;
+        margin-left: -100px;
+        width: 300px;
+        background-color: $green;
+        height: 300px;
+      }
+    }
+
+}
+

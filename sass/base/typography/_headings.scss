@@ -9,14 +9,14 @@ h6 {
 }
 
 h1,
-h2 {
+h2,
+h6 {
 	font-family: $font__heading_serif;
 }
 
 h3,
 h4,
-h5,
-h6 {
+h5 {
 	font-weight: normal;
 	font-family: $font__heading;
 }
@@ -45,4 +45,9 @@ h5 {
 	font-weight: 700;
 	font-size: 24px;
 	line-height: 34px;
+}
+
+h6 {
+	font-size: 20px;
+	line-height: 30px;
 }

@@ -1,0 +1,47 @@
+.main-block {
+  height: 100vh;
+  position: relative;
+
+  & .dynamic-heading__block {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content:space-around;
+    align-content: space-around;
+
+    & .dynamic-heading {
+      margin: auto;
+      text-align: center;
+      text-transform: uppercase;
+      z-index: 10;
+    }
+  }
+
+  & #main-sugar {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    & #main-sugar__svg {
+      width: 100%;
+      height: 100%;
+
+      & .confetti-piece {
+        transform-box: fill-box;
+      }
+    }
+  }
+}
+
+.confetti-piece {
+  transition: all 0.5s ease-in, fill 0.5s ease-in;
+  // &:hover {
+  //   transform: rotate(90deg);
+  // }
+}
+
+.confetti-piece-deleted {
+  fill: transparent !important;
+}

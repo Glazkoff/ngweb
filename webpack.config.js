@@ -51,6 +51,7 @@ module.exports = {
     minimize: true,
     minimizer: [
       new UglifyJsPlugin({
+        extractComments: true,
         cache: true,
         parallel: true,
         sourceMap: true,

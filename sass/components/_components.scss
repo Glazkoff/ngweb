@@ -14,6 +14,10 @@
 --------------------------------------------- */
 @import "widgets/widgets";
 
+/* Footer
+--------------------------------------------- */
+@import "widgets/footer";
+
 /* Media
 --------------------------------------------- */
 @import "media/media";
@@ -26,6 +30,15 @@
 --------------------------------------------- */
 @import "media/galleries";
 
+/* Front-page
+--------------------------------------------- */
+@import "portfolio/portfolio";
+
 /* Header
 --------------------------------------------- */
 @import "header/header";
+
+/* Services
+--------------------------------------------- */
+@import "services/services";
+@import "main/main";

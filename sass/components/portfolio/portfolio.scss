@@ -1,0 +1,48 @@
+// .portfolio-block {
+// 	// TODO: сменить 80px на размер шапки
+// 	// height: calc(100vh - 80px);
+// }
+
+.portfolio-card {
+	border: 1px solid #000;
+	padding: 40px;
+	box-sizing: border-box;
+	& .btn-block {
+		width: 100%;
+		display: flex;
+		justify-content: flex-end;
+		& .go-btn {
+			display: block;
+			cursor: pointer;
+			transition: transform 0.4s ease;
+			&:hover {
+				transform: translateX(8px);
+			}
+		}
+	}
+}
+
+.glide {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	&__arrows {
+		display: flex !important;
+		&	button {
+			cursor: pointer;
+			padding: 0;
+			background: transparent;
+			color: #000 !important;
+			width: 100%;
+			min-width: 3rem !important;
+			display: block;
+			font-size: 2.5rem !important;
+			transition: all .5s ease-in-out;
+
+			&:active {
+				font-size: 2rem !important;
+			}
+		}
+	}
+}
