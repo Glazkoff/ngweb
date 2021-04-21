@@ -1,11 +1,11 @@
 	.site-header {
 		display: flex;
-		margin: 2.5rem 5rem 0 5rem;
+		padding: 2.5rem 5.75rem;
 		& .main-navigation {
 			margin-left: 15rem;
 		}
 		& .site-branding {
-			width: 35%;
+			width: 12.5rem;
 		}
 	} 
 	nav ul {
@@ -38,10 +38,9 @@
 	.prompt {
 		display: block;
 		position: absolute;
-		border-radius: 10px 0px 10px 10px;
 		background: #9FD3F8;
-		width: 248px;
-		padding: 16px;
+		width: 16rem;
+		padding: 1rem;
 		opacity: 0;
 		visibility: hidden;
 		transition: opacity 0.3s, margin-top 0.5s;
