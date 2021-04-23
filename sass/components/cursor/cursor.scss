@@ -1,4 +1,7 @@
 html {
-  // cursor: url('../../../src/cursor.png'), auto;
-    //  mix-blend-mode: difference;
+  cursor: url('../../../src/img/circle.svg'), pointer;
+
+  .image1 {
+    background: url('../../../src/img/circle.svg') !important;
+  }
 }
