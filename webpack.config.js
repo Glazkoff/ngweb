@@ -23,13 +23,23 @@ module.exports = {
         test: /\.scss$/,
         use: [
           MiniCssExtractPlugin.loader,
-          "css-loader",
-          "resolve-url-loader",
-          "sass-loader",
+          {
+            loader: "css-loader"
+          },
+          {
+            loader: "resolve-url-loader",
+            options: {  
+              root: path.join(__dirname, '/src/img'),
+              includeRoot: true,
+            },
+          },
+          {
+            loader: 'sass-loader',
+          }
         ],
       },
       {
-        test: /\.(woff2?|ttf|otf|eot|svg)$/,
+        test: /\.(woff2?|ttf|otf|eot)$/,
         exclude: /node_modules/,
         loader: "file-loader",
         options: {
