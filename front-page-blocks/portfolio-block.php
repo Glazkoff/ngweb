@@ -1,11 +1,6 @@
 <section class="portfolio-block">
-  <h2>Портфолио</h2>
+  <h2 class="heading-for-services">Портфолио</h2>
   <div class="glide">
-      <div class="glide__arrows" data-glide-el="controls">
-        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
-          <
-        </button>
-      </div>
     <div class="glide__track" data-glide-el="track">
       <div class="portfolio-list glide__slides">
         <div class="portfolio-card glide__slide">
@@ -49,12 +44,16 @@
           </div> 
         </div>
       </div>
-    </div>   
-
-      <div class="glide__arrows" data-glide-el="controls">
+      <div class="glide__arrows left" data-glide-el="controls">
+        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+          <
+        </button>
+      </div>
+      <div class="glide__arrows right" data-glide-el="controls">
         <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
           >
         </button>
       </div> 
+    </div>   
   </div>
 </div>
