@@ -7,7 +7,8 @@ import "./navigation";
 
 import "../sass/style.scss"
 
-import Glide from '@glidejs/glide'
+import GlidePortfolioSetup from './glide-portfolio'
+import CursorSetup from './cursor'
 
 function generateRandomConfettiObj(colors, clientHeight, clientWidth) {
   let randomColor = colors[Math.floor(Math.random() * colors.length)];
@@ -162,6 +163,8 @@ let confettiPieceArr = []
 
 window.onload = () => {
 
+  CursorSetup();
+
   let colors = ['#FF3322', '#F4DF60', '#68CD5F', '#9FD3F8'];
   let confettiPieceHeight = 80;
   let confettiPieceWidth = 16;
@@ -232,26 +235,8 @@ window.onload = () => {
     }
   });
 
-  new Glide('.glide', {
-    type: 'carousel',
-    startAt: 0,
-    perView: 3,
-    peek: { before: 80, after: 150 },
-    gap: 48,
-    breakpoints: {
-      740: {
-        perView: 1
-      },
-      980: {
-        perView: 2
-      },
-      1280: {
-        perView: 3
-      }
-    }
-  }).mount()
+  GlidePortfolioSetup()
 
-  
 }
 
 
