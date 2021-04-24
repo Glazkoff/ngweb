@@ -7,36 +7,55 @@
   margin-top: 8rem;
 }
 
-.running-stroke {
-  display: inline-block;
-  position: relative;
-  white-space: nowrap;
-    overflow: hidden;
-    bottom: 0;
-    margin: 0; 
-    margin-right: 10px;
-    color: $lightGray;
-    font-weight: bold;
-    font-size: 64px;
-    line-height: 83px;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    -webkit-text-stroke-width: 2px;
-    &.green {
-      -webkit-text-stroke-color: $green;
-    }
-    &.red {
-      -webkit-text-stroke-color: $red;
-    }
-    &.blue {
-      -webkit-text-stroke-color: $blue;
-    }
-
-}
-
-.marquee {
+.infinite-line {
   margin-left: -5.75rem;
   margin-right: -5.75rem;
-	overflow: hidden;
-	white-space: nowrap;
+	height: 5rem;
+  &.programming {
+  	background: url('../../../src/img/programming.svg') repeat-x;
+  	animation: animate 5s linear infinite;
+  	-webkit-animation: programming 5s linear infinite;
+}
+
+  &.marketing {
+  	background: url('../../../src/img/marketing.svg') repeat-x;
+  	animation: animate 5s linear infinite;
+  	-webkit-animation: marketing 5s linear infinite;
+}
+
+  &.design {
+    background: url('../../../src/img/design.svg') repeat-x;
+    animation: design 5s linear infinite;
+    -webkit-animation: design 5s linear infinite;
+}
+}
+
+@keyframes programming {
+	from {
+		background-position: 0px 0px;
+	}
+
+	to {
+		background-position: 710px 0px;
+	}
+}
+
+@keyframes marketing {
+	from {
+		background-position: 0px 0px;
+	}
+
+	to {
+		background-position: -403px 0px;
+	}
+}
+
+@keyframes design {
+	from {
+		background-position: 0px 0px;
+	}
+
+	to {
+		background-position: 286px 0px;
+	}
 }
