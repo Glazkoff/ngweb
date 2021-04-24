@@ -13,20 +13,20 @@
 	height: 5rem;
   &.programming {
   	background: url('../../../src/img/programming.svg') repeat-x;
-  	animation: animate 5s linear infinite;
+  	animation: programming 5s linear infinite;
   	-webkit-animation: programming 5s linear infinite;
 }
 
   &.marketing {
   	background: url('../../../src/img/marketing.svg') repeat-x;
-  	animation: animate 5s linear infinite;
-  	-webkit-animation: marketing 5s linear infinite;
+  	animation: marketing 2.85s linear infinite;
+  	-webkit-animation: marketing 2.85s linear infinite;
 }
 
   &.design {
     background: url('../../../src/img/design.svg') repeat-x;
-    animation: design 5s linear infinite;
-    -webkit-animation: design 5s linear infinite;
+    animation: design 2s linear infinite;
+    -webkit-animation: design 2s linear infinite;
 }
 }
 
