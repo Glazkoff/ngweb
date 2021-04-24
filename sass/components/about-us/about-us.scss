@@ -1,0 +1,42 @@
+.about-us {
+  background-color: $color__background-screen;
+  position: relative;
+}
+
+.wrap-for-running-stroke{
+  margin-top: 8rem;
+}
+
+.running-stroke {
+  display: inline-block;
+  position: relative;
+  white-space: nowrap;
+    overflow: hidden;
+    bottom: 0;
+    margin: 0; 
+    margin-right: 10px;
+    color: $lightGray;
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 83px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    -webkit-text-stroke-width: 2px;
+    &.green {
+      -webkit-text-stroke-color: $green;
+    }
+    &.red {
+      -webkit-text-stroke-color: $red;
+    }
+    &.blue {
+      -webkit-text-stroke-color: $blue;
+    }
+
+}
+
+.marquee {
+  margin-left: -5.75rem;
+  margin-right: -5.75rem;
+	overflow: hidden;
+	white-space: nowrap;
+}

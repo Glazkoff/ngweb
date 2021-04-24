@@ -5,6 +5,8 @@
 // Global Javascript
 import "./navigation";
 
+// import RunningStrokeSetup from "./running-stroke";
+
 import "../sass/style.scss"
 
 import Glide from '@glidejs/glide'
@@ -161,6 +163,8 @@ let confettiPieceArr = []
 
 
 window.onload = () => {
+  // RunningStrokeSetup();
+  
   let colors = ['#FF3322', '#F4DF60', '#68CD5F', '#9FD3F8'];
   let confettiPieceHeight = 80;
   let confettiPieceWidth = 16;

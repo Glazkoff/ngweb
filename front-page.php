@@ -9,6 +9,7 @@
 get_header();
 
 include "front-page-blocks/main-block.php";
+include "front-page-blocks/about-us.php";
 include "front-page-blocks/services.php";
 include "front-page-blocks/portfolio-block.php";
 include "front-page-blocks/contact-form.php";
