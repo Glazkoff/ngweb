@@ -164,7 +164,7 @@ let confettiPieceArr = []
 
 window.onload = () => {
   // RunningStrokeSetup();
-  
+
   let colors = ['#FF3322', '#F4DF60', '#68CD5F', '#9FD3F8'];
   let confettiPieceHeight = 80;
   let confettiPieceWidth = 16;
@@ -238,16 +238,17 @@ window.onload = () => {
   new Glide('.glide', {
     type: 'carousel',
     startAt: 0,
-    perView:4,
-    gap: 16,
+    perView: 3,
+    peek: { before: 80, after: 150 },
+    gap: 48,
     breakpoints: {
-      500: {
+      740: {
         perView: 1
       },
-      800: {
+      980: {
         perView: 2
       },
-      990: {
+      1280: {
         perView: 3
       }
     }
