@@ -4,10 +4,12 @@
 
 // Global Javascript
 import "./navigation";
+import "./form-animation";
 
 import "../sass/style.scss"
 
-import Glide from '@glidejs/glide'
+import GlidePortfolioSetup from './glide-portfolio'
+import CursorSetup from './cursor'
 
 function generateRandomConfettiObj(colors, clientHeight, clientWidth) {
   let randomColor = colors[Math.floor(Math.random() * colors.length)];
@@ -157,16 +159,19 @@ function deleteConfettiPiece(confettiIndex, confettiPieceArr) {
   }
 }
 
+let confettiPieceArr = []
+
 
 window.onload = () => {
+
+  CursorSetup();
+
   let colors = ['#FF3322', '#F4DF60', '#68CD5F', '#9FD3F8'];
   let confettiPieceHeight = 80;
   let confettiPieceWidth = 16;
 
   let svg = document.getElementById("main-sugar__svg");
   let heading = document.getElementById("main-heading");
-  let confettiPieceArr = []
-  
   let mainSugar = document.getElementById("main-sugar");
 
   mainSugar.onmousemove = (e) => {
@@ -194,7 +199,11 @@ window.onload = () => {
 
     if (svg && heading) {
 
-      for (let index = 0; index < 3; index++) {
+      let iterations = 16;
+      let maxSquare = (svg.clientHeight * svg.clientWidth - heading.clientHeight * heading.clientWidth) / (confettiPieceHeight * confettiPieceHeight)
+      maxSquare <= 10 ? maxSquare = 3 : maxSquare;
+      iterations = Math.floor(maxSquare / 3)
+      for (let index = 0; index < iterations; index++) {
         let confetti
         let notAllRules = false;
         do {
@@ -213,25 +222,22 @@ window.onload = () => {
 
   draw()
 
-  new Glide('.glide', {
-    type: 'carousel',
-    startAt: 0,
-    perView:4,
-    gap: 16,
-    breakpoints: {
-      500: {
-        perView: 1
-      },
-      800: {
-        perView: 2
-      },
-      990: {
-        perView: 3
-      }
+  let timeOut = false;
+  window.addEventListener('resize', function (event) {
+    if (!timeOut) {
+      timeOut = true;
+      let svg = document.getElementById("main-sugar__svg");
+      svg.textContent = '';
+      confettiPieceArr = [];
+      draw();
+      setTimeout(() => {
+        timeOut = false;
+      }, 50);
     }
-  }).mount()
+  });
 
-  
+  GlidePortfolioSetup()
+
 }
 
 
