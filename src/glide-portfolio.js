@@ -11,7 +11,7 @@ export default function () {
       740: {
         perView: 1
       },
-      980: {
+      1060: {
         perView: 2
       },
       1280: {

@@ -36,6 +36,14 @@ $glideArrowWidth: 80px;
 	justify-content: space-between;
 	padding-bottom: 4rem;
 
+	&__slide {
+		height: unset !important;
+	}
+
+	&__slides {
+		display: flex;
+	}
+
 	&__track {
 		position: relative;
 	}
