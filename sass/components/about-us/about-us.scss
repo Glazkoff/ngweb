@@ -1,34 +1,69 @@
 .about-us {
-  background-color: $color__background-screen;
-  position: relative;
+	background-color: $color__background-screen;
+	position: relative;
+}
+.heading-for-about {
+	margin-bottom: 4.5rem;
 }
 
-.wrap-for-running-stroke{
-  margin-top: 8rem;
+.wrap-for-about {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+
+	& .description-for-about {
+		width: 35%;
+		margin-right: 5%;
+		& p {
+			margin: 0;
+		}
+	}
+
+	& .images-for-about {
+		width: 60%;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+
+}
+
+.wrap-for-running-stroke {
+	margin-top: 4.5rem;
 }
 
 .infinite-line {
-  margin-left: -5.75rem;
-  margin-right: -5.75rem;
+	margin-left: -5.75rem;
+	margin-right: -5.75rem;
 	height: 5rem;
-  &.programming {
-  	background: url('../../../src/img/programming.svg') repeat-x;
-  	animation: programming 5s linear infinite;
-  	-webkit-animation: programming 5s linear infinite;
-}
 
-  &.marketing {
-  	background: url('../../../src/img/marketing.svg') repeat-x;
-  	animation: marketing 2.87s linear infinite;
-  	-webkit-animation: marketing 2.87s linear infinite;
-}
+	&.programming {
+		background: url('../../../src/img/programming.svg') repeat-x;
+		animation: programming 5s linear infinite;
+		-webkit-animation: programming 5s linear infinite;
+		&:hover {
+			animation-play-state: paused;
+		}
+	}
 
-  &.design {
-    margin-top: -12px;
-    background: url('../../../src/img/design.svg') repeat-x;
-    animation: design 2s linear infinite;
-    -webkit-animation: design 2s linear infinite;
-}
+	&.marketing {
+		background: url('../../../src/img/marketing.svg') repeat-x;
+		animation: marketing 2.87s linear infinite;
+		-webkit-animation: marketing 2.87s linear infinite;
+		&:hover {
+			animation-play-state: paused;
+		}
+	}
+
+	&.design {
+		margin-top: -12px;
+		background: url('../../../src/img/design.svg') repeat-x;
+		animation: design 2s linear infinite;
+		-webkit-animation: design 2s linear infinite;
+		&:hover {
+			animation-play-state: paused;
+		}
+	}
 }
 
 @keyframes programming {
