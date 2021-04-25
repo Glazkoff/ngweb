@@ -4,6 +4,7 @@
 
 // Global Javascript
 import "./navigation";
+import "./form-animation";
 
 import "../sass/style.scss"
 
