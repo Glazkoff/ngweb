@@ -37,17 +37,8 @@
 		display: flex;
 		margin-left: 7rem;
 		cursor: pointer;
-		& span {
-			font-weight: 600;
-			margin-right: 1rem;
-		}
-		&:hover .prompt {
-        margin-top: 2.5rem;
-        opacity: 1;
-        visibility: visible;
-		}
-	}
-	.prompt {
+		margin: 10px;
+		&.prompt:after{
 					display: block;
 					position: absolute;
 					right: 10rem;
@@ -55,7 +46,29 @@
 					width: 16rem;
 					padding: 1rem;
 					opacity: 0;
-					visibility: hidden;
 					transition: opacity 0.3s ease-out,
 					margin-top 0.5s ease-out;
+		}
+		& span {
+			font-weight: 600;
+			margin-right: 1rem;
+		}
+		&:hover:after .prompt {
+        margin-top: 2.5rem;
+        opacity: 1;
+		}
 	}
+	// .prompt {
+	// 				display: block;
+	// 				position: absolute;
+	// 				right: 10rem;
+	// 				background: #9FD3F8;
+	// 				width: 16rem;
+	// 				padding: 1rem;
+	// 				opacity: 0;
+	// 				transition: opacity 0.3s ease-out, margin-top 0.5s ease-out;
+	// }
+	// .out {
+	// 	transition: opacity 0.3s ease-out,
+	// 	margin-top 0.5s ease-out;
+	// }

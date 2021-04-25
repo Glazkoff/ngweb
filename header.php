@@ -68,4 +68,11 @@
 			<small>Собирай монетки на сайте и обменивай их на скидку 10%</small>
 			</div>
 			</div>
+			<!-- <script>
+  let money = document.querySelector(".money");
+	let ptompt = document.querySelector(".prompt");
+   money.addEventListener("mouseout", function () {
+     prompt.className = 'out';
+});
+</script> -->
 	</header><!-- #masthead -->
