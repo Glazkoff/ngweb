@@ -12,6 +12,7 @@ $glideArrowWidth: 80px;
 }
 
 .portfolio-card {
+	cursor: pointer;
 	border: 2px solid #000;
 	padding: 40px;
 	box-sizing: border-box;
@@ -19,13 +20,21 @@ $glideArrowWidth: 80px;
 	position: relative;
 	background-size: cover;
   background-position: center;
-
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 
 
 	&:hover {
 		color: #fff;
 		background-color: rgba(2, 2, 2, 0.527);
   	background-blend-mode: multiply;
+		& .go-btn .btn-circle {
+			stroke: #fff;
+		} 
+		& .go-btn .btn-arrow {
+			fill: #fff;
+		} 
 	}
 
 	& .btn-block {
