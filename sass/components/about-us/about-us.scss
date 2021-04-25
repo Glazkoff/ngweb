@@ -13,20 +13,21 @@
 	height: 5rem;
   &.programming {
   	background: url('../../../src/img/programming.svg') repeat-x;
-  	animation: animate 5s linear infinite;
+  	animation: programming 5s linear infinite;
   	-webkit-animation: programming 5s linear infinite;
 }
 
   &.marketing {
   	background: url('../../../src/img/marketing.svg') repeat-x;
-  	animation: animate 5s linear infinite;
-  	-webkit-animation: marketing 5s linear infinite;
+  	animation: marketing 2.87s linear infinite;
+  	-webkit-animation: marketing 2.87s linear infinite;
 }
 
   &.design {
+    margin-top: -12px;
     background: url('../../../src/img/design.svg') repeat-x;
-    animation: design 5s linear infinite;
-    -webkit-animation: design 5s linear infinite;
+    animation: design 2s linear infinite;
+    -webkit-animation: design 2s linear infinite;
 }
 }
 
@@ -36,7 +37,7 @@
 	}
 
 	to {
-		background-position: 710px 0px;
+		background-position: 720px 0px;
 	}
 }
 
@@ -46,7 +47,7 @@
 	}
 
 	to {
-		background-position: -403px 0px;
+		background-position: -413px 0px;
 	}
 }
 
@@ -56,6 +57,6 @@
 	}
 
 	to {
-		background-position: 286px 0px;
+		background-position: 297px 0px;
 	}
 }
