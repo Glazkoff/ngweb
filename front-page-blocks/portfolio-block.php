@@ -13,7 +13,10 @@
       <?php if (have_posts()):
       	while (have_posts()):
       		the_post(); ?>
-        <div class="portfolio-card glide__slide">
+        <div class="portfolio-card glide__slide" onMouseOver="this.style.backgroundImage=`url('<?php the_post_thumbnail_url(
+        	"full"
+        ); ?>')`"
+   onMouseOut="this.style.backgroundImage='none'">
           <h3><?php the_title(); ?></h3>
           <p><?php the_excerpt(); ?></p>
           <a class="btn-block" href="<?php the_permalink(); ?>">
