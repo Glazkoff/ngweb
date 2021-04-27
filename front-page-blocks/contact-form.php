@@ -57,19 +57,17 @@ margin-top: 2rem;
 </style>
 <section class="grid-contact-form"><div class="sale-heading"><h2>Cобери все монетки на сайте и получи скидку 10%
 </h2></div><div class="contact-form">
-  <?php 
-// если была нажата кнопка "Отправить"
-if ($_POST["submit"]) {
-	$name = htmlspecialchars($_POST["name"]);
-	$phone = htmlspecialchars($_POST["phone"]);
-	// $to - кому отправляем
-	$to = "nvkolezneva@gmail.com";
-	// $from - от кого
-	$from = htmlspecialchars($_POST["email"]);;
-	// функция, которая отправляет наше письмо.
-	mail($to, $name, $phone, "From:" . $from);
-	echo "Спасибо! Ваше письмо отправлено.";
-} ?>
+  <?php if ($_POST["submit"]) {
+  	$name = htmlspecialchars($_POST["name"]);
+  	$phone = htmlspecialchars($_POST["phone"]);
+  	// $to - кому отправляем
+  	$to = "nvkolezneva@gmail.com";
+  	// $from - от кого
+  	$from = htmlspecialchars($_POST["email"]);
+  	// функция, которая отправляет наше письмо.
+  	mail($to, $name, $phone, "From:" . $from);
+  	echo "Спасибо! Ваше письмо отправлено.";
+  } ?>
   <form action="" method=post>
     <label for="name">Как вас зовут?</label>
     <input type="text" id="name" name="name">
@@ -82,3 +80,8 @@ if ($_POST["submit"]) {
 
 
   </section>
+ <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js" type="text/javascript"></script>
+<script>
+$('#phone').mask('+7 (999) 999-99-99');
+</script>

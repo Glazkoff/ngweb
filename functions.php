@@ -183,6 +183,17 @@ if (defined("JETPACK__VERSION")) {
 	require get_template_directory() . "/inc/jetpack.php";
 }
 
+// // ******************************
+// // Подключение jQuery Mask
+// //
+// wp_enqueue_script(
+// 	"theme_slug-jquery-mask-js",
+// 	get_template_directory_uri() . "/js/jquery.mask.min.js",
+// 	[],
+// 	false,
+// 	true
+// );
+
 // ******************************
 // Подключение своих типов постов
 // ******************************
