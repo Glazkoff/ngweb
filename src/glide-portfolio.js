@@ -19,4 +19,16 @@ export default function () {
       }
     }
   }).mount()
+
+  let portfolioCardArr = document.querySelectorAll(".portfolio-card")
+  portfolioCardArr.forEach((card) => {
+    card.addEventListener("mouseenter", (e) => {
+      e.stopPropagation();
+      card.style.backgroundImage = 'url('+card.dataset.imageUrl+')';
+    })
+    card.addEventListener("mouseleave", (e) => {
+      e.stopPropagation();
+      card.style.backgroundImage = 'none';
+    })
+  })
 }
