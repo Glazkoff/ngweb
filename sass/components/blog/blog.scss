@@ -1,0 +1,32 @@
+.blog h2{
+  text-transform: uppercase;
+  margin-bottom: 8.7rem;
+  text-align: center;
+
+}
+.extra-navigation ul{
+  display: flex;
+  justify-content: flex-start;
+  margin:0 -2.5rem 2rem;
+  & li {
+  	list-style-type: none;
+  	margin-right: 2rem;
+  }
+}
+.articles {
+  display: flex;
+  flex-wrap: wrap;
+  & .one-article{
+    width:19rem;
+    margin-bottom: 1rem;
+    margin-right: 1.8rem;
+    position: relative;
+    & .tag {
+      position: absolute;
+      left:1rem;
+      padding: 0.4rem 2rem;
+      background-color: #68CD5F;
+      color: white;
+    }
+  }
+}

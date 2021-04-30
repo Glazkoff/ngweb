@@ -8,8 +8,8 @@
 
 get_header();
 
-include "contacts.php";
-
+// include "contacts.php";
+include "blog.php";
 // include "front-page-blocks/main-block.php";
 // include "front-page-blocks/about-us.php";
 // include "front-page-blocks/services.php";
