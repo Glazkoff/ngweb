@@ -8,10 +8,10 @@ export default function () {
     peek: { before: 80, after: 150 },
     gap: 48,
     breakpoints: {
-      790: {
+      890: {
         perView: 1
       },
-      1060: {
+      1160: {
         perView: 2
       },
       1280: {

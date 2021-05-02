@@ -127,6 +127,10 @@ export function drawConfettiWithObj(confetti, svgElement, confettiPieceWidth, co
   newSvgChild.setAttribute("transform-box", "fill-box");
   newSvgChild.setAttribute("transform-origin", "center center 0");
   newSvgChild.classList.add("confetti-piece");
+  newSvgChild.classList.add("confetti-piece__anim");
+  let delayClassArr = ['confetti-piece__anim__delay1', 'confetti-piece__anim__delay2', 'confetti-piece__anim__delay3']
+  let randomDelayClass = delayClassArr[Math.floor(Math.random() * delayClassArr.length)];
+  newSvgChild.classList.add(randomDelayClass);
   svgElement.appendChild(newSvgChild);
   return newSvgChild;
 }
@@ -135,13 +139,17 @@ export function deleteConfettiPiece(confettiIndex, confettiPieceArr) {
   let deleteElem = confettiPieceArr[confettiIndex]
   if (typeof deleteElem !== 'undefined') {
     let DOMElement = deleteElem.DOMElement
+    confettiPieceArr.splice(confettiIndex, 1)
     setTimeout(() => {
       DOMElement.classList.add("confetti-piece-deleted");
       setTimeout(() => {
-        DOMElement.remove();
-        confettiPieceArr.splice(confettiIndex,1)
+        if (DOMElement.parentNode) {
+          DOMElement.parentNode.removeChild(DOMElement);
+        }
       }, 500)
     }, 500);
+    return true;
   }
+  return false;
 }
 
