@@ -103,11 +103,14 @@ window.addEventListener('load', () => {
           })
         }
         el.DOMElement.addEventListener('click', () => {
-          confettiPieceArr.forEach(el => {
-            el.DOMElement.setAttribute("y", "1000")
-            deleteConfettiPiece(el.index, confettiPieceArr)
-          })
-          draw();
+          if (el.isClicked == 1) {
+            confettiPieceArr.forEach(el => {
+              el.DOMElement.setAttribute("y", svg.clientHeight+100+"")
+              deleteConfettiPiece(el.index, confettiPieceArr)
+            })
+          } else {
+            el.isClicked = 1
+          }
         })
 
       }
