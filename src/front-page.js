@@ -33,15 +33,15 @@ window.addEventListener('load', () => {
     function getRandomInt(min, max) {
       return Math.floor(Math.random() * (max - min + 1) + min);
     }
-    let deleteCount = getRandomInt(1,2);
-    let drawCount = getRandomInt(1,2);
+    let deleteCount = getRandomInt(1, 2);
+    let drawCount = getRandomInt(1, 2);
     for (let index = 0; index < deleteCount; index++) {
       let randomIndex = Math.floor(confettiPieceArr.length * Math.random())
       deleteConfettiPiece(randomIndex, confettiPieceArr)
     }
     for (let index = 0; index < drawCount; index++) {
       draw(false)
-    } 
+    }
   }, 1000)
 
   setInterval(() => {
@@ -50,8 +50,9 @@ window.addEventListener('load', () => {
     confettiPieceArr.map(el => {
       if (!el.isAnimated) {
         el.isAnimated = true;
+        let animation;
         if (el.DOMElement.classList.contains("confetti-piece__anim__delay1")) {
-          el.DOMElement.animate([
+          animation = el.DOMElement.animate([
             { transform: "translatey(0px) rotate(" + (el.randomAngle) + "deg)" },
             { transform: "translatey(20px) rotate(" + (el.randomAngle + 20) + "deg)" },
             { transform: "translatey(0px) rotate(" + (el.randomAngle) + "deg)" },
@@ -65,34 +66,49 @@ window.addEventListener('load', () => {
             }
           )
         } else if (el.DOMElement.classList.contains("confetti-piece__anim__delay2")) {
-            el.DOMElement.animate([
-              { transform: "translatey(0px) rotate(" + (el.randomAngle) + "deg)" },
-              { transform: "translatey(-20px) rotate(" + (el.randomAngle - 20) + "deg)" },
-              { transform: "translatey(0px) rotate(" + (el.randomAngle) + "deg)" },
-              { transform: "translatey(20px) rotate(" + (el.randomAngle + 20) + "deg)" },
-              { transform: "translatey(0px) rotate(" + (el.randomAngle) + "deg)" }],
-              {
-                duration: animationDuration,
-                iterations: Infinity,
-                easing: animationEasing,
-                delay: 1000
-              }
-            )
+          animation = el.DOMElement.animate([
+            { transform: "translatey(0px) rotate(" + (el.randomAngle) + "deg)" },
+            { transform: "translatey(-20px) rotate(" + (el.randomAngle - 20) + "deg)" },
+            { transform: "translatey(0px) rotate(" + (el.randomAngle) + "deg)" },
+            { transform: "translatey(20px) rotate(" + (el.randomAngle + 20) + "deg)" },
+            { transform: "translatey(0px) rotate(" + (el.randomAngle) + "deg)" }],
+            {
+              duration: animationDuration,
+              iterations: Infinity,
+              easing: animationEasing,
+              delay: 1000
+            }
+          )
         } else if (el.DOMElement.classList.contains("confetti-piece__anim__delay3")) {
-            el.DOMElement.animate([
-              { transform: "translatey(0px) rotate(" + (el.randomAngle) + "deg)" },
-              { transform: "translatey(-20px) rotate(" + (el.randomAngle - 20) + "deg)" },
-              { transform: "translatey(0px) rotate(" + (el.randomAngle) + "deg)" },
-              { transform: "translatey(20px) rotate(" + (el.randomAngle + 20) + "deg)" },
-              { transform: "translatey(0px) rotate(" + (el.randomAngle) + "deg)" }],
-              {
-                duration: animationDuration,
-                iterations: Infinity,
-                easing: animationEasing,
-                delay: 1500
-              }
-            )
+          animation = el.DOMElement.animate([
+            { transform: "translatey(0px) rotate(" + (el.randomAngle) + "deg)" },
+            { transform: "translatey(-20px) rotate(" + (el.randomAngle - 20) + "deg)" },
+            { transform: "translatey(0px) rotate(" + (el.randomAngle) + "deg)" },
+            { transform: "translatey(20px) rotate(" + (el.randomAngle + 20) + "deg)" },
+            { transform: "translatey(0px) rotate(" + (el.randomAngle) + "deg)" }],
+            {
+              duration: animationDuration,
+              iterations: Infinity,
+              easing: animationEasing,
+              delay: 1500
+            }
+          )
         }
+        if (animation) {
+          el.DOMElement.addEventListener('mouseenter', () => {
+            animation.pause();
+          })
+          el.DOMElement.addEventListener('mouseleave', () => {
+            animation.play();
+          })
+        }
+        el.DOMElement.addEventListener('click', () => {
+          confettiPieceArr.forEach(el => {
+            el.DOMElement.setAttribute("y", "1000")
+            deleteConfettiPiece(el.index, confettiPieceArr)
+          })
+          draw();
+        })
 
       }
     })
@@ -130,31 +146,33 @@ window.addEventListener('load', () => {
     return angle;
   }
 
-  function draw(multiple=true) {
+  function draw(multiple = true) {
     if (svg && heading) {
       let iterations = 16;
+      let maxSquare = (svg.clientHeight * svg.clientWidth - heading.clientHeight * heading.clientWidth) / (confettiPieceHeight * confettiPieceHeight)
+      maxSquare <= 10 ? maxSquare = 3 : maxSquare;
+      let maxIterations = Math.floor(maxSquare / 4)
       if (multiple) {
-
-        let maxSquare = (svg.clientHeight * svg.clientWidth - heading.clientHeight * heading.clientWidth) / (confettiPieceHeight * confettiPieceHeight)
-        maxSquare <= 10 ? maxSquare = 3 : maxSquare;
-        iterations = Math.floor(maxSquare / 3)
+        iterations = maxIterations
       } else {
         iterations = 1;
       }
-     
       for (let index = 0; index < iterations; index++) {
-        let confetti
-        let notAllRules = false;
-        do {
-          confetti = generateRandomConfettiObj(colors, svg.clientHeight - confettiBottomBorderSizePx, svg.clientWidth)
-          notAllRules = isInElementZone(confetti, heading, confettiPieceHeight, confettiPieceWidth) || isCollideWithOtherConfetti(confetti, confettiPieceArr, confettiPieceHeight, confettiPieceWidth)
+        if (confettiPieceArr.length < maxIterations) {
+          let confetti
+          let notAllRules = false;
+          do {
+            confetti = generateRandomConfettiObj(colors, svg.clientHeight - confettiBottomBorderSizePx, svg.clientWidth)
+            notAllRules = isInElementZone(confetti, heading, confettiPieceHeight, confettiPieceWidth) || isCollideWithOtherConfetti(confetti, confettiPieceArr, confettiPieceHeight, confettiPieceWidth)
+          }
+          while (notAllRules)
+
+          confetti.DOMElement = drawConfettiWithObj(confetti, svg, confettiPieceWidth, confettiPieceHeight)
+
+          confettiPieceArr.push(confetti)
         }
-        while (notAllRules)
-
-        confetti.DOMElement = drawConfettiWithObj(confetti, svg, confettiPieceWidth, confettiPieceHeight)
-
-        confettiPieceArr.push(confetti)
       }
+
     }
   }
 
