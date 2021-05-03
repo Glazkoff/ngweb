@@ -1,7 +1,6 @@
 $glideArrowWidth: 80px;
 
 .portfolio-block {
-	background-color: $color__background-screen;
 	padding: 0;
 
 	& h2 {
@@ -84,7 +83,7 @@ $glideArrowWidth: 80px;
 			right: 0;
 		}
 
-		background-color: $color__background-screen;
+		background-color: $white;
 
 		&	button {
 			cursor: pointer;
