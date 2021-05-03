@@ -39,12 +39,12 @@
       </div>
       <div class="glide__arrows left" data-glide-el="controls">
         <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
-          <
+          ←
         </button>
       </div>
       <div class="glide__arrows right" data-glide-el="controls">
         <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
-          >
+          →
         </button>
       </div> 
     </div>   
