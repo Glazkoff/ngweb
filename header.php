@@ -27,7 +27,7 @@
  	"ngwebstudio"
  ); ?></a>
 
-	<header id="masthead" class="site-header">
+	<header id="masthead" class="site-header headroom">
 		<div class="site-branding">
 			<?php
    the_custom_logo();
