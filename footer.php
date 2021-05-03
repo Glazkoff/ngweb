@@ -43,7 +43,7 @@
 			</ul></div></div>
 			<div>
 				<hr>
-				<h6>NIKITA GLAZKOV 2021</h6>
+				<h6>NIKITA GLAZKOV <?php echo date('Y'); ?></h6>
 			</div>
 			<!-- <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'ngwebstudio' ) ); ?>">
 				<?php
