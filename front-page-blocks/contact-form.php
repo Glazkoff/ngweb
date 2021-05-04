@@ -94,7 +94,7 @@ function setCursorPosition(pos, elem) {
     }
 }
 function mask(event) {
-    var matrix = "+7 (___) ___ ____",
+    var matrix = "+7 (___) ___-__-__",
         i = 0,
         def = matrix.replace(/\D/g, ""),
         val = this.value.replace(/\D/g, "");
