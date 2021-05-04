@@ -53,20 +53,16 @@
 		transition: opacity 0.3s ease-out,
 			margin-top 0.5s ease-out;
 	}
-	// &:hover .prompt {
-	// 	margin-top: 2.5rem;
-	// 	opacity: 1;
-	// 	visibility: visible;
-	// }
-}
-
-.over {
-			margin-top: 2.5rem;
-			opacity: 1;
-			visibility: visible;
+	&:hover .prompt {
+		margin-top: 2.5rem;
+		opacity: 1;
+		visibility: visible;		
+	}
 }
 
 	.out {
-			margin-top: 0;
-			opacity: 0;
+				opacity: 0;
+				visibility: hidden;
+			  margin-top: -2.5rem;
+
 	}
