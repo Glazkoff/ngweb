@@ -10,6 +10,7 @@ import "../sass/style.scss"
 
 import GlidePortfolioSetup from './glide-portfolio'
 import CursorSetup from './cursor'
+import Headroom from "headroom.js"
 
 function generateRandomConfettiObj(colors, clientHeight, clientWidth) {
   let randomColor = colors[Math.floor(Math.random() * colors.length)];
@@ -165,6 +166,12 @@ let confettiPieceArr = []
 window.onload = () => {
 
   CursorSetup();
+
+// select your header or whatever element you wish
+const header = document.querySelector("header");
+
+const headroom = new Headroom(header);
+headroom.init();
 
   let colors = ['#FF3322', '#F4DF60', '#68CD5F', '#9FD3F8'];
   let confettiPieceHeight = 80;
