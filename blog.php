@@ -1,3 +1,11 @@
+<?php
+/*
+ * Template name: Blog
+ * @package Underscoresme
+ * @since Underscoresme 1.0
+ */
+
+get_header(); ?>
 <section>
 <div class="blog">
 <h2>Статьи по веб-дизайну и разработке</h2>
@@ -49,3 +57,5 @@
 </div>
 </div>
 </section>
+<?php get_footer();
+?>

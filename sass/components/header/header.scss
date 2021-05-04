@@ -47,6 +47,7 @@
 	display: flex;
 	margin-left: 7rem;
 	cursor: pointer;
+	position: relative;
 	& span {
 		font-weight: 600;
 		margin-right: 1rem;
@@ -54,7 +55,7 @@
 	& .prompt {
 		display: block;
 		position: absolute;
-		right: 10rem;
+		right: 3rem;
 		background: #9FD3F8;
 		width: 16rem;
 		padding: 1rem;
@@ -66,13 +67,14 @@
 	&:hover .prompt {
 		margin-top: 2.5rem;
 		opacity: 1;
-		visibility: visible;		
+		visibility: visible;
 	}
 }
 
 	.out {
-				opacity: 0;
-				visibility: hidden;
-			  margin-top: -2.5rem;
+		transition: opacity 0.3s ease-out,
+		margin-top 0.5s ease-out;
+		opacity: 0;
+		margin-top: -2.5rem;
 
 	}

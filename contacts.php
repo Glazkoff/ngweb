@@ -1,3 +1,12 @@
+<?php
+/*
+ * Template name: Contacts
+ * @package Underscoresme
+ * @since Underscoresme 1.0
+ */
+
+get_header(); ?>
+
 <section>
 <h2>Контакты</h2>
 <div class="flex">
@@ -32,3 +41,6 @@
 </div>
 </div>
 </section>
+
+<?php get_footer();
+?>
