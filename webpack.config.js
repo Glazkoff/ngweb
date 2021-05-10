@@ -12,6 +12,7 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 module.exports = {
   entry: {
     site: "./src/index.js",
+    frontPage: "./src/front-page.js"
   },
   output: {
     filename: "[name].js",

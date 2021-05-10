@@ -3,13 +3,13 @@ export default function () {
 
   
 
-  document.onmouseleave = (e) => {
-    console.log('MOUSE LEAVE: ', e);
-  }
-  document.onmouseover = (e) => {
-    console.log('MOUSE OVER: ', e);
-  }
-  document.onmousemove = (e) => {
-    // console.log('MOUSE MOVE: ', e);
-  }
+  // document.onmouseleave = (e) => {
+  //   console.log('MOUSE LEAVE: ', e);
+  // }
+  // document.onmouseover = (e) => {
+  //   console.log('MOUSE OVER: ', e);
+  // }
+  // document.onmousemove = (e) => {
+  //   // console.log('MOUSE MOVE: ', e);
+  // }
 }
