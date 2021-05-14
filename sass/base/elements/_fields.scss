@@ -56,7 +56,6 @@ input[type="checkbox"]:not(:checked)+label {
 	position: relative;
 	padding-left: 28px;
 	line-height: 20px;
-	cursor: pointer;
 }
 
 input[type="checkbox"]:checked+label:before,

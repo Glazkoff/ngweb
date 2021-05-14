@@ -2,3 +2,8 @@ html {
   cursor: url('../../../src/img/circle.svg'), pointer;
     //  mix-blend-mode: difference;
 }
+
+html *:hover {
+	cursor: url('../../../src/img/circle.svg'), pointer !important;
+	//  mix-blend-mode: difference;
+}
