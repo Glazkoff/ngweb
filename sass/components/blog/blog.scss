@@ -13,10 +13,10 @@
   	margin-right: 2rem;
   }
 }
-.articles {
+#articles {
   display: flex;
   flex-wrap: wrap;
-  & .one-article{
+  & .article{
     width:19rem;
     margin-bottom: 1rem;
     margin-right: 1.8rem;
@@ -25,8 +25,25 @@
       position: absolute;
       left:1rem;
       padding: 0.4rem 2rem;
-      background-color: #68CD5F;
       color: white;
-    }
+          }
   }
+}
+.dev {
+  & .tag{
+    background-color: #68CD5F;
+  }
+
+}
+.prom {
+	& .tag {
+		background-color: #9FD3F8;
+	}
+
+}
+.design {
+	& .tag {
+		background-color: #FF3322;
+	}
+
 }
