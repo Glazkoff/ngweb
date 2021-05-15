@@ -8,12 +8,13 @@
 get_header(); ?>
 
 <section>
+<div class="contact">
 <h2>Контакты</h2>
 <div class="flex">
 <div class="block-left">
-<p>Москва</p>
-<p>+7 (999) 999 99 99</p>
-<p>glazkov@gmail.com</p>
+<p>Адрес: Москва</p>
+<p>Телефон: +7 (999) 999 99 99</p>
+<p>E-mail: glazkov@gmail.com</p>
 <p>Чтобы задать вопрос, или просто сказать «привет», свяжитесь с нами любым удобным способом</p>
 </div>
 <div class="block-right">
@@ -38,6 +39,7 @@ get_header(); ?>
     <input type="text" id="email" name="email">
     <input type="checkbox" id="confpolitic" value="" style="width: 20px;" class="form-checkbox"> Отправляю форму, принимаю <a>условия политики и пользовательского соглашения</a>
     <button name="submit">Отправить</button></form></div>
+</div>
 </div>
 </div>
 </section>

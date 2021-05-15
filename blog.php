@@ -59,16 +59,14 @@ get_header(); ?>
 </section>
 <?php get_footer(); ?>
 <script>
-function showEvery(){
 var items_el = document.getElementById('articles');
-  var items = items_el.getElementsByClassName('article');
+var items = items_el.getElementsByClassName('article');
+function showEvery(){
   for (var i=0; i<items.length; i++) {
     	items[i].style.display = 'block';
 };
 };
 function showDesign(){
-var items_el = document.getElementById('articles');
-  var items = items_el.getElementsByClassName('article');
   for (var i=0; i<items.length; i++) {
   	if (items[i].classList.contains("design")) {
     	items[i].style.display = 'block';
@@ -78,8 +76,6 @@ var items_el = document.getElementById('articles');
   }
 };
 function showDev(){
-var items_el = document.getElementById('articles');
-  var items = items_el.getElementsByClassName('article');
   for (var i=0; i<items.length; i++) {
   	if (items[i].classList.contains("dev")) {
     	items[i].style.display = 'block';
@@ -89,8 +85,6 @@ var items_el = document.getElementById('articles');
   }
 };
 function showProm(){
-var items_el = document.getElementById('articles');
-  var items = items_el.getElementsByClassName('article');
   for (var i=0; i<items.length; i++) {
   	if (items[i].classList.contains("prom")) {
     	items[i].style.display = 'block';
