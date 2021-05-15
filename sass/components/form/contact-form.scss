@@ -7,10 +7,15 @@
   position: absolute;
   left: 0;
   top: 0;
-  width: 80%;
+  width: 0%;
   height: 100%;
   background-color: $blue;
   z-index: 2;
+  transition: width 2s ease-in-out;
+  -webkit-transition: width 2s ease-in-out;
+  -moz-transition: width 2s ease-in-out;
+  -ms-transition: width 2s ease-in-out;
+  -o-transition: width 2s ease-in-out;
 }
 
 .flex-form-container {
@@ -47,7 +52,8 @@
 
   & input {
     margin-bottom: 1.3rem;
-    &[type="text"] {
+    &[type="text"],
+    &[type="email"] {
       width: 100%;
     }
     &[type="checkbox"] {

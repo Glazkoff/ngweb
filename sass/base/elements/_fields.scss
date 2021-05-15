@@ -19,11 +19,16 @@ textarea {
 	color: $color__text-input;
 	border: 2px solid $color__border-input;
 	padding: 0.5rem;
+	padding-right: 2.8rem;
 	outline: none;
 	min-width: 20rem;
 
-	&.red {
-	border-color: $color__border-input-error;
+	&.invalid {
+		background: $white url('../../../src/img/invalid.svg') 97% 50% no-repeat;
+	}
+
+	&.sucsess {
+		background: $white url('../../../src/img/sucsess.svg') 97% 50% no-repeat;
 	}
 }
 
@@ -43,6 +48,7 @@ select {
 textarea {
 	width: 100%;
 }
+
 
 input[type="checkbox"]:checked,
 input[type="checkbox"]:not(:checked) {

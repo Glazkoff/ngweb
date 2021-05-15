@@ -21,18 +21,18 @@
       // // Если письмо не ушло — выводим сообщение об ошибке 
       // else {echo "Ой, что-то пошло не так";} ?> 
     
-      <form action='' method='POST'>
-        <label for="name">Как вас зовут?</label>
+      <form name="contact" action='' method='POST'>
+        <label>Как вас зовут?</label>
         <input type="text" id="name" name="name" required>
         
-        <label for="phone">А скажете номер?</label>
+        <label>А скажете номер?</label>
         <input type="text" id="phone" name="phone" required>
 
-        <label for="email">А почтой поделитесь?</label>
-        <input type="text" id="email" name="email" required>
+        <label>А почтой поделитесь?</label>
+        <input type="email" id="email" name="email" required>
 
         <div class="wrap-for-checkbox">
-          <input type="checkbox" id="confpolitic" value="agreement" required> <label class="confpolitic" for="confpolitic">Отправляю форму, принимаю <a>условия политики и пользовательского соглашения</a></label>
+          <input type="checkbox" id="confpolitic" name="agreement" value="agreement" required> <label class="confpolitic" for="confpolitic">Отправляю форму, принимаю <a>условия политики и пользовательского соглашения</a></label>
         </div>
 
         <input type='submit' name="submit" value='Отправить'></input>

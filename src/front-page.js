@@ -1,5 +1,6 @@
 import { generateRandomConfettiObj, isInElementZone, isCollideWithOtherConfetti, getRelativeCoordinates, drawConfettiWithObj, deleteConfettiPiece } from './confetti-functions'
 import GlidePortfolioSetup from './glide-portfolio'
+import FormAnimation from './form-animation'
 
 let confettiPieceArr = []
 let confettiBottomBorderSizePx = 80;
@@ -126,7 +127,7 @@ window.addEventListener('load', () => {
       st.getPropertyValue("transform") ||
       "FAIL";
 
-    console.log('Matrix: ' + tr);
+    // console.log('Matrix: ' + tr);
 
     let values = tr.split('(')[1].split(')')[0].split(',');
     let a = values[0];
@@ -136,7 +137,7 @@ window.addEventListener('load', () => {
 
     let scale = Math.sqrt(a * a + b * b);
 
-    console.log('Scale: ' + scale);
+    // console.log('Scale: ' + scale);
 
     // arc sin, convert from radians to degrees, round
     let sin = b / scale;
@@ -144,7 +145,7 @@ window.addEventListener('load', () => {
     // var angle = Math.round(Math.asin(sin) * (180/Math.PI));
     let angle = Math.round(Math.atan2(b, a) * (180 / Math.PI));
 
-    console.log('Rotate: ' + angle + 'deg');
+    // console.log('Rotate: ' + angle + 'deg');
 
     return angle;
   }
@@ -196,4 +197,5 @@ window.addEventListener('load', () => {
   });
 
   GlidePortfolioSetup()
+  FormAnimation()
 })
