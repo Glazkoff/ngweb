@@ -13,10 +13,9 @@
       <?php if (have_posts()):
       	while (have_posts()):
       		the_post(); ?>
-        <div class="portfolio-card glide__slide" onclick="location.href='<?php the_permalink(); ?>'" onMouseOver="this.style.backgroundImage=`url('<?php the_post_thumbnail_url(
-	"full"
-); ?>')`"
-   onMouseOut="this.style.backgroundImage='none'">
+        <div class="portfolio-card glide__slide" data-image-url="<?php the_post_thumbnail_url(
+        	"full"
+        ); ?>" onclick="location.href='<?php the_permalink(); ?>'">
         <div class="portfolio-card__top"> 
           <h3><?php the_title(); ?></h3>
           <p><?php the_excerpt(); ?></p>
@@ -40,12 +39,12 @@
       </div>
       <div class="glide__arrows left" data-glide-el="controls">
         <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
-          <
+          ←
         </button>
       </div>
       <div class="glide__arrows right" data-glide-el="controls">
         <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
-          >
+          →
         </button>
       </div> 
     </div>   

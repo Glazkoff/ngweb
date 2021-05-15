@@ -150,6 +150,15 @@ function ngwebstudio_scripts()
 		true
 	);
 
+	if (is_front_page()) {
+		wp_enqueue_script(
+			"ngwebstudio-front-page",
+			get_template_directory_uri() . "/dist/frontPage.js",
+			_S_VERSION,
+			true
+		);
+	}
+
 	if (is_singular() && comments_open() && get_option("thread_comments")) {
 		wp_enqueue_script("comment-reply");
 	}
