@@ -1,82 +1,81 @@
-
 version: "3"
 
 services:
   db:
-    image: mysql:8.0
+    image: mysql:5.7
     container_name: db
-    restart: unless-stopped
-    env_file: .env
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: wordpress
       MYSQL_USER: wordpress
-      MYSQL_PASSWORD: wordpress
+      MYSQL_PASSWORD: wordpress  
     volumes:
       - dbdata:/var/lib/mysql
+    command: --disable-partition-engine-check  
     networks:
       - app-network
 
   phpmyadmin:
     depends_on:
       - db
+    container_name: phpmyadmin
     image: phpmyadmin/phpmyadmin
-    restart: always
+    links: 
+      - db
     ports:
-      - '8080:80'
+      - '8081:80'
     environment:
-      PMA_HOST: db
-      MYSQL_ROOT_PASSWORD: password 
+      PMA_HOST: db:3306
     networks:
       - app-network
 
   wordpress:
     depends_on:
       - db
-    build: .
-    tty: true
+    build: . 
     ports:
-      - '8000:80'
-    restart: always
-    volumes: 
-      - wordpress:/var/www/html
-      - ./:/var/www/html/wp-content/themes/ngwebstudio
+      - "8000:80"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress   
+    volumes:
+      - wordpress:/var/www/html  
     networks:
-      - app-network      
-
-  wordpress-cli:
+      - app-network   
+    
+  wp-cli:
     depends_on:
       - wordpress
     image: wordpress:cli
-    ports:
-      - '8100:80'
-    command: /bin/sh -c 'sleep 10; wp db reset --yes; wp core install --path="/var/www/html" --url="http://localhost:8000" --title="Local Wordpress By NGLAZKOV!" --admin_user=admin --admin_password=admin --admin_email=foo@bar.com; wp theme list; wp theme activate ngwebstudio; wp plugin install cyr2lat --activate'
+    command:
+      /bin/sh -c 'sleep 10; wp db reset --yes; wp core install --path="/var/www/html"--url="http://localhost:8000" --title="Local Wordpress By Docker" --admin_user=admin--admin_password=admin --admin_email=foo@bar.com; wp theme list'
     volumes:
-      - wordpress:/var/www/html
-      - ./:/var/www/html/wp-content/themes/ngwebstudio
+      - wordpress:/var/www/html                
     networks:
-      - app-network  
-  
-  nginx:
-    image: nginx:latest
-    restart: unless-stopped
-    depends_on:
-      - wordpress
-    volumes:
-      - ./deploy/nginx-conf:/etc/nginx/conf.d
-      - wordpress:/var/www/html
-    ports:
-      - 80:80
-    links:
-      - wordpress 
-    command: ['nginx', '-g', 'daemon off;']   
-    networks:
-      - app-network    
+      - app-network
+
+  # nginx:
+  #   image: nginx:latest
+  #   restart: unless-stopped
+  #   depends_on:
+  #     - wordpress-cli
+  #   volumes:
+  #     - ./deploy/nginx-conf/default.conf:/etc/nginx/conf.d/default.conf
+  #     # - wordpress:/var/www/html
+  #   ports:
+  #     - 8401:80
+  #   links:
+  #     - wordpress-cli
+  #   command: ['nginx', '-g', 'daemon off;']   
+  #   networks:
+  #     - app-network    
 
 volumes:
   wordpress:
-  dbdata:
+  dbdata: {}
 
 networks:
   app-network:
-    driver: bridge    
+    driver: bridge
