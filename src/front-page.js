@@ -1,5 +1,6 @@
 import { generateRandomConfettiObj, isInElementZone, isCollideWithOtherConfetti, getRelativeCoordinates, drawConfettiWithObj, deleteConfettiPiece } from './confetti-functions'
 import GlidePortfolioSetup from './glide-portfolio'
+import coinFrontPageInit  from './coin-functions'
 
 let confettiPieceArr = []
 let confettiBottomBorderSizePx = 80;
@@ -196,4 +197,6 @@ window.addEventListener('load', () => {
   });
 
   GlidePortfolioSetup()
+
+  coinFrontPageInit()
 })
