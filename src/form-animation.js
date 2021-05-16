@@ -1,23 +1,23 @@
 export default function () {
-  let backgroundSize = 0;
+  let backgroundSize = [0, 0, 0, 0];
   let backgroundForm = document.querySelector('.fill');
   let form = document.forms.contact;
   let elementName = form.elements.name;
   let elementPhone = form.elements.phone;
   let elementEmail = form.elements.email;
   let elementAgreement = form.elements.agreement;
-  console.log(elementAgreement.checked)
 
-  elementName.onblur = function() {
-    if (elementName.value.trim() == "") {
-      if (backgroundSize!=0) backgroundSize -= 25;
-      backgroundForm.style.width = `${backgroundSize}%`;
-      elementName.classList.add('invalid');
-    } 
-    else {
-      if (backgroundSize!=100) backgroundSize += 25;
-      backgroundForm.style.width = `${backgroundSize}%`;
+  elementName.onblur = function () {  
+    let checkName =/^[A-Za-zА-Яа-яёЁ -]*$/;
+    if (checkName.test(elementName.value)) {
+      if (backgroundSize[0]!=25) backgroundSize[0] += 25;
+      backgroundForm.style.width = `${backgroundSize[0]+backgroundSize[1]+backgroundSize[2]+backgroundSize[3]}%`;
       elementName.classList.add('sucsess');
+    }
+    else {
+      if (backgroundSize[0]!=0) backgroundSize[0] -= 25;
+      backgroundForm.style.width = `${backgroundSize[0]+backgroundSize[1]+backgroundSize[2]+backgroundSize[3]}%`;
+      elementName.classList.add('invalid');
     }
   };
 
@@ -32,16 +32,16 @@ export default function () {
 
   elementPhone.onblur = function() {
     if (elementPhone.value.trim() == "") {
-      if (backgroundSize!=0) backgroundSize -= 25;
-      backgroundForm.style.width = `${backgroundSize}%`;
+      if (backgroundSize[1]!=0) backgroundSize[1] -= 25;
+      backgroundForm.style.width = `${backgroundSize[0]+backgroundSize[1]+backgroundSize[2]+backgroundSize[3]}%`;
       elementPhone.classList.add('invalid');
     } 
     else {
-      if (backgroundSize!=100) backgroundSize += 25;
-      backgroundForm.style.width = `${backgroundSize}%`;
+      if (backgroundSize[1]!=25) backgroundSize[1] += 25;
+      backgroundForm.style.width = `${backgroundSize[0]+backgroundSize[1]+backgroundSize[2]+backgroundSize[3]}%`;
       elementPhone.classList.add('sucsess');
     }
-  };
+    };
 
   elementPhone.onfocus = function() {
     if (this.classList.contains('invalid')) {
@@ -53,15 +53,16 @@ export default function () {
   };
 
   elementEmail.onblur = function() {
-    if (elementEmail.value.trim() == "") {
-      if (backgroundSize!=0) backgroundSize -= 25;
-      backgroundForm.style.width = `${backgroundSize}%`;
-      elementEmail.classList.add('invalid');
-    } 
-    else { 
-      if (backgroundSize!=100) backgroundSize += 25;
-      backgroundForm.style.width = `${backgroundSize}%`;
+    let checkEmail =/([^\?!=<>()\[\]\\.,;:\+\s@"]+(\.[^\?!=<>()\[\]\\.,;:\+\s@"]+)*)@(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,})/;
+    if (checkEmail.test(elementEmail.value)) {
+      if (backgroundSize[2]!=25) backgroundSize[2] += 25;
+      backgroundForm.style.width = `${backgroundSize[0]+backgroundSize[1]+backgroundSize[2]+backgroundSize[3]}%`;
       elementEmail.classList.add('sucsess');
+    }
+    else {
+      if (backgroundSize[2]!=0) backgroundSize[2] -= 25;
+      backgroundForm.style.width = `${backgroundSize[0]+backgroundSize[1]+backgroundSize[2]+backgroundSize[3]}%`;
+      elementEmail.classList.add('invalid');
     }
   };
 
@@ -76,13 +77,14 @@ export default function () {
 
   elementAgreement.onclick = function() {
     if (this.checked) {
-    if (backgroundSize!=100) backgroundSize += 25;
-    backgroundForm.style.width = `${backgroundSize}%`;
-    } else {
-      if (backgroundSize != 0) backgroundSize -= 25;
-      backgroundForm.style.width = `${backgroundSize}%`;
+    if (backgroundSize[4]!=25) backgroundSize[3] += 25;
+      backgroundForm.style.width = `${backgroundSize[0]+backgroundSize[1]+backgroundSize[2]+backgroundSize[3]}%`;
+      } else {
+      if (backgroundSize[4]!=0) backgroundSize[3] -= 25;
+      backgroundForm.style.width = `${backgroundSize[0]+backgroundSize[1]+backgroundSize[2]+backgroundSize[3]}%`;
+      
     }
-  }; 
+    }; 
 
 
   form.onsubmit = function() {
