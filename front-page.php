@@ -13,7 +13,6 @@ include "front-page-blocks/about-us.php";
 include "front-page-blocks/services.php";
 include "front-page-blocks/portfolio-block.php";
 include "front-page-blocks/contact-form.php";
-include "full-about-us.php";
 get_footer();
 ?>
 
