@@ -8,10 +8,12 @@
 		padding-bottom: 0.5rem;
 	}
 	& ul{
-		padding-left: 6.25rem;
-		flex:1 1 calc(33% - 1.8rem);
-		box-sizing:border-box;
-		min-width:10.625rem;
+justify-content: center;
+		// padding-left: 6.25rem;
+		// flex:1 1 calc(33% - 1.8rem);
+		// box-sizing:border-box;
+		// min-width:25rem;
+		// align-content: stretch;
 	}
 	& li{
   	list-style-type: none;
@@ -28,9 +30,12 @@
 		text-align: center;
 	}
 	& .footer-custom{
-		display: flex;
-		flex-wrap: wrap;
+	display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  align-items: stretch;
 		font-weight:bold;
+
 	}
 }
 
