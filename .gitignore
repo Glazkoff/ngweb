@@ -4,3 +4,4 @@ composer.lock
 vendor
 dist
 dist/
+wp-configphp.
