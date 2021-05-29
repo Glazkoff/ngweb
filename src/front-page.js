@@ -198,10 +198,6 @@ window.addEventListener('load', () => {
   });
 
   GlidePortfolioSetup()
-<<<<<<< HEAD
   FormAnimation()
-=======
-
   coinFrontPageInit()
->>>>>>> origin/header-feature
 })
