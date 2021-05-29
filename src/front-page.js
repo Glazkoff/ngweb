@@ -2,6 +2,8 @@ import { generateRandomConfettiObj, isInElementZone, isCollideWithOtherConfetti,
 
 import FormAnimation from './form-animation'
 import coinFrontPageInit from './coin-functions'
+import GlidePortfolioSetup from './glide-portfolio.js'
+import phoneMask  from './phone-mask.js'
 
 let confettiPieceArr = []
 let confettiBottomBorderSizePx = 80;
@@ -200,4 +202,5 @@ window.addEventListener('load', () => {
   GlidePortfolioSetup()
   FormAnimation()
   coinFrontPageInit()
+  phoneMask();
 })
