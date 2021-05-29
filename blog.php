@@ -6,7 +6,73 @@
  */
 
 get_header(); ?>
+
 <section>
+<div class="blog">
+<h2>Статьи по веб-дизайну и разработке</h2>
+<nav class="extra-navigation">
+<ul class="menu">
+  
+<li><a href="#" onclick="showEvery()">Все</a></li>
+<!-- <li><a href="#" class="design" onclick="showDesign()">Дизайн</a></li>
+<li><a href="#" class="dev" onclick="showDev()">Разработка</a></li>
+<li><a href="#" class="prom"onclick="showProm()">Продвижение</a></li> -->
+<?php if ($terms = get_terms(["taxonomy" => "category", "orderby" => "name"])) {
+	foreach ($terms as $term) {
+		echo '<li><a href="#" onclick="' .
+			$term->term_id .
+			'()">' .
+			$term->name .
+			"</a></li>";
+	}
+} ?>
+</ul>
+</nav>
+<div id="articles">
+
+<?php
+$current_page = get_query_var("paged") ? get_query_var("paged") : 1; // определяем текущую страницу блога
+$args = [
+	"posts_per_page" => get_option("posts_per_page"), // значение по умолчанию берётся из настроек, но вы можете использовать и собственное
+	"paged" => $current_page, // текущая страница
+];
+query_posts($args);
+
+$wp_query->is_archive = true;
+$wp_query->is_home = false;
+
+while (have_posts()):
+	the_post(); ?>
+  <div class="article ">
+    <p class="tag"><?php
+    $cat = get_the_category();
+    echo $cat[0]->cat_name;
+    ?></p>
+<?php echo get_the_post_thumbnail($id, "thumbnail"); ?>
+    <h6><?php the_title();
+	/* заголовок */
+	?></h6>
+    <small><?php the_content();
+	/* содержимое поста */
+	?></small>
+  </div>
+    <?php
+endwhile;
+if (function_exists("wp_pagenavi")) {
+	wp_pagenavi();
+}
+
+// функция постраничной навигации
+?>
+</div>
+</div>
+</section> 
+
+
+
+
+
+<!-- <section>
 <div class="blog">
 <h2>Статьи по веб-дизайну и разработке</h2>
 <nav class="extra-navigation">
@@ -56,7 +122,7 @@ get_header(); ?>
 </div>
 </div>
 </div>
-</section>
+</section> -->
 <?php get_footer(); ?>
 <script>
 var items_el = document.getElementById('articles');
