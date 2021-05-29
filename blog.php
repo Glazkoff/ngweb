@@ -43,7 +43,9 @@ $wp_query->is_home = false;
 
 while (have_posts()):
 	the_post(); ?>
-  <div class="article ">
+  <div class="article " data-image-url="<?php the_post_thumbnail_url(
+  	"full"
+  ); ?>" onclick="location.href='<?php the_permalink(); ?>'">
     <p class="tag"><?php
     $cat = get_the_category();
     echo $cat[0]->cat_name;
@@ -52,7 +54,7 @@ while (have_posts()):
     <h6><?php the_title();
 	/* заголовок */
 	?></h6>
-    <small><?php the_content();
+    <small><?php echo wp_trim_words(get_the_content(), 10);
 	/* содержимое поста */
 	?></small>
   </div>

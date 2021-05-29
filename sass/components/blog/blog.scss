@@ -21,6 +21,9 @@
     margin-bottom: 1rem;
     margin-right: 1.8rem;
     position: relative;
+    & :hover{
+      cursor:pointer;
+    }
     & .tag {
       position: absolute;
       left:1rem;
