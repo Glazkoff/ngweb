@@ -1,84 +1,43 @@
-<style>
-.grid-contact-form{
-    display:grid;
-		 grid-template-areas: "a1 a1 a2"; 
-    background-color: #9FD3F8;
-    padding-top: 5rem;
-    padding-bottom:8,75rem;
-}
+<section class="contact-form">
+  <div class="fill"></div>
 
-.grid-contact-form label{
-padding-bottom:1rem;
-padding-top: 1rem;
-}
-/* .contact-form #name,#phone,#email{
-  width:31rem;
-} */
-.grid-contact-form button{
-  padding:1rem 3.5rem 1rem 3.5rem;
-margin-left: auto;
-    margin-right: auto;
-    margin-top:2rem;
-}
-.contact-form{
-   margin-left: auto;
-    margin-right: auto;
-    padding-right: 9rem;
-    padding-left: 2.5rem;
-    grid-area: a2;
-}
-.sale-heading{
-  grid-area: a1;
-}
-.grid-contact-form h2{
-  padding-left: 4rem;
-  font-size: 40px;
-  line-height: 3.5rem;
-  padding-top: 5rem;
-}
-.grid-contact-form a{
-		text-decoration: underline;
-		color: #080808 !important;
+  <div class="flex-form-container">
+    <div class="heading-for-form">
+      <h2>Cобери все монетки на сайте и получи скидку 10%</h2>
+    </div>
+
+    <div class="wrap-for-form">
+      <?php 
+      // // Получаем значения переменных из пришедших данных 
+      // $name = $_POST['name']; 
+      // $email = $_POST['email']; 
+      // $phone = $_POST['phone']; 
+      // // Формируем сообщение для отправки, в нём мы соберём всё, что ввели в форме 
+      // $mes = "Имя: $name \nE-mail: $email \nТема: $phone \n"; 
+      // // Пытаемся отправить письмо по заданному адресу 
+      // $send = mail("d.belyaeva1@gmail.com", "WORK", $mes, "Content-type:text/plain; charset = UTF-8\r\nFrom:$email"); 
+      // // Если отправка прошла успешно — так и пишем 
+      // if ($send == 'true') {echo "Сообщение отправлено";} 
+      // // Если письмо не ушло — выводим сообщение об ошибке 
+      // else {echo "Ой, что-то пошло не так";} ?> 
     
-	}
-#confpolitic{
+      <form name="contact" action='' method='POST'>
+        <label>Как вас зовут?</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label>А скажете номер?</label>
+        <input type="text" id="phone" name="phone" required>
 
-margin-top: 2rem;
-    
-	}
+        <label>А почтой поделитесь?</label>
+        <input type="email" id="email" name="email" required>
 
-@media only screen and (max-width: 740px) {
-  .grid-contact-form {
-    grid-template-areas:"a1"
-                        "a2";
-  }
-}
+        <div class="wrap-for-checkbox">
+          <input type="checkbox" id="confpolitic" name="agreement" value="agreement" required> <label class="confpolitic" for="confpolitic">Отправляю форму, принимаю <a>условия политики и пользовательского соглашения</a></label>
+        </div>
 
-</style>
-<section class="grid-contact-form"><div class="sale-heading"><h2>Cобери все монетки на сайте и получи скидку 10%
-</h2></div><div class="contact-form">
-  <?php 
-// если была нажата кнопка "Отправить"
-if ($_POST["submit"]) {
-	$name = htmlspecialchars($_POST["name"]);
-	$phone = htmlspecialchars($_POST["phone"]);
-	// $to - кому отправляем
-	$to = "nvkolezneva@gmail.com";
-	// $from - от кого
-	$from = htmlspecialchars($_POST["email"]);;
-	// функция, которая отправляет наше письмо.
-	mail($to, $name, $phone, "From:" . $from);
-	echo "Спасибо! Ваше письмо отправлено.";
-} ?>
-  <form action="" method=post>
-    <label for="name">Как вас зовут?</label>
-    <input type="text" id="name" name="name">
-    <label for="phone">А скажете номер?</label>
-    <input type="text" id="phone" name="phone">
-    <label for="email">А почтой поделитесь?</label>
-    <input type="text" id="email" name="email">
-    <input type="checkbox" id="confpolitic" value="" style="width: 20px;" class="form-checkbox"> Отправляю форму, принимаю <a>условия политики и пользовательского соглашения</a>
-    <button name="submit">Отправить</button></form></div>
+        <input type='submit' name="submit" value='Отправить'></input>
+      </form>
+    </div>      
+  </div>
 
-
-  </section>
+</section>
