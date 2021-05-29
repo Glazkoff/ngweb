@@ -31,27 +31,42 @@
       & .go-btn {
         display: block;
         cursor: pointer;
-        transition: transform 0.4s ease;
-        &:hover {
-          transform: translateX(8px);
+        & .circle, .arrow {
+          transition: all 0.4s ease;
         }
         & .circle.green {
+
           stroke: $green;
+          fill: $white;
+        }
+        &:hover .circle.green {
+          fill: $green;
         }
         & .arrow.green {
           fill: $green;
         }
+        &:hover .arrow {
+          fill: $white !important;
+        }
         & .circle.red {
           stroke: $red;
+          fill: $white;
+        }
+        &:hover .circle.red {
+          fill: $red;
         }
         & .arrow.red {
           fill: $red;
         }
         & .circle.blue {
           stroke: $blue;
+          fill: $white;
+        }
+        &:hover .circle.blue {
+          fill: $blue;
         }
         & .arrow.blue {
-          fill: $blue
+          fill: $blue;
         }
       }
     }
