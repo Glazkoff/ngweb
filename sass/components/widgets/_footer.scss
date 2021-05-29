@@ -2,18 +2,28 @@
 	& a{
 		text-decoration: none;
 		color: $black !important;
-	}
-	& a:active{
+&:after {
+				display: block;
+				left: 0;
+				width: 0;
+				height: 3px;
+				background-color: #FF3322;
+				content: "";
+				transition: width 0.3s ease-out;
+			}
+			&:hover:after {
+				width: 100%;
+				color:black;
+			}
+				& :active{
 		border-bottom: 0.125rem solid $red;
 		padding-bottom: 0.5rem;
 	}
+	}
+
 	& ul{
 justify-content: center;
-		// padding-left: 6.25rem;
-		// flex:1 1 calc(33% - 1.8rem);
-		// box-sizing:border-box;
-		// min-width:25rem;
-		// align-content: stretch;
+
 	}
 	& li{
   	list-style-type: none;
