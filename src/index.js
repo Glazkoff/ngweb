@@ -10,6 +10,7 @@ import "../sass/style.scss"
 
 
 import CursorSetup from './cursor'
+import phoneMask  from './phone-mask'
 
 
 
@@ -17,6 +18,7 @@ import CursorSetup from './cursor'
 window.onload = () => {
 
   CursorSetup();
+  phoneMask();
 
 }
 
