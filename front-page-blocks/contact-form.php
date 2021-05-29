@@ -44,8 +44,7 @@ margin-left: auto;
 #confpolitic{
 
 margin-top: 2rem;
-    
-	}
+  }
 
 @media only screen and (max-width: 740px) {
   .grid-contact-form {
