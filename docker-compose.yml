@@ -41,26 +41,6 @@ services:
     volumes:
       - wordpress:/var/www/html  
       # - ./:/var/www/html/wp-content/themes/ngwebstudio 
-    
-  # # Wordpress CLI
-  # wp-cli:
-  #   depends_on:
-  #     - wordpress
-  #   # build: 
-  #   #   context: .
-  #   #   dockerfile: ./Dockerfile.wp-cli
-  #   image: wordpress:cli
-  #   user: xfs
-  #   tty: true
-  #   working_dir: /var/www/html
-  #   links:
-  #     - db:db
-  #   command:
-  #     /bin/sh -c 'sleep 10;  wp core install --path="/var/www/html"--url="http://localhost:8000" --title="Local Wordpress By Docker" --admin_user=admin--admin_password=admin --admin_email=foo@bar.com; wp theme list'
-  #   volumes:
-  #     - wordpress:/var/www/html                
-  #   networks:
-  #     - app-network
 
   # Веб-сервер
   nginx:
@@ -73,6 +53,26 @@ services:
     volumes:
       - wordpress:/var/www/html
       - ./nginx/dev.conf:/etc/nginx/nginx.conf:ro   
+
+  # Wordpress CLI
+  wp-cli:
+    depends_on:
+      - db
+      - wordpress
+      - nginx
+    # build: 
+    #   context: .
+    #   dockerfile: ./Dockerfile.wp-cli
+    image: wordpress:cli
+    user: xfs
+    tty: true
+    # working_dir: /var/www/html
+    command:
+      /bin/sh -c 'sleep 30;  wp core install --path="/var/www/html"--url="http://localhost:8100" --title="Local Wordpress By Docker" --admin_user=admin--admin_password=admin --admin_email=foo@bar.com; wp theme list'
+    volumes:
+      - wordpress:/var/www/html                
+    networks:
+      - app-network      
 
 volumes:
   wordpress:
