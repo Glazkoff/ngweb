@@ -16,5 +16,8 @@
     "formatOnPaste",
     "formatOnSave",
     "formatOnType"
+  ],
+  "i18n-ally.localesPaths": [
+    "languages"
   ]
 }
