@@ -1,0 +1,70 @@
+.contact-form {
+  position: relative;
+  padding: 0 !important;
+}
+
+.fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0%;
+  height: 100%;
+  background-color: $blue;
+  z-index: 2;
+  transition: width 2s ease-in-out;
+  -webkit-transition: width 2s ease-in-out;
+  -moz-transition: width 2s ease-in-out;
+  -ms-transition: width 2s ease-in-out;
+  -o-transition: width 2s ease-in-out;
+}
+
+.flex-form-container {
+  padding: 6rem 8.6rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.heading-for-form,
+.wrap-for-form {
+	z-index: 3;
+}
+
+.heading-for-form {
+  margin-right: 5%;
+  width: 55%;
+}
+
+.wrap-for-form {
+	width: 40%;
+  & a {
+    text-decoration: underline;
+    color: $black !important;
+  }
+
+  & label {
+    margin-bottom: 0.7rem;
+    &.confpolitic{
+      display: inline;
+    }
+  }
+
+  & input {
+    margin-bottom: 1.3rem;
+    &[type="text"],
+    &[type="email"] {
+      width: 100%;
+    }
+    &[type="checkbox"] {
+      margin-top: 1rem;
+      margin-bottom: 0;
+    }
+    &[type="submit"] {
+      padding: 1.25rem 6.25rem;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 2.5rem;
+    }
+  }
+}

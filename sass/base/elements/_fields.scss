@@ -14,20 +14,97 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
+	display: block;
+	background-color: $white;
 	color: $color__text-input;
-	border: 1px solid $color__border-input;
-	border-radius: 3px;
-	padding: 3px;
+	border: 2px solid $color__border-input;
+	padding: 0.5rem;
+	padding-right: 2.8rem;
+	outline: none;
+	min-width: 20rem;
 
-	&:focus {
-		color: $color__text-input-focus;
+	&.invalid {
+		background: $white url('../../../src/img/invalid.svg') 97% 50% no-repeat;
+	}
+
+	&.sucsess {
+		background: $white url('../../../src/img/sucsess.svg') 97% 50% no-repeat;
+	}
+}
+
+label {
+	display: block;
+	margin-bottom: 0.3rem;
+
+	&.red {
+		color: $color__border-input-error;
 	}
 }
 
 select {
-	border: 1px solid $color__border-input;
+	border: 2px solid $color__border-input;
 }
 
 textarea {
 	width: 100%;
+}
+
+
+input[type="checkbox"]:checked,
+input[type="checkbox"]:not(:checked) {
+	position: absolute;
+	left: -9999px;
+}
+
+input[type="checkbox"]:checked+label,
+input[type="checkbox"]:not(:checked)+label {
+	display: inline-block;
+	position: relative;
+	padding-left: 28px;
+	line-height: 20px;
+}
+
+input[type="checkbox"]:checked+label:before,
+input[type="checkbox"]:not(:checked)+label:before {
+	content: "";
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 18px;
+	height: 18px;
+	border: 2px solid $black;
+	background-color: $white;
+}
+
+input[type="checkbox"]:checked+label:after,
+input[type="checkbox"]:not(:checked)+label:after {
+	content: "";
+	position: absolute;
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+
+input[type="checkbox"]:checked+label:after,
+input[type="checkbox"]:not(:checked)+label:after {
+	left: -1px;
+	top: -3px;
+	width: 22px;
+	height: 13px;
+	border-left: 4px solid $darkGreen;
+	border-bottom: 4px solid $darkGreen;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+input[type="checkbox"]:not(:checked)+label:after {
+	opacity: 0;
+}
+
+input[type="checkbox"]:checked+label:after {
+	opacity: 1;
 }

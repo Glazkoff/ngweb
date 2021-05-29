@@ -1,35 +1,37 @@
 // Цвета дизайна
 $black: #080808;
-$green: #68CD5F;
-$darkGreen: #5EBB55;
-$yellow: #F4DF60;
-$darkYellow: #EBD44D;
-$red: #FF3322;
-$darkRed: #E22D1E;
-$blue: #9FD3F8;
-$darkBlue: #75C2F9;
-$lightGray: #F5F5F5;
-$white: #FFFFFF;
-
+$lightGreen: #90da89;
+$green: #68cd5f;
+$darkGreen: #5ebb55;
+$yellow: #f4df60;
+$darkYellow: #ebd44d;
+$red: #ff3322;
+$darkRed: #e22d1e;
+$blue: #9fd3f8;
+$darkBlue: #75c2f9;
+$linkColor: #44AEFA;
+$darkLinkColor: #1B94EB;
+$lightGray: #f5f5f5;
+$white: #ffffff;
 
 $color__background-body: $white;
 $color__background-screen: $lightGray;
-$color__background-hr: #ccc;
+$color__background-hr: $lightGray;
 $color__background-button: $green;
-$color__background-pre: #eee;
-$color__background-ins: #fff9c0;
+$color__background-pre: transparent;
+$color__background-ins: $blue;
+$color__background-button-hover: $darkGreen;
+$color__background-button-active: $lightGreen;
 
-$color__text-screen: #21759b;
-$color__text-input: #666;
-$color__text-input-focus: #111;
-$color__link: #4169e1; //royalblue
-$color__link-visited: #800080; //purple
-$color__link-hover: #191970; //midnightblue
-$color__text-main: #404040;
+$color__text-screen: $black;
+$color__text-input: $black;
+$color__link: $linkColor;
+$color__link-visited: $darkLinkColor;
+$color__link-hover: $darkLinkColor;
+$color__text-main: $black;
 
 $color__border-button: $green;
-$color__border-button-hover: $darkGreen;
-$color__border-button-focus: #bbb #bbb #bbb;
-$color__border-input: #ccc;
-$color__border-abbr: #666;
 
+$color__border-input: $black;
+$color__border-input-error: $red;
+$color__border-abbr: $yellow;

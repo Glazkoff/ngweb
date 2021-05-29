@@ -2,12 +2,31 @@ body,
 button,
 input,
 select,
+small, 
+p,
 optgroup,
 textarea {
-	color: $color__text-main;
 	font-family: $font__main;
-	font-size: 1rem;
+	font-weight: 400;
+	font-style: normal;
 	line-height: $font__line-height-body;
+}
+body,
+p
+select,
+small,
+optgroup{
+	color: $color__text-main;
+}
+
+p, input, button{
+	font-size: 18px;
+	line-height: 25px;
+}
+
+small, label {
+	font-size: 16px;
+	line-height: 22px;
 }
 
 @import "headings";

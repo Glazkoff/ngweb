@@ -1,0 +1,6 @@
+{
+  "parser": "php",
+  "useTabs": true,
+  "tabWidth": 4,
+  "endOfLine": "lf"
+}

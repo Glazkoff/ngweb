@@ -2,6 +2,10 @@
 --------------------------------------------- */
 @import "navigation/navigation";
 
+/* Contact-form
+--------------------------------------------- */
+@import "form/contact-form";
+
 /* Posts and pages
 --------------------------------------------- */
 @import "content/posts-and-pages";
@@ -14,6 +18,10 @@
 --------------------------------------------- */
 @import "widgets/widgets";
 
+/* Footer
+--------------------------------------------- */
+@import "widgets/footer";
+
 /* Media
 --------------------------------------------- */
 @import "media/media";
@@ -25,3 +33,36 @@
 /* Galleries
 --------------------------------------------- */
 @import "media/galleries";
+
+/* Front-page
+--------------------------------------------- */
+@import "portfolio/portfolio";
+
+/* Header
+--------------------------------------------- */
+@import "header/header";
+
+/* Services
+--------------------------------------------- */
+@import "services/services";
+
+/* About us
+--------------------------------------------- */
+@import "about-us/about-us";
+
+/* Main
+--------------------------------------------- */
+@import "main/main";
+
+/* Cursor
+--------------------------------------------- */
+@import "cursor/cursor";
+
+/* Contacts
+--------------------------------------------- */
+@import "contacts/contacts";
+
+/* Blog
+--------------------------------------------- */
+@import "blog/blog";
+

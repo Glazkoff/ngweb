@@ -1,0 +1,10 @@
+section {
+  & .flex {
+    display: flex;
+  }
+  & .contact h2 {
+  	text-transform: uppercase;
+  	margin-bottom: 8.7rem;
+  	text-align: center;
+  }
+}

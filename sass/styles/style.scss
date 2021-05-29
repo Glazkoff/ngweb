@@ -2,140 +2,145 @@
 
 // FONTS_BEGIN
 @font-face {
-  font-family: "PT Sans";
-  src: url("./fonts/PT_Sans/PTSans-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
+	font-family: "PT Sans";
+	src: url("./fonts/PT_Sans/PTSans-Regular.ttf") format("truetype");
+	font-weight: 400;
+	font-style: normal;
 }
 
 @font-face {
-    font-family: 'PT Sans';
-    src: url("./fonts/PT_Sans/PTSans-Bold.ttf") format('truetype');
-    font-weight: 700;
-    font-style: normal;
+	font-family: "PT Sans";
+	src: url("./fonts/PT_Sans/PTSans-Bold.ttf") format("truetype");
+	font-weight: 700;
+	font-style: normal;
 }
 
 @font-face {
-    font-family: 'Literata 7pt';
-    src: url('./fonts/Literata_7pt/Literata_7pt-Bold.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
+	font-family: "Literata 7pt";
+	src: url("./fonts/Literata_7pt/Literata_7pt-Bold.ttf") format("truetype");
+	font-weight: 400;
+	font-style: normal;
 }
-
 
 // FONTS_END
 
 * {
-    font-family: "PT Sans",
-    sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    color: $black;
-    cursor: url(images/cursor_default.png), auto;
+	font-family: "PT Sans", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	color: $black;
+	cursor: url(images/cursor_default.png), auto;
 }
 
 h1 {
-    font-family: "PT Sans";
-    font-weight: 400;
-    font-style: normal;
-    font-size: 40px;
-    line-height: 56px;
-    &.serif{
-        font-family: "Literata 7pt";
-        font-size: 80px;
-        line-height: 112px;
-    }
+	font-family: "PT Sans";
+	font-weight: 400;
+	font-style: normal;
+	font-size: 40px;
+	line-height: 56px;
+
+	&.serif {
+		font-family: "Literata 7pt";
+		font-size: 80px;
+		line-height: 112px;
+	}
 }
 
 h2 {
-    font-family: "PT Sans";
-    font-weight: 400;
-    font-style: normal;
-    font-size: 24px;
-    line-height: 34px;
-    &.serif {
-        font-family: "Literata 7pt";
-        font-size: 60px;
-        line-height: 84px;
-    }
+	font-family: "PT Sans";
+	font-weight: 400;
+	font-style: normal;
+	font-size: 24px;
+	line-height: 34px;
+
+	&.serif {
+		font-family: "Literata 7pt";
+		font-size: 60px;
+		line-height: 84px;
+	}
 }
 
 h3 {
-    font-family: "PT Sans";
-    font-weight: 700;
-    font-style: normal;
-    font-size: 24px;
-    line-height: 34px;
+	font-family: "PT Sans";
+	font-weight: 700;
+	font-style: normal;
+	font-size: 24px;
+	line-height: 34px;
 }
 
-p, label, input {
-    font-family: "PT Sans";
-    font-weight: 400;
-    font-style: normal;
-    font-size: 18px;
-    line-height: 25px;
+p,
+label,
+input {
+	font-family: "PT Sans";
+	font-weight: 400;
+	font-style: normal;
+	font-size: 18px;
+	line-height: 25px;
 }
 
 small {
-    font-family: "PT Sans";
-    font-weight: 400;
-    font-style: normal;
-    font-size: 16px;
-    line-height: 22px;
+	font-family: "PT Sans";
+	font-weight: 400;
+	font-style: normal;
+	font-size: 16px;
+	line-height: 22px;
 }
 
 button {
-    border-radius: 6px;
-    display: block;
-    padding: 15px 41px;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    -ms-border-radius: 6px;
-    -o-border-radius: 6px;
-    box-sizing: border-box;
-    background-color: $green;
-    font-family: "PT Sans";
-    font-weight: 700;
-    font-style: normal;
-    font-size: 20px;
-    letter-spacing: 1px;
-    text-align: center;
-    color: $lightGray;
-    border: none;
-    outline: none;
-    &:hover {
-        background-color: $darkGreen;
-    }
-    &:active {
-        padding: 10px 36px;
-        background-color: $lightGray;
-        border: 5px solid $green;
-        color: $green;
-    }
+	border-radius: 6px;
+	display: block;
+	padding: 15px 41px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	-ms-border-radius: 6px;
+	-o-border-radius: 6px;
+	box-sizing: border-box;
+	background-color: $green;
+	font-family: "PT Sans";
+	font-weight: 700;
+	font-style: normal;
+	font-size: 20px;
+	letter-spacing: 1px;
+	text-align: center;
+	color: $lightGray;
+	border: none;
+	outline: none;
+
+	&:hover {
+		background-color: $darkGreen;
+	}
+
+	&:active {
+		padding: 10px 36px;
+		background-color: $lightGray;
+		border: 5px solid $green;
+		color: $green;
+	}
 }
 
 label {
-    display: block;
-    margin-bottom: 11px;
-    &.red{
-        color: $red;
-    }
+	display: block;
+	margin-bottom: 11px;
+
+	&.red {
+		color: $red;
+	}
 }
 
 input {
-    padding-left: 10px;
-    padding-right: 10px;
-    display: block;
-    height: 64px;
-    width: 500px;
-    outline: none;
-    background-color: $lightGray;
-    border: 2px solid $black;
-    box-sizing: border-box;
-    border-radius: 6px;
-    margin-bottom: 30px;
-    &.red {
-        border-color: $red;
-    }
-    
+	padding-left: 10px;
+	padding-right: 10px;
+	display: block;
+	height: 64px;
+	width: 500px;
+	outline: none;
+	background-color: $lightGray;
+	border: 2px solid $black;
+	box-sizing: border-box;
+	border-radius: 6px;
+	margin-bottom: 30px;
+
+	&.red {
+		border-color: $red;
+	}
 }

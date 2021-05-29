@@ -1,0 +1,59 @@
+.main-block {
+  height: 100vh;
+  position: relative;
+
+  & .dynamic-heading__block {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
+
+    & .dynamic-heading {
+      margin: auto;
+      text-align: center;
+      text-transform: uppercase;
+      z-index: 10;
+    }
+  }
+
+  & #main-sugar {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    & #main-sugar__svg {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      top: 0;
+      left: 0;
+      height: 110%;
+      z-index: 1000;
+
+      & .confetti-piece {
+        transform-box: fill-box;
+      }
+    }
+  }
+}
+
+@keyframes appear {
+	0% {
+    opacity: 0;
+	}
+	100% {
+    opacity: 1;
+	}
+}
+
+.confetti-piece {
+  transition: all 0.5s ease-in, fill 0.5s ease-in;
+  animation: appear 0.5s ease-in;
+}
+
+.confetti-piece-deleted {
+  fill: transparent !important;
+}
