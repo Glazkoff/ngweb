@@ -28,7 +28,7 @@ services:
       PMA_HOST: db:3306
 
   # Wordpress
-  wordpress:
+  wordpress:  
     container_name: wordpress
     depends_on:
       - db
@@ -56,23 +56,21 @@ services:
 
   # Wordpress CLI
   wp-cli:
+    container_name: wp-cli
     depends_on:
       - db
       - wordpress
       - nginx
-    # build: 
-    #   context: .
-    #   dockerfile: ./Dockerfile.wp-cli
-    image: wordpress:cli
+    links:
+      - db
+      - wordpress  
+    image: wordpress:cli-php8.0 
     user: xfs
-    tty: true
-    # working_dir: /var/www/html
+    working_dir: /var/www/html
     command:
-      /bin/sh -c 'sleep 30;  wp core install --path="/var/www/html"--url="http://localhost:8100" --title="Local Wordpress By Docker" --admin_user=admin--admin_password=admin --admin_email=foo@bar.com; wp theme list'
+      /bin/sh -c 'sleep 10; wp core install --path="/var/www/html" --url="http://localhost:8100" --title="Сайт Студии Никиты Глазкова" --admin_user=admin --admin_password=admin --admin_email=foo@bar.com; wp theme list; wp theme activate ngwebstudio; wp language core install ru_RU; wp site switch-language ru_RU'
     volumes:
-      - wordpress:/var/www/html                
-    networks:
-      - app-network      
+      - wordpress:/var/www/html                   
 
 volumes:
   wordpress:
