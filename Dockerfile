@@ -1,8 +1,8 @@
-FROM node:12.2.0-alpine as build
+FROM node:12.2.0 as build
 LABEL maintainer="contact@nglazkov.ru"
 WORKDIR /theme/src
 COPY package*.json /theme/src/
-RUN apk update && apk add nodejs && apk add npm && npm install -g webpack webpack-cli dir-archiver && npm install
+RUN sudo apt install nodejs && sudo apt install npm && npm install -g webpack webpack-cli dir-archiver && npm install
 COPY . /theme/src
 RUN npm run build --production && npm run bundle && rm -rf /theme/src/node_modules
 
