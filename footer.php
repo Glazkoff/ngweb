@@ -37,13 +37,13 @@
 				<li><a href="<?php echo esc_url( __( 'https://wordpress.org/', 'ngwebstudio' ) ); ?>">
 				Behance</a></li>
 			</ul></div>
-				<div><ul>
+				<div class="footer-contact"><ul>
 				<li>+7(967)335-79-67</li>
 				<li>contact@nglazkov.ru</li>
 			</ul></div></div>
 			<div>
 				<hr>
-				<h6>NIKITA GLAZKOV 2021</h6>
+				<h6>NIKITA GLAZKOV <?php echo date('Y'); ?></h6>
 			</div>
 			<!-- <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'ngwebstudio' ) ); ?>">
 				<?php

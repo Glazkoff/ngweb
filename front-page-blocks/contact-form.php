@@ -7,19 +7,20 @@
     </div>
 
     <div class="wrap-for-form">
-      <?php 
-      // // Получаем значения переменных из пришедших данных 
-      // $name = $_POST['name']; 
-      // $email = $_POST['email']; 
-      // $phone = $_POST['phone']; 
-      // // Формируем сообщение для отправки, в нём мы соберём всё, что ввели в форме 
-      // $mes = "Имя: $name \nE-mail: $email \nТема: $phone \n"; 
-      // // Пытаемся отправить письмо по заданному адресу 
-      // $send = mail("d.belyaeva1@gmail.com", "WORK", $mes, "Content-type:text/plain; charset = UTF-8\r\nFrom:$email"); 
-      // // Если отправка прошла успешно — так и пишем 
-      // if ($send == 'true') {echo "Сообщение отправлено";} 
-      // // Если письмо не ушло — выводим сообщение об ошибке 
-      // else {echo "Ой, что-то пошло не так";} ?> 
+      <?php
+// // Получаем значения переменных из пришедших данных
+// $name = $_POST['name'];
+// $email = $_POST['email'];
+// $phone = $_POST['phone'];
+// // Формируем сообщение для отправки, в нём мы соберём всё, что ввели в форме
+// $mes = "Имя: $name \nE-mail: $email \nТема: $phone \n";
+// // Пытаемся отправить письмо по заданному адресу
+// $send = mail("d.belyaeva1@gmail.com", "WORK", $mes, "Content-type:text/plain; charset = UTF-8\r\nFrom:$email");
+// // Если отправка прошла успешно — так и пишем
+// if ($send == 'true') {echo "Сообщение отправлено";}
+// // Если письмо не ушло — выводим сообщение об ошибке
+// else {echo "Ой, что-то пошло не так";}
+?> 
     
       <form name="contact" action='' method='POST'>
         <label>Как вас зовут?</label>
