@@ -1,102 +1,120 @@
-[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)
+# NGLAZKOV - оригинальная тема для Wordpress, сайт веб-студии
 
-_s
-===
+В данном учебном семестре зародилась новая концепция студии, поменялось позиционирование, репутационные кампания и брендинг в целом. В связи с этим был принят в разработку проект нового сайта, над концепцией которого работали как дизайнер, так и веб-программисты, интернет-маркетологи и менеджеры. Лейтмотив сайта студии - использование интерактивности и геймификационных методик, причем не только в продуктах, выпускаемых студией, но и в управлении коллективами и проектами. В соответствии с этой идеей и создавался дизайн сайта, так, например, хорошей иллюстрацией интерактивности в концепте сайта является сбор монеток, приводящий к получению скидки. Непосредственная разработка программного продукта тоже имеет свои тонкости и нюансы. Так, было принято решение о создании собственной уникальной темы для WordPress с использованием возможностей для кастомизации CMS, чтобы повысить юзабилити дальнейшего развития сайта. 
 
-Hi. I'm a starter theme called `_s`, or `underscores`, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+## Формулировка решаемой проблемы
 
-My ultra-minimal CSS might make me look like theme tartare but that means less stuff to get in your way when you're designing your awesome theme. Here are some of the other more interesting things you'll find here:
+Студия Никиты Глазков нуждается в сайте, который станет одним из каналов привлечения клиентов, а также медиаплатформой для продвижения. 
+В рамках этапа планирования и проектирования будущей платформы было принято решение сфокусироваться на разработке сайта с использованием CMS Wordpress. Это обеспечивает следующий список преимуществ:
+- широкий спектр возможностей SEO и SMM-оптимизаций;
+- быстрый старт и дружелюбный интерфейс для человека, не обладающего глубокими знаниями в разработке, что открывает доступ к работе с контентом сайта, например, первокурсникам;
+- обширный ассортимент плагинов, проверенных сообществом, которые позволяют моментально расширить функционал сайта и адаптировать его к изменяющимся условиям рынка;
+- имеет понятную, простую и расширяемую административную панель;
+- лояльное сообщество разработчиков.
 
-* A modern workflow with a pre-made command-line interface to turn your project into a more pleasant experience.
-* A just right amount of lean, well-commented, modern, HTML5 templates.
-* A custom header implementation in `inc/custom-header.php`. Just add the code snippet found in the comments of `inc/custom-header.php` to your `header.php` template.
-* Custom template tags in `inc/template-tags.php` that keep your templates clean and neat and prevent code duplication.
-* Some small tweaks in `inc/template-functions.php` that can improve your theming experience.
-* A script at `js/navigation.js` that makes your menu a toggled dropdown on small screens (like your phone), ready for CSS artistry. It's enqueued in `functions.php`.
-* 2 sample layouts in `sass/layouts/` made using CSS Grid for a sidebar on either side of your content. Just uncomment the layout of your choice in `sass/style.scss`.
-Note: `.no-sidebar` styles are automatically loaded.
-* Smartly organized starter CSS in `style.css` that will help you to quickly get your design off the ground.
-* Full support for `WooCommerce plugin` integration with hooks in `inc/woocommerce.php`, styling override woocommerce.css with product gallery features (zoom, swipe, lightbox) enabled.
-* Licensed under GPLv2 or later. :) Use it to make something cool.
-
-Installation
----------------
-
-### Requirements
-
-`_s` requires the following dependencies:
-
-- [Node.js](https://nodejs.org/)
-- [Composer](https://getcomposer.org/)
-
-### Quick Start
-
-Clone or download this repository, change its name to something else (like, say, `megatherium-is-awesome`), and then you'll need to do a six-step find and replace on the name in all the templates.
-
-1. Search for `'_s'` (inside single quotations) to capture the text domain and replace with: `'megatherium-is-awesome'`.
-2. Search for `_s_` to capture all the functions names and replace with: `megatherium_is_awesome_`.
-3. Search for `Text Domain: _s` in `style.css` and replace with: `Text Domain: megatherium-is-awesome`.
-4. Search for <code>&nbsp;_s</code> (with a space before it) to capture DocBlocks and replace with: <code>&nbsp;Megatherium_is_Awesome</code>.
-5. Search for `_s-` to capture prefixed handles and replace with: `megatherium-is-awesome-`.
-6. Search for `_S_` (in uppercase) to capture constants and replace with: `MEGATHERIUM_IS_AWESOME_`.
-
-Then, update the stylesheet header in `style.css`, the links in `footer.php` with your own information and rename `_s.pot` from `languages` folder to use the theme's slug. Next, update or delete this readme.
-
-### Setup
-
-To start using all the tools that come with `_s`  you need to install the necessary Node.js and Composer dependencies :
-
-```sh
-$ composer install
-$ npm install
-```
-
-### Available CLI commands
-
-`_s` comes packed with CLI commands tailored for WordPress theme development :
-
-- `composer lint:wpcs` : checks all PHP files against [PHP Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/php/).
-- `composer lint:php` : checks all PHP files for syntax errors.
-- `composer make-pot` : generates a .pot file in the `languages/` directory.
-- `npm run compile:css` : compiles SASS files to css.
-- `npm run compile:rtl` : generates an RTL stylesheet.
-- `npm run watch` : watches all SASS files and recompiles them to css when they change.
-- `npm run lint:scss` : checks all SASS files against [CSS Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/css/).
-- `npm run lint:js` : checks all JavaScript files against [JavaScript Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/javascript/).
-- `npm run bundle` : generates a .zip archive for distribution, excluding development and system files.
-
-Now you're ready to go! The next step is easy to say, but harder to do: make an awesome WordPress theme. :)
-
-Good luck!
+Однако, также чистая архитектура Wordpress имеет и ряд недостатков, таких как:
+- большое количество некачественно сделанных тем;
+- предвзятое отношение поисковых систем к сайту на бесплатных шаблонах;
+- трудность внедрения собственных стилей и сложного функционала.
+А потому наша команда приняла решение разрабатывать собственную тему на Wordpress, написанную с нуля, которая будет содержать элементы микросервисной архитектуры, собственного типа контента, автоматической сборки проекта и установки настроек. Так, внутри композиции Docker-контейнеров, первая настройка Nginx создаёт обратный прокси, отдающий на определённый порт каждый микросервис в зависимости от выбранного URL. И уже впоследствии вторая конфигурация Nginx соединяет обратным прокси домена и публичный порт сервера, чтобы он был доступен в сети Интернет.
 
 
-### Описание папок темы
+## Цель проекта
 
-- **inc** - здесь хранятся функции, которые уже используются в шаблоне и новые функции, которые создаст разработчик
-- **js** - содержит библиотеки JavaScript
-- **languages** - здесь языковые файлы, WordPress мультиязычная платформа
-- **layouts** - здесь будут новые пользовательские CSS стили
-- **template-parts** - для дополнительных PHP файлов
+Разработать MVP, пригодный к выгрузке на сервер и использованию для продвижения
 
+## Задачи по проекту
 
-### Описание файлов темы
+- Задачи обучения
+  - Изучение технологий фронтенда
+  - Изучение технологий бэкенда
+  - Изучение особенностей шаблонов Wordpress
+  
+- Продуктовые задачи  
+  - Определение стратегии позиционирования 
+  - Анализ рисков
+  - Составление планов коммуникации
+  - Анализ позиционирования конкурентов
+  - Разработка мокапов интерфейсов
+  - Тестирование с отделом медиаразмещения студии
 
-- **404.php** - файл, показывающий шаблон несуществующей страницы
-- **archive.php** - файл с шаблоном страницы архив (по дням, неделям и годам)
-- **comments.php** - файл с шаблоном внешнего вида комментариев
-- **footer.php** - шаблон с подключением подвала сайта
-- **functions.php** - подключает все файлы темы к ядру самого WordPress
-- **header.php** - файл с шаблоном подключения шапки сайта
-- **index.php** - файл с шаблоном генерации архива страниц блога
-- **LICENSE.txt** - информация о лицензии (бесплатная / платная)
-- **page.php** - шаблон для отдельных страниц
-- **rtl.css** - меняющий направление текста на right-to-left для отдельных языков
-- **screenshot.png** - превью-картинка для темы в админке
-- **search.php** - шаблон результатов поиска на блоге
-- **sidebar.php** - файл с шаблоном для правой / левой колонки темы
-- **single.php** - файл с шаблоном для отдельно взятого поста
-- **style.css** - основной CSS файл темы
+- Задачи дизайна
+  - Разработка айдентики и позиционирования
+  - Разработка шаблонов корпоративных документов
+  - Разработка дизайна визиток
+  - Разработка UI-kit
+  - Разработка дизайна интерфейсов на основе мокапов и UI-kit
+  
+- Задачи фронтенда/бэкенда
+  - Создание первичной структуры фронтенда
+  - Создание первичной структуры бэкенда
+  - Вёрстка интерфейсов
+  - Технический долг
+  - Разработка шаблона стилей проекта на SCSS
+  - Внедрение интерактивности на сайт
+  - Изучение библиотек с анимацией
+  - Верстка шаблонов страниц сайта
+  - Разработка различных типов постов
+  - Внедрение собственного функционала в административную часть Wordpress
+  - Тестирование корректности шаблонов PHP с помощью Composer
 
+- Задачи оранизации разработки
+  - Настройка сборки Webpack
+  - Внедрение обработки SASS/SCSS
+  - Настройка ESLint + Prettier (linter+formatter)
+  - Создание архитектуры темы WordPress
+  - Написание документации к проекту
+
+- Задачи менеджмента
+  - Планирование backlog продукта
+  - Определенеи состава MVP и релизов
+  - Backlog Refinement
+  - Daily meeting
+  - Планирование спринта
+  - Завершение спринта
+  - Ретроспектива спринта
+  - Тимбилдинг
+
+## Участники
+
+| _Участники_            | _Учебная группа_ |                                          _Роли_                                           |
+| :--------------------- | :--------------- | :---------------------------------------------------------------------------------------: |
+| **Никита Глазков**     | 181-321          |       Product Owner, технический лидер, fullstack-разработчик, идейный вдохновитель       |
+| **Дарья Беляева**      | 181-321          |                          Project-менеджер, Fullstack-разработчик                          |
+| **Надежда Колезнева**  | 181-322          |                          Project-менеджер, Fullstack-разработчик                          |
+| **Анастасия Двояшова** | 181-821          |                            Дизайнер, консультант по айдентике                             |
+| **Елена Бычкова**      | 181-321          |                                   Fullstack-разработчик                                   |
+
+## Ссылки
+
+- [Дизайн интерфейсов](https://www.figma.com/file/fQEhYtIbaPwNtCV7OUoTKp/%D0%BF%D0%B4?node-id=0%3A1)
+
+## Используемые в проекте библиотеки, фреймворки и технологии
+
+- SCSS
+- ESLint + Prettier
+- JavaScript 
+- Wordpress 
+- PHP
+- Composer
+- MySQL
+- PhpMyAdmin
+- Docker 
+- Docker-compose 
+- Webpack 
+- npm
+- WP-CLI
+- Nginx 
+- Git 
+- GitHub
+- Poly-gile (Agile + Scrum + Kanban + PMBOK)
+- Atlassian Jira
+- Figma 
+- Adobe Illustrator 
+- Adobe Photoshop 
+
+---
+## Процесс разработки
 
 ### Что делать чтобы начать разработку?
 
@@ -122,14 +140,6 @@ Good luck!
 18. Перейти на сайт и проверить, установилась ли тема
 19. Установить расширение "All-in-One WP Migration"
 
-#### TODO-list 
-- [] **abstracts** - Надя
-- [] **base** - Даша
-- [] **generic**, **layouts**, **utilities** - Лена
-- [x] Сделать главной страницей шаблон **template/example.html** - Никита
-
-Создать отдельную ветку, изучить папку, погуглить, как папка устроена и для чего нужна, изменить содержимое в соответствии с существующим дизайном.  
-
 
 ### Ссылки
 
@@ -137,10 +147,10 @@ Good luck!
 
 
 ### Типы постов
-- [x] `services` - услуги
-- [x] `portfolio` - портфолио
-- [x] `teammates` - команда
-- [] `блог` - блог
+- `services` - услуги
+- `portfolio` - портфолио
+- `teammates` - команда
+- `блог` - блог
 
 ### Структура js файлов
 | Файл                          | Назначение                                                |
