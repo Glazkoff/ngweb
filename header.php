@@ -28,36 +28,72 @@
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
+			<div class="logo">
+				<a href="https://nglazkov.ru/" class="custom-logo-link" rel="home" aria-current="page">
+					<img  src="<?php echo get_template_directory_uri(); ?>/src/img/logo.png" alt="Logo" />
+				</a>
+			</div>
 			<?php
-   the_custom_logo();
-   if (is_front_page() && is_home()): ?>
-				<h1 class="site-title"><a href="<?php echo esc_url(
-    	home_url("/")
-    ); ?>" rel="home"><?php bloginfo("name"); ?></a></h1>
-				<?php else: ?>
-				<p class="site-title"><a href="<?php echo esc_url(
-    	home_url("/")
-    ); ?>" rel="home"><?php bloginfo("name"); ?></a></p>
-				<?php endif;
-   $ngwebstudio_description = get_bloginfo("description", "display");
-   if ($ngwebstudio_description || is_customize_preview()): ?>
-				<!-- <p class="site-description"><?php echo $ngwebstudio_description;
-   	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-   	?></p> -->
-			<?php endif;
-   ?>
-		</div><!-- .site-branding -->
+// the_custom_logo();
+//  if (is_front_page() && is_home()):
+?>
+				<!-- <h1 class="site-title"><a href=" -->
+				<?php
+// echo esc_url(home_url("/"));
+?>
+				<!-- " rel="home"> -->
+				<?php
+// bloginfo("name");
+?>
+				<!-- </a></h1> -->
+				<?php
+// else:
+?>
+				<!-- <p class="site-title"><a href=" -->
+				<?php
+// echo esc_url(home_url("/"));
+?>
+				 <!-- " rel="home"> -->
+				 <?php
+// bloginfo("name");
+?>
+				<!-- </a></p> -->
+				<?php
+//  endif;
+//  $ngwebstudio_description = get_bloginfo("description", "display");
+//  if ($ngwebstudio_description || is_customize_preview()):
+?>
+				<!-- <p class="site-description">
+					<?php
+// echo $ngwebstudio_description;
+// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+?></p> -->
+			<?php
+// endif;
+?>
+		</div>
 
 		<nav id="site-navigation" class="main-navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e(
    	"Primary Menu",
    	"ngwebstudio"
    ); ?></button>
-			<?php wp_nav_menu([
-   	"theme_location" => "menu-1",
-   	"menu_id" => "primary-menu",
-   ]); ?>
-		</nav><!-- #site-navigation -->
+	 <div class="menu-menu-1-container">
+		 <ul id="primary-menu" class="menu">
+			 <li id="menu-item-8" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-8"><a href="https://nglazkov.ru/#" aria-current="page">Главная</a></li>
+			 <li id="menu-item-9" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-9"><a href="https://nglazkov.ru/#about-us" aria-current="page">О нас</a></li>
+			 <li id="menu-item-11" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-11"><a href="https://nglazkov.ru/#services" aria-current="page">Услуги</a></li>
+			 <li id="menu-item-12" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-12"><a href="https://nglazkov.ru/#contact-form" aria-current="page">Обратная связь</a></li>
+</ul></div>
+			<?php
+// 		wp_nav_menu([
+//  	"theme_location" => "menu-1",
+//  	"menu_id" => "primary-menu",
+//  ]);
+?>
+		</nav>
+
+		<!-- ЧАСТЬ ПРО МОНЕТКИ: НАЧАЛО -->
 		<!-- <div class="money" id="money-panel">
 		<span>3/10</span>
 		<svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -67,5 +103,6 @@
 			<small>Собирай монетки на сайте и обменивай их на скидку 10%</small>
 			</div>
 			</div> -->
+		<!-- ЧАСТЬ ПРО МОНЕТКИ: КОНЕЦ -->
 
-	</header><!-- #masthead -->
+	</header>

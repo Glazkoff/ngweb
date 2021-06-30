@@ -1,4 +1,4 @@
-<section class="services">
+<section class="services" id="services">
   <h2 class="heading-for-services">Услуги</h2>
   <div class="wrap-for-services left">
     <div class="description-for-services left">
