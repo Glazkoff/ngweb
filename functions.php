@@ -165,8 +165,6 @@ function ngwebstudio_scripts()
 }
 add_action("wp_enqueue_scripts", "ngwebstudio_scripts");
 
-add_action("wp_head", "true_metrika");
-
 function true_metrika()
 {
 	?>
@@ -187,10 +185,9 @@ function true_metrika()
 <!-- /Yandex.Metrika counter -->
 	<?php
 }
+add_action("wp_head", "true_metrika");
 
-add_action("wp_head", "true_analytica");
-
-function wp_analyticass()
+function true_analytica()
 {
 	?>
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -204,7 +201,7 @@ function wp_analyticass()
 </script>
 <?php
 }
-
+add_action("wp_head", "true_analytica");
 /**
  * Implement the Custom Header feature.
  */
