@@ -28,13 +28,15 @@ function formatDate(date) {
   return dd + '.' + mm + '.' + yy;
 }
 
-app.post('/request', async (req, res) => {
-  let now = new Date();
-  let name = '' || req.body.name
-  let phone = '' || req.body.phone
-  let email = '' || req.body.email
+app.post('/api/request', async (req, res) => {
+  console.log("BODY: ", req.body);
 
-  let htmlBody = `<div><b>Имя: ${name}</b><br><b>Телефон: ${phone}</b><br><b>Email: ${email}</b><br></div>`
+  let now = new Date();
+  let name = req.body.name || '-'  
+  let phone = req.body.phone || '-' 
+  let email = req.body.email || '-'
+
+  let htmlBody = `<div><h1>ТЕСТОВЫЙ РЕЖИМ</h1></div><div><b>Имя: ${name}</b><br><b>Телефон: ${phone}</b><br><b>Email: ${email}</b><br></div>`
 
   try {
     let info = await transporter.sendMail({

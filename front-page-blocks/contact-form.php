@@ -22,7 +22,7 @@
 // else {echo "Ой, что-то пошло не так";}
 ?> 
     
-      <form name="contact" action='' method='POST'>
+      <form id="contact-form" name="contact">
         <label>Как вас зовут?</label>
         <input type="text" id="name" name="name" required>
         

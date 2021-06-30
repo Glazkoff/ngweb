@@ -4,6 +4,7 @@ import FormAnimation from './form-animation'
 import coinFrontPageInit from './coin-functions'
 import GlidePortfolioSetup from './glide-portfolio.js'
 import phoneMask  from './phone-mask.js'
+import FormSendingSetup from './form-send.js'
 
 let confettiPieceArr = []
 let confettiBottomBorderSizePx = 80;
@@ -203,4 +204,5 @@ window.addEventListener('load', () => {
   FormAnimation()
   coinFrontPageInit()
   phoneMask();
+  FormSendingSetup();
 })
