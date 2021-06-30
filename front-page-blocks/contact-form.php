@@ -3,7 +3,7 @@
 
   <div class="flex-form-container">
     <div class="heading-for-form">
-      <h2>Cобери все монетки на сайте и получи скидку 10%</h2>
+      <h2>Закажите сайт для вашего бизнеса</h2>
     </div>
 
     <div class="wrap-for-form">
