@@ -5,4 +5,5 @@ vendor
 dist
 dist/
 ./dist
+./dist/
 wp-configphp.
