@@ -2,7 +2,7 @@ import { generateRandomConfettiObj, isInElementZone, isCollideWithOtherConfetti,
 
 import FormAnimation from './form-animation'
 import coinFrontPageInit from './coin-functions'
-import GlidePortfolioSetup from './glide-portfolio.js'
+// import GlidePortfolioSetup from './glide-portfolio.js'
 import phoneMask  from './phone-mask.js'
 import FormSendingSetup from './form-send.js'
 
@@ -200,7 +200,7 @@ window.addEventListener('load', () => {
     }
   });
 
-  GlidePortfolioSetup()
+  // GlidePortfolioSetup()
   FormAnimation()
   coinFrontPageInit()
   phoneMask();

@@ -1,9 +1,9 @@
-<section class="contact-form">
+<section class="contact-form" id="contact-form">
   <div class="fill"></div>
 
   <div class="flex-form-container">
     <div class="heading-for-form">
-      <h2>Cобери все монетки на сайте и получи скидку 10%</h2>
+      <h2>Заполните форму и с вами свяжется наш менеджер!</h2>
     </div>
 
     <div class="wrap-for-form">
@@ -22,14 +22,14 @@
 // else {echo "Ой, что-то пошло не так";}
 ?> 
     
-      <form id="contact-form" name="contact">
-        <label>Как вас зовут?</label>
+      <form name="contact" id="contact-form">
+        <label>Имя:</label>
         <input type="text" id="name" name="name" required>
         
-        <label>А скажете номер?</label>
+        <label>Номер телефона:</label>
         <input type="text" id="phone" name="phone" required>
 
-        <label>А почтой поделитесь?</label>
+        <label>Электронная почта:</label>
         <input type="email" id="email" name="email" required>
 
         <div class="wrap-for-checkbox">
