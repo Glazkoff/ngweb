@@ -72,30 +72,18 @@
     }
   }
   & .images-for-services {
-    width: 60%;
+    width: 45%;
     display: flex;
     &.left {
       justify-content: flex-end;
+      margin-left: auto;
     }
 
     &.right {
       justify-content: flex-start;
+      margin-right: auto;
     }
     align-items: center;
-
-      & .image1 {
-        width: 500px;
-        background-color: $blue;
-        height: 350px;
-      }
-
-      & .image2 {
-        margin-top: 150px;
-        margin-left: -100px;
-        width: 300px;
-        background-color: $green;
-        height: 300px;
-      }
     }
 
 }
