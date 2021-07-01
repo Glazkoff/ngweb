@@ -1,4 +1,4 @@
-<section class="about-us">
+<section class="about-us" id="about-us">
   <h2 class="heading-for-about">О нас</h2>
   <div class="wrap-for-about">
     <div class="description-for-about">

@@ -2,12 +2,17 @@
 		display: flex;
 		padding: 2.5rem 5.75rem;
 		& .main-navigation {
-			margin-left: 15rem;
+			margin-left: 10rem;
 		}
 		& .site-branding {
-			width: 12.5rem;
+			width: 18rem;
 		}
 	} 
+
+// header#masthead .site-branding .logo {
+
+// }
+
 .headroom {
   will-change: transform;
   transition: transform 200ms linear;

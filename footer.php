@@ -12,30 +12,20 @@
 
 ?>
 	<footer id="colophon" class="site-footer">
-		<div class="footer-custom"><div>
+		<div class="footer-custom"><div class="test-centert">
 			<ul>
-				<li><a href="<?php echo esc_url( __( 'https://wordpress.org/', 'ngwebstudio' ) ); ?>">
-				Услуги</a></li>
-				<li><a href="<?php echo esc_url( __( 'https://wordpress.org/', 'ngwebstudio' ) ); ?>">
-				Портфолио</a></li>
-				<li><a href="<?php echo esc_url( __( 'https://wordpress.org/', 'ngwebstudio' ) ); ?>">
-				Статьи</a></li>
-				<li><a href="<?php echo esc_url( __( 'https://wordpress.org/', 'ngwebstudio' ) ); ?>">
-				Контакты</a></li>
+				<li><a href="https://nglazkov.ru/#" aria-current="page">Главная</a></li>
+				<li><a href="https://nglazkov.ru/#about-us" aria-current="page">О нас</a></li>
+				<li><a href="https://nglazkov.ru/#services" aria-current="page">Услуги</a></li>
+				<li><a href="https://nglazkov.ru/#contact-form" aria-current="page">Обратная связь</a></li>
 			</ul></div>
 			<div><ul>
-				<li><a href="<?php echo esc_url( __( 'https://wordpress.org/', 'ngwebstudio' ) ); ?>">
+				<li><a href="<?php echo esc_url( __( 'https://www.facebook.com/nglazkovstudio/', 'ngwebstudio' ) ); ?> "target="_blank">
 				Facebook</a></li>
-				<li><a href="<?php echo esc_url( __( 'https://wordpress.org/', 'ngwebstudio' ) ); ?>">
+				<li><a href="<?php echo esc_url( __( 'https://www.instagram.com/nglazkov_studio/', 'ngwebstudio' ) ); ?> "target="_blank">
 				Instagram</a></li>
-				<li><a href="<?php echo esc_url( __( 'https://wordpress.org/', 'ngwebstudio' ) ); ?>">
+				<li><a href="<?php echo esc_url( __( 'https://vk.com/nglazkov_studio', 'ngwebstudio' ) ); ?> "target="_blank">
 				ВКонтакте</a></li>
-				<li><a href="<?php echo esc_url( __( 'https://wordpress.org/', 'ngwebstudio' ) ); ?>">
-				Telegram</a></li>
-				<li><a href="<?php echo esc_url( __( 'https://wordpress.org/', 'ngwebstudio' ) ); ?>">
-				TikTok</a></li>
-				<li><a href="<?php echo esc_url( __( 'https://wordpress.org/', 'ngwebstudio' ) ); ?>">
-				Behance</a></li>
 			</ul></div>
 				<div class="footer-contact"><ul>
 				<li>+7(967)335-79-67</li>
@@ -45,7 +35,7 @@
 				<hr>
 				<h6>NIKITA GLAZKOV <?php echo date('Y'); ?></h6>
 			</div>
-			<!-- <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'ngwebstudio' ) ); ?>">
+			<!-- <a href="<?php echo esc_url( __( 'https://nglazkov.ru', 'ngwebstudio' ) ); ?>">
 				<?php
 				/* translators: %s: CMS name, i.e. WordPress. */
 				printf( esc_html__( 'Proudly powered by %s', 'ngwebstudio' ), 'WordPress' );

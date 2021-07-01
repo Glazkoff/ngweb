@@ -37,7 +37,7 @@
         & .circle.green {
 
           stroke: $green;
-          fill: $white;
+          fill: transparent;
         }
         &:hover .circle.green {
           fill: $green;
@@ -50,7 +50,7 @@
         }
         & .circle.red {
           stroke: $red;
-          fill: $white;
+          fill: transparent;
         }
         &:hover .circle.red {
           fill: $red;
@@ -60,7 +60,7 @@
         }
         & .circle.blue {
           stroke: $blue;
-          fill: $white;
+          fill: transparent;
         }
         &:hover .circle.blue {
           fill: $blue;
