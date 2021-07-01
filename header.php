@@ -26,7 +26,7 @@
  	"ngwebstudio"
  ); ?></a>
 
-	<header id="masthead" class="site-header">
+	<header id="masthead" class="site-header headroom">
 		<div class="site-branding">
 			<div class="logo">
 				<a href="https://nglazkov.ru/" class="custom-logo-link" rel="home" aria-current="page">

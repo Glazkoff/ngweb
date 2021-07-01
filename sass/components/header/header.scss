@@ -1,6 +1,6 @@
 	.site-header {
 		display: flex;
-		padding: 2.5rem 5.75rem;
+		padding: 1.5rem 3.75rem;
 		& .main-navigation {
 			margin-left: 10rem;
 		}
@@ -106,3 +106,40 @@
 			margin-top: 1.5rem;
 		}
 	}
+	.prompt {
+					display: block;
+					position: absolute;
+					right: 10rem;
+					background: #9FD3F8;
+					width: 16rem;
+					padding: 1rem;
+					opacity: 0;
+					visibility: hidden;
+					transition: opacity 0.3s ease-out,
+					margin-top 0.5s ease-out;
+	}
+
+html,
+body {
+    scroll-padding-top: 110px; /* set to the height of your header */
+}
+
+header {
+	position: fixed;
+  z-index: 10000;
+  right: 0;
+	left: 0;
+	top: 0;
+	background-color: $white;
+}
+
+.headroom {
+    will-change: transform;
+    transition: transform 200ms linear;
+}
+.headroom--pinned {
+    transform: translateY(0%);
+}
+.headroom--unpinned {
+    transform: translateY(-100%);
+}
