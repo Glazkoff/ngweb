@@ -2,8 +2,9 @@
   <h2 class="heading-for-services">Услуги</h2>
   <div class="wrap-for-services left">
     <div class="description-for-services left">
-      <h3>Дизайн</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Potenti eget erat ultricies in habitant risus etiam egestas et. Ac, neque, iaculis nec vulputate tempus hendrerit. Lacus, ipsum elit nibh fusce in vel. Et faucibus mauris, accumsan, elit.</p>
+      <h3>Дизайн, разработка логотипа и фирменного стиля</h3>
+      <p>Визуальное представление бренда —  это то, что всегда привлекает внимание вашего клиента. Оно должно не только соответствовать модным и современным тенденциям, но и запоминаться, резонировать с вашей компанией. Грамотно выстроенный фирменный стиль поможет выделить продукцию среди конкурентов. Выберите дизайнеров студии Никиты Глазкова и получите уникальное и креативное оформление своего бизнеса!
+</p>
       <div class="btn-block">
         <svg width="70" height="71" viewBox="0 0 70 71" fill="none" xmlns="http://www.w3.org/2000/svg" class="go-btn">
           <path d="M69 35.8478C69 54.7138 53.7736 70.0003 35 70.0003C16.2264 70.0003 1 54.7138 1 35.8478C1 16.9818 16.2264 1.69531 35 1.69531C53.7736 1.69531 69 16.9818 69 35.8478Z"  stroke-width="2" class="circle green" />
@@ -21,8 +22,9 @@
   <!-- <h2 class="heading-for-services">Услуги</h2> -->
   <div class="wrap-for-services right">
     <div class="description-for-services right">
-      <h3>Разработка</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Potenti eget erat ultricies in habitant risus etiam egestas et. Ac, neque, iaculis nec vulputate tempus hendrerit. Lacus, ipsum elit nibh fusce in vel. Et faucibus mauris, accumsan, elit.</p>
+      <h3>Разработка сайтов и приложений</h3>
+      <p>Современное интернет-пространство изобилует разнообразием сайтов и веб-страниц. Лендинги, сайты-портфолио, сайты-визитки, большие информационные системы и интернет-магазины — всё это наша студия создаст вам «под ключ».  Программисты студии Никиты Глазкова разработают для вас сайты и приложения с любым функционалом, которые облегчат жизнь вашим работникам или клиентам.
+</p>
       <div class="btn-block">
         <svg width="70" height="71" viewBox="0 0 70 71" fill="none" xmlns="http://www.w3.org/2000/svg" class="go-btn">
           <path d="M69 35.8478C69 54.7138 53.7736 70.0003 35 70.0003C16.2264 70.0003 1 54.7138 1 35.8478C1 16.9818 16.2264 1.69531 35 1.69531C53.7736 1.69531 69 16.9818 69 35.8478Z"  stroke-width="2" class="circle red " />
@@ -40,8 +42,8 @@
   <!-- <h2 class="heading-for-services">Услуги</h2> -->
   <div class="wrap-for-services left">
     <div class="description-for-services left">
-      <h3>Маркетинг</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Potenti eget erat ultricies in habitant risus etiam egestas et. Ac, neque, iaculis nec vulputate tempus hendrerit. Lacus, ipsum elit nibh fusce in vel. Et faucibus mauris, accumsan, elit.</p>
+      <h3>Продвижение в интернете</h3>
+      <p>Бизнес не может существовать без клиентов, и именно интернет предоставляет возможность привлекать потенциальных клиентов. Студия Никиты Глазкова занимается SEO-продвижением (оптимизацией под поисковые сервисы), SMM-продвижением (работой с социальными сетями), контекстной и таргетированной рекламами. Помимо этого, мы поможем вам определить свою аудиторию, настроить счетчики Google Analytics и Яндекс Метрики и выстроить свою маркетинговую стратегию.</p>
       <div class="btn-block">
         <svg width="70" height="71" viewBox="0 0 70 71" fill="none" xmlns="http://www.w3.org/2000/svg" class="go-btn">
           <path d="M69 35.8478C69 54.7138 53.7736 70.0003 35 70.0003C16.2264 70.0003 1 54.7138 1 35.8478C1 16.9818 16.2264 1.69531 35 1.69531C53.7736 1.69531 69 16.9818 69 35.8478Z"  stroke-width="2" class="circle blue" />
@@ -58,8 +60,8 @@
   <!-- <h2 class="heading-for-services">Услуги</h2> -->
   <div class="wrap-for-services right">
     <div class="description-for-services right">
-      <h3>Геймификация</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Potenti eget erat ultricies in habitant risus etiam egestas et. Ac, neque, iaculis nec vulputate tempus hendrerit. Lacus, ipsum elit nibh fusce in vel. Et faucibus mauris, accumsan, elit.</p>
+      <h3>Разработка и внедрение геймификации</h3>
+      <p>Геймификация — это превращение самых обычных процессов в игру. Благодаря геймификации наш мозг лучше понимает информацию и находит мотивацию. Игровые механики выделят ваш сайт среди конкурентов, привлекут клиентов и повысят их лояльность. Геймификация может помочь реорганизовать и оптимизировать процессы любой сферы. Обращайтесь к нам, и мы реализуем и укореним геймификационные методики в вашем бизнесе.</p>
       <div class="btn-block">
         <svg width="70" height="71" viewBox="0 0 70 71" fill="none" xmlns="http://www.w3.org/2000/svg" class="go-btn">
           <path d="M69 35.8478C69 54.7138 53.7736 70.0003 35 70.0003C16.2264 70.0003 1 54.7138 1 35.8478C1 16.9818 16.2264 1.69531 35 1.69531C53.7736 1.69531 69 16.9818 69 35.8478Z"  stroke-width="2" class="circle red " />
