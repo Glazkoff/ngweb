@@ -22,10 +22,16 @@ export default function () {
   //   console.log('SUBMIT!', formData);
   // })
 
+  function showLoading() {
+    let formSection = document.querySelector("#contact-form")
+    console.log(formSection);
+    
+  }
+  showLoading()
+
   document.body.addEventListener("submit", async function (event) {
     event.preventDefault();
     const form = event.target;
-    console.log("###");
     console.log(new URLSearchParams([...(new FormData(form))]));
     const result = await fetch("/api/request", {
       method: "POST",

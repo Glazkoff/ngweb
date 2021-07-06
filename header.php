@@ -74,10 +74,13 @@
 		</div>
 
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e(
+			<!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e(
    	"Primary Menu",
    	"ngwebstudio"
-   ); ?></button>
+   ); ?></button> -->
+	 <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+	 	<img src="<?php echo get_template_directory_uri(); ?>/src/img/menu-toggle.svg" alt="Primary menu button"></img>
+	 </button>
 	 <div class="menu-menu-1-container">
 		 <ul id="primary-menu" class="menu">
 			 <li id="menu-item-8" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-8"><a href="https://nglazkov.ru/#" aria-current="page">Главная</a></li>
