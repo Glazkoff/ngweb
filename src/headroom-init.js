@@ -5,14 +5,14 @@ export default function () {
     console.log('header', myElement);
 
     let headroom = new Headroom(myElement, {
-  "offset": 30,
-  "tolerance": 12,
-  "classes": {
-    "initial": "animated",
-    "pinned": "slideDown",
-    "unpinned": "slideUp"
-  }
-});
+      "offset": 30,
+      "tolerance": 12,
+      // "classes": {
+      //   "initial": "animated",
+      //   "pinned": "slideDown",
+      //   "unpinned": "slideUp"
+      // }
+    });
     console.log('headroom', headroom);
 
     headroom.init();

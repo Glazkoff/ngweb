@@ -81,10 +81,10 @@
 	 </button> -->
 	 <div class="menu-menu-1-container">
 		 <ul id="primary-menu" class="menu">
-			 <li id="menu-item-8" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-8"><a href="https://nglazkov.ru/#" aria-current="page">Главная</a></li>
-			 <li id="menu-item-9" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-9"><a href="https://nglazkov.ru/#about-us" aria-current="page">О нас</a></li>
-			 <li id="menu-item-11" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-11"><a href="https://nglazkov.ru/#services" aria-current="page">Услуги</a></li>
-			 <li id="menu-item-12" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-12"><a href="https://nglazkov.ru/#contact-form" aria-current="page">Обратная связь</a></li>
+			 <li id="menu-item-8" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-8"><a href="#" aria-current="page">Главная</a></li>
+			 <li id="menu-item-9" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-9"><a href="#about-us" aria-current="page">О нас</a></li>
+			 <li id="menu-item-11" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-11"><a href="#services" aria-current="page">Услуги</a></li>
+			 <li id="menu-item-12" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-12"><a href="#contact-form" aria-current="page">Обратная связь</a></li>
 </ul></div>
 			<?php
 // 		wp_nav_menu([
