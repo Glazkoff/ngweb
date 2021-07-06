@@ -3,7 +3,7 @@
 
   <div class="flex-form-container">
     <div class="heading-for-form">
-      <h2>Заполните форму и с вами свяжется наш менеджер!</h2>
+      <h2>Заполните форму, и с вами свяжется наш менеджер!</h2>
     </div>
 
     <div class="wrap-for-form">
@@ -36,7 +36,7 @@
           <input type="checkbox" id="confpolitic" name="agreement" value="agreement" required> <label class="confpolitic" for="confpolitic">Отправляю форму, принимаю <a>условия политики и пользовательского соглашения</a></label>
         </div>
 
-        <input type='submit' name="submit" value='Отправить'></input>
+        <input type='submit' name="submit" value='Отправить' class="form-button"></input>
       </form>
     </div>      
   </div>
