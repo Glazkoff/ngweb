@@ -145,18 +145,16 @@ header {
 }
 
 
-@media (max-width:600px) {
-	.menu-toggle {
-		padding: unset !important;
-		min-width: unset !important;
-		background: transparent;
-		position: relative;
-		right: 0;
-		top: 0;
-	}
+@media (max-width: 880px) {
+.site-header {
+		
+		padding: 1.5rem 2.5rem;
+		& .main-navigation {
+			margin-left: 2rem;
+		}
+		& .site-branding {
+			// width: 18rem;
+		}
+	} 
 
-	.site-header .site-branding {
-    width: unset;
-	}
-}
-
+  }

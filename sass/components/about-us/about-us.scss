@@ -12,8 +12,7 @@
 	flex-direction: row;
 
 	& .description-for-about {
-		width: 85%;
-		margin-right: 5%;
+		
 		& p {
 			margin: 0;
 		}
@@ -95,3 +94,19 @@
 		background-position: 297px 0px;
 	}
 }
+
+@media (max-width: 1177px) {
+  section {
+    padding: 3.6rem 5rem;
+  }
+ 
+}
+
+@media (max-width: 600px) {
+	.infinite-line {
+		margin-right: -2.75rem;
+	}
+  section {
+    padding: 1.5rem 2.5rem;
+  }
+  }
