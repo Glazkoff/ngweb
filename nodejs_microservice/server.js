@@ -41,9 +41,7 @@ app.post('/api/request', async (req, res) => {
   try {
     let info = await transporter.sendMail({
     from: '"Заявки с сайта nglazkov.ru 😸" <requests@nglazkov.ru>', // адрес отправителя
-    // to: "zitrnik@gmail.com, d.belyaeva1@gmail.com, nvkolezneva@gmail.com", // список получателей
-    to: "zitrnik@gmail.com", // список получателей
-    
+    to: "zitrnik@gmail.com, d.belyaeva1@gmail.com, nvkolezneva@gmail.com", // список получателей,
       subject: `Заявка на nglazkov.ru от ${formatDate(now)}`, // Тема письма
     text: "Привет", // Тело письма обычным текстом
     html: htmlBody // Тело письма HTML

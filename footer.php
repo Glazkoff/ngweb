@@ -10,8 +10,8 @@
  * @package ngwebstudio
  */
 ?>
-	<footer id="colophon" class="site-footer">
-		<div class="footer-custom"><div class="test-centert">
+	<footer id="colophon" class="site-footer">			
+	<div class="footer-custom"><div class="test-centert">
 			<ul>
 				<li><a href="#" aria-current="page">Главная</a></li>
 				<li><a href="#about-us" aria-current="page">О нас</a></li>
