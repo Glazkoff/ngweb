@@ -103,20 +103,25 @@ app.post('/api/request', async (req, res) => {
   let htmlBody = `<div><h1>ЗАЯВКА</h1></div><div><b>Имя: ${name}</b><br><b>Телефон: ${phone}</b><br><b>Email: ${email}</b><br></div>`
 
   try {
-    let info = await transporter.sendMail({
-    from: '"Заявки с сайта nglazkov.ru 😸" <requests@nglazkov.ru>', // адрес отправителя
-      // to: "zitrnik@gmail.com, d.belyaeva1@gmail.com, nvkolezneva@gmail.com", // список получателей,
-    to: "zitrnik@gmail.com", // список получателей,
-    subject: `Заявка на nglazkov.ru от ${formatDate(now)}`, // Тема письма
-    text: "Привет", // Тело письма обычным текстом
-    html: htmlBody // Тело письма HTML
-    });
-    console.log(info);
-    users.forEach(userChatId => {
-      if (userChatId != "") {
-        bot.sendMessage(userChatId, `<b>Заявка с сайта nglazkov.ru от ${formatDate(now)}</b>\n\nИмя: <b>${name}</b>\nТелефон: <b>${phone}</b>\nEmail: <b>${email}</b>`,{parse_mode : "HTML"})
+    for (let index = 0; index < users.length; index++) {
+      const userChatId = users[index];
+       if (userChatId != "") {
+        await bot.sendMessage(userChatId, `<b>Заявка с сайта nglazkov.ru от ${formatDate(now)}</b>\n\nИмя: <b>${name}</b>\nТелефон: <b>${phone}</b>\nEmail: <b>${email}</b>`, { parse_mode: "HTML" })
       }
-    });
+    }
+    try {
+      let info = await transporter.sendMail({
+        from: '"Заявки с сайта nglazkov.ru 😸" <requests@nglazkov.ru>', // адрес отправителя
+          // to: "zitrnik@gmail.com, d.belyaeva1@gmail.com, nvkolezneva@gmail.com", // список получателей,
+        to: "zitrnik@gmail.com", // список получателей,
+        subject: `Заявка на nglazkov.ru от ${formatDate(now)}`, // Тема письма
+        text: "Привет", // Тело письма обычным текстом
+        html: htmlBody // Тело письма HTML
+      });
+        console.log(info);  
+    } catch (error) {
+      console.log(error);
+    }
     res.send({ message: "All is ok!" });
   } catch (error) {
     res.send({ error });
