@@ -22,15 +22,46 @@ export default function () {
   //   console.log('SUBMIT!', formData);
   // })
 
+
+  let flexFormContainer = document.querySelector("#main-form-container")
+  let flexFormContainerLoading = document.querySelector("#flex-form-container-loading")
+  let flexFormContainerSuccess = document.querySelector("#flex-form-container-success")
+
   function showLoading() {
-    let formSection = document.querySelector("#contact-form")
-    console.log(formSection);
-    
+    let containerHeight
+    if (flexFormContainer.clientHeight != 0) {
+      containerHeight = flexFormContainer.clientHeight
+    } else {
+      containerHeight = window.innerHeight
+    }
+    flexFormContainer.style.display = 'none'
+    flexFormContainerSuccess.style.display = 'none'
+    flexFormContainerLoading.style.display = 'flex'
+    flexFormContainerLoading.style.alignItems = 'center'
+    flexFormContainerLoading.style.height = `${containerHeight}px`
   }
-  showLoading()
+  function showSuccess() {
+    let containerHeight
+    if (flexFormContainer.clientHeight != 0) {
+      containerHeight = flexFormContainer.clientHeight
+    } else {
+      containerHeight = window.innerHeight
+    }
+    flexFormContainer.style.display = 'none'
+    flexFormContainerLoading.style.display = 'none'
+    flexFormContainerSuccess.style.display = 'flex'
+    flexFormContainerSuccess.style.alignItems = 'center'
+    flexFormContainerSuccess.style.height = `${containerHeight}px`
+  }
+
+  function closeLoading() {
+    flexFormContainer.style.display = 'flex'
+    flexFormContainerLoading.style.display = 'none'
+  }
 
   document.body.addEventListener("submit", async function (event) {
     event.preventDefault();
+    showLoading()
     const form = event.target;
     console.log(new URLSearchParams([...(new FormData(form))]));
     const result = await fetch("/api/request", {
@@ -39,8 +70,12 @@ export default function () {
     })
     .then((response) => response.json())
       .then((json) => {
+        showSuccess()
         console.log(json);
       })
-    .catch((error) => console.log(error));
+      .catch((error) => {
+         closeLoading()
+        console.log(error)
+      })
   })
 }

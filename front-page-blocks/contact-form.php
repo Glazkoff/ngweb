@@ -1,7 +1,18 @@
 <section class="contact-form" id="contact-form">
   <div class="fill"></div>
 
-  <div class="flex-form-container">
+  <div id="flex-form-container-loading" class="flex-form-container" style="display: none;">
+    <div class="heading-for-form">
+      <h2>Отправляем вашу заявку...</h2>
+    </div>
+  </div>
+  <div id="flex-form-container-success" class="flex-form-container" style="display: none;">
+    <div class="heading-for-form">
+      <h2>Ваша заявка успешно отправлена! <br>Скоро с вами свяжется наш менеджер, чтобы обсудить сотрудничество</h2>
+    </div>
+  </div>
+
+  <div class="flex-form-container" id="main-form-container">
     <div class="heading-for-form">
       <h2>Заполните форму, и с вами свяжется наш менеджер!</h2>
     </div>
