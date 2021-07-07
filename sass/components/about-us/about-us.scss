@@ -99,12 +99,15 @@
   section {
     padding: 3.6rem 5rem;
   }
+	.infinite-line {
+
+	margin-right: -5rem;
  
-}
+}}
 
 @media (max-width: 600px) {
 	.infinite-line {
-		margin-right: -2.75rem;
+		margin-right: -2.5rem;
 	}
   section {
     padding: 1.5rem 2.5rem;
