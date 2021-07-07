@@ -100,9 +100,7 @@
     padding: 3.6rem 5rem;
   }
 	.infinite-line {
-
 	margin-right: -5rem;
- 
 }}
 
 @media (max-width: 600px) {
@@ -112,4 +110,7 @@
   section {
     padding: 1.5rem 2.5rem;
   }
-  }
+	h2.heading-for-about {
+		margin-bottom: 1.5rem;
+	}
+}
