@@ -1,6 +1,63 @@
 "use strict";
+
+const fs = require('fs');
+
 const express = require('express');
 const nodemailer = require("nodemailer");
+
+const TelegramBot = require('node-telegram-bot-api');
+const token = '1848742663:AAEs4TxHVrdDLebALjFHkjZ1J_PmM19lX4M';
+
+const bot = new TelegramBot(token, {polling: true});
+
+
+let fileContent = fs.readFileSync("tg_chats.txt", "utf8");
+
+let users = fileContent.split(/\r?\n/);
+
+bot.on("polling_error", console.log);
+
+bot.onText(/\/start/, (msg, match) => {
+  const chatId = msg.chat.id
+  bot.sendMessage(chatId, `Привет! Я <b>чат-бот для служебной рассылки</b>\n\nТебе нужно отправить <code>/register</code>, чтобы подписаться на сообщения от меня`,{parse_mode : "HTML"})
+})
+
+bot.onText(/\/register/, (msg, match) => {
+  const chatId = msg.chat.id
+  let findUserIndex = users.findIndex(userId => {
+    return userId ==chatId 
+  })
+  if (findUserIndex == -1) {
+    users.push(chatId)
+    fs.appendFile('tg_chats.txt', chatId + "\n", function (err) {
+      if (err) throw err;
+      console.log('Сохранено!');
+    });
+    bot.sendMessage(chatId, `<b>Сотрудник добавлен в рассылку</b> ✔\nЧат #${chatId}`,{parse_mode : "HTML"})
+  } else {
+    bot.sendMessage(chatId, `Прекрати! Ты уже добавлен, что ещё нужно?`)
+  }
+})
+
+bot.onText(/\/employees/, async (msg, match) => {
+  const chatId = msg.chat.id
+  let message = '<b>Список подписанных пользователей:</b>\n\n'
+let findUserIndex = users.findIndex(userId => {
+    return userId ==chatId 
+  })
+  if (findUserIndex !== -1) {
+    for (let index = 0; index < users.length; index++) {
+      const userId = users[index];
+      if (userId != "") {
+        let chatData = await bot.getChat(userId)
+        message += chatData.first_name + " " + chatData.last_name + " / " + chatData.username + " (Сhat ID: " + userId + ")" + "\n"
+      }
+    }
+    bot.sendMessage(chatId, message, { parse_mode: "HTML" });
+  } else {
+    bot.sendMessage(chatId, "<b>Вы не зарегистрированы!</b>", { parse_mode: "HTML" });
+  }
+})
 
 const app = express();
 const port = 3000;
@@ -12,7 +69,14 @@ let transporter = nodemailer.createTransport({
     auth: {
       user: "requests@nglazkov.ru", 
       pass: "nglazkov2021"
-    },
+  },
+  secure: true,
+  //  dkim: {
+  //   domainName: "nglazkov.ru",
+  //   keySelector: "mail._domainkey",
+  //   privateKey: "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBg..."
+  // }
+    
   });
 
 function formatDate(date) {
@@ -41,10 +105,17 @@ app.post('/api/request', async (req, res) => {
   try {
     let info = await transporter.sendMail({
     from: '"Заявки с сайта nglazkov.ru 😸" <requests@nglazkov.ru>', // адрес отправителя
-    to: "zitrnik@gmail.com, d.belyaeva1@gmail.com, nvkolezneva@gmail.com", // список получателей,
-      subject: `Заявка на nglazkov.ru от ${formatDate(now)}`, // Тема письма
+      // to: "zitrnik@gmail.com, d.belyaeva1@gmail.com, nvkolezneva@gmail.com", // список получателей,
+    to: "zitrnik@gmail.com", // список получателей,
+    subject: `Заявка на nglazkov.ru от ${formatDate(now)}`, // Тема письма
     text: "Привет", // Тело письма обычным текстом
     html: htmlBody // Тело письма HTML
+    });
+    console.log(info);
+    users.forEach(userChatId => {
+      if (userChatId != "") {
+        bot.sendMessage(userChatId, `<b>Заявка с сайта nglazkov.ru от ${formatDate(now)}</b>\n\nИмя: <b>${name}</b>\nТелефон: <b>${phone}</b>\nEmail: <b>${email}</b>`,{parse_mode : "HTML"})
+      }
     });
     res.send({ message: "All is ok!" });
   } catch (error) {
