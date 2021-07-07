@@ -36,7 +36,7 @@ app.post('/api/request', async (req, res) => {
   let phone = req.body.phone || '-' 
   let email = req.body.email || '-'
 
-  let htmlBody = `<div><h1>ТЕСТОВЫЙ РЕЖИМ</h1></div><div><b>Имя: ${name}</b><br><b>Телефон: ${phone}</b><br><b>Email: ${email}</b><br></div>`
+  let htmlBody = `<div><h1>ЗАЯВКА</h1></div><div><b>Имя: ${name}</b><br><b>Телефон: ${phone}</b><br><b>Email: ${email}</b><br></div>`
 
   try {
     let info = await transporter.sendMail({
