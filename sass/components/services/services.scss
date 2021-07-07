@@ -167,11 +167,14 @@
 @media (max-width: 600px) {
   .services .heading-for-services{
     font-size: 32px;
+    padding: 0.6rem 3.5rem;
+    margin-bottom: 2rem;
   }
   .wrap-for-services {
     & .description-for-services {
       & h3{
         font-size: 20px;
+        line-height: 1.7;
       }
     }
   }
@@ -179,11 +182,16 @@
    @media (max-width: 450px) {
     .services .heading-for-services {
     font-size: 24px;
+    margin-bottom: 1.5rem;
   }
   .wrap-for-services {
     & .description-for-services {
       & p{
         font-size: 12px;
+        margin-top: 0.4rem;
+      }
+      & h3{
+        font-size: 18px;
       }
     }
   }
