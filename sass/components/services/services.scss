@@ -68,6 +68,16 @@
         & .arrow.blue {
           fill: $blue;
         }
+         & .circle.yellow {
+          stroke: $yellow;
+          fill: transparent;
+        }
+        &:hover .circle.yellow {
+          fill: $yellow;
+        }
+        & .arrow.yellow {
+          fill: $yellow;
+        }
       }
     }
   }
