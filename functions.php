@@ -202,6 +202,34 @@ function true_analytica()
 <?php
 }
 add_action("wp_head", "true_analytica");
+
+function ngl_favicon()
+{
+	echo '<link rel="apple-touch-icon" sizes="180x180" href="' .
+		get_template_directory_uri() .
+		"/src/favicon" .
+		'/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="' .
+		get_template_directory_uri() .
+		"/src/favicon" .
+		'/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="' .
+		get_template_directory_uri() .
+		"/src/favicon" .
+		'/favicon-16x16.png">
+<link rel="manifest" href="' .
+		get_template_directory_uri() .
+		"/src/favicon" .
+		'/site.webmanifest">
+<link rel="mask-icon" href="' .
+		get_template_directory_uri() .
+		"/src/favicon" .
+		'/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#b91d47">
+<meta name="theme-color" content="#ffffff">';
+}
+add_action("wp_head", "ngl_favicon");
+
 /**
  * Implement the Custom Header feature.
  */

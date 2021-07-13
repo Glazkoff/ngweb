@@ -33,17 +33,17 @@ services:
     volumes:
       - wordpress:/var/www/html
 
-  # nodejs:
-  #   container_name: nodejs    
-  #   build: 
-  #     context: .
-  #     dockerfile: nodejs_microservice/Dockerfile
-  #   depends_on:
-  #     - db
-  #   env_file: .env  
-  #   command: "node server.js" 
-  #   volumes:
-  #     - tg_data:/usr/src/app/th_chats.txt
+  nodejs:
+    container_name: nodejs    
+    build: 
+      context: .
+      dockerfile: nodejs_microservice/Dockerfile
+    depends_on:
+      - db
+    env_file: .env  
+    command: "node server.js" 
+    volumes:
+      - tg_data:/usr/src/app/th_chats.txt
 
   # Веб-сервер
   nginx:
@@ -55,7 +55,7 @@ services:
       - wordpress
     volumes:
       - wordpress:/var/www/html
-      - ./nginx/dev.conf:/etc/nginx/nginx.conf:ro   
+      - ./nginx/prod.conf:/etc/nginx/nginx.conf:ro   
 
   # Wordpress CLI
   wp-cli:
@@ -70,7 +70,6 @@ services:
     image: wordpress:cli
     user: xfs
     working_dir: /var/www/html
-    # entrypoint: wp 
     command:
       /bin/sh -c 'sleep 10; wp core install --path="/var/www/html" --url="http://localhost:8100" --title="Сайт Студии Никиты Глазкова" --admin_user=admin --admin_password=admin --admin_email=foo@bar.com; wp theme list; wp theme activate ngwebstudio; wp language core install ru_RU; wp site switch-language ru_RU'
     volumes:
