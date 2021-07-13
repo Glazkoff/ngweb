@@ -12,16 +12,16 @@ services:
     command: --disable-partition-engine-check   
 
   # PhpMyAdmin
-  phpmyadmin:
-    depends_on:
-      - db
-    container_name: phpmyadmin
-    image: phpmyadmin/phpmyadmin
-    links: 
-      - db
-    ports:
-      - '8081:80'
-    env_file: .env  
+  # phpmyadmin:
+  #   depends_on:
+  #     - db
+  #   container_name: phpmyadmin
+  #   image: phpmyadmin/phpmyadmin
+  #   links: 
+  #     - db
+  #   ports:
+  #     - '8081:80'
+  #   env_file: .env  
 
   # Wordpress
   wordpress:  
@@ -68,7 +68,6 @@ services:
     image: wordpress:cli
     user: xfs
     working_dir: /var/www/html
-    # entrypoint: wp 
     command:
       /bin/sh -c 'sleep 10; wp core install --path="/var/www/html" --url="http://localhost:8100" --title="Сайт Студии Никиты Глазкова" --admin_user=admin --admin_password=admin --admin_email=foo@bar.com; wp theme list; wp theme activate ngwebstudio; wp language core install ru_RU; wp site switch-language ru_RU'
     volumes:
