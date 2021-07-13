@@ -1,18 +1,15 @@
 version: "3"
 
 services:
-  # База данных
+  # MySQL
   db:
     image: mysql:5.7
     container_name: db
-    environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: wordpress  
+    env_file: .env  
+    restart: always
     volumes:
-      - dbdata:/var/lib/mysql
-    command: --disable-partition-engine-check  
+      - dbdata:/var/lib/mysql 
+    command: --disable-partition-engine-check   
 
   # PhpMyAdmin
   phpmyadmin:
@@ -24,8 +21,7 @@ services:
       - db
     ports:
       - '8081:80'
-    environment:
-      PMA_HOST: db:3306
+    env_file: .env  
 
   # Wordpress
   wordpress:  
@@ -33,21 +29,21 @@ services:
     depends_on:
       - db
     build: .
-    environment:
-      WORDPRESS_DB_HOST: db:3306
-      WORDPRESS_DB_USER: wordpress
-      WORDPRESS_DB_PASSWORD: wordpress
-      WORDPRESS_DB_NAME: wordpress   
+    env_file: .env 
     volumes:
-      - wordpress:/var/www/html  
-      # - ./:/var/www/html/wp-content/themes/ngwebstudio 
+      - wordpress:/var/www/html
 
   nodejs:
     container_name: nodejs    
-    build: ./nodejs_microservice/
+    build: 
+      context: .
+      dockerfile: nodejs_microservice/Dockerfile
     depends_on:
       - db
-    command: "node server.js"  
+    env_file: .env  
+    command: "node server.js" 
+    volumes:
+      - tg_data:/usr/src/app/th_chats.txt
 
   # Веб-сервер
   nginx:
@@ -71,7 +67,7 @@ services:
     links:
       - db
       - wordpress  
-    image: wordpress:cli-php8.0 
+    image: wordpress:cli
     user: xfs
     working_dir: /var/www/html
     command:
@@ -81,4 +77,5 @@ services:
 
 volumes:
   wordpress:
+  tg_data:
   dbdata: {}
