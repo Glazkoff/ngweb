@@ -42,8 +42,6 @@ services:
       - db
     env_file: .env  
     command: "node server.js" 
-    volumes:
-      - tg_data:/usr/src/app/th_chats.txt
 
   # Веб-сервер
   nginx:
