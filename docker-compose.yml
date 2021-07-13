@@ -5,22 +5,29 @@ services:
   db:
     image: mysql:5.7
     container_name: db
-    env_file: .env  
+    # env_file: .env  
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
     restart: always
     volumes:
       - dbdata:/var/lib/mysql 
     command: --disable-partition-engine-check   
 
   # PhpMyAdmin
-  # phpmyadmin:
-  #   depends_on:
-  #     - db
-  #   container_name: phpmyadmin
-  #   image: phpmyadmin/phpmyadmin
-  #   links: 
-  #     - db
-  #   ports:
-  #     - '8081:80'
+  phpmyadmin:
+    depends_on:
+      - db
+    container_name: phpmyadmin
+    image: phpmyadmin/phpmyadmin
+    links: 
+      - db
+    ports:
+      - '8081:80'
+    environment:
+      PMA_HOST: db:3306  
   #   env_file: .env  
 
   # Wordpress
@@ -29,7 +36,12 @@ services:
     depends_on:
       - db
     build: .
-    env_file: .env 
+    # env_file: .env
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress    
     volumes:
       - wordpress:/var/www/html
 
@@ -40,7 +52,7 @@ services:
       dockerfile: nodejs_microservice/Dockerfile
     depends_on:
       - db
-    env_file: .env  
+    # env_file: .env  
     command: "node server.js" 
 
   # Веб-сервер
@@ -75,5 +87,4 @@ services:
 
 volumes:
   wordpress:
-  tg_data:
   dbdata: {}
