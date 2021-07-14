@@ -65,6 +65,7 @@ services:
       - "8100:80"
     depends_on:
       - wordpress
+      - nodejs
     volumes:
       - wordpress:/var/www/html
       - ./nginx/dev.conf:/etc/nginx/nginx.conf:ro   
