@@ -21,7 +21,7 @@ services:
     depends_on:
       - db
     container_name: phpmyadmin
-    image: phpmyadmin/phpmyadmin
+    image: phpmyadmin/phpmyadmin:5-fpm-alpine
     links: 
       - db
     ports:
@@ -58,7 +58,9 @@ services:
   # Веб-сервер
   nginx:
     container_name: nginx
-    image: nginx:alpine 
+    build:
+      context: .
+      dockerfile: nginx/Dockerfile
     ports:
       - "8100:80"
     depends_on:
@@ -69,6 +71,8 @@ services:
 
   # Wordpress CLI
   wp-cli:
+    tty: true
+    stdin_open: true
     container_name: wp-cli
     depends_on:
       - db

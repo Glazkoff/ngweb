@@ -1,63 +1,62 @@
 "use strict";
+require('dotenv').config()
 
 const fs = require('fs');
 
 const express = require('express');
 const nodemailer = require("nodemailer");
 
-const TelegramBot = require('node-telegram-bot-api');
-const token = '1848742663:AAEs4TxHVrdDLebALjFHkjZ1J_PmM19lX4M';
+if (process.env.TELEGRAM_ENABLE !== 'false') {
+  const TelegramBot = require('node-telegram-bot-api');
+  const token = '1848742663:AAEs4TxHVrdDLebALjFHkjZ1J_PmM19lX4M';
 
-const bot = new TelegramBot(token, {polling: true});
+  const bot = new TelegramBot(token, {polling: true});
+  let fileContent = fs.readFileSync("tg_chats.txt", "utf8");
+  let users = fileContent.split(/\r?\n/);
+  bot.on("polling_error", console.log);
 
-
-let fileContent = fs.readFileSync("tg_chats.txt", "utf8");
-
-let users = fileContent.split(/\r?\n/);
-
-bot.on("polling_error", console.log);
-
-bot.onText(/\/start/, (msg, match) => {
-  const chatId = msg.chat.id
-  bot.sendMessage(chatId, `Привет! Я <b>чат-бот для служебной рассылки</b>\n\nТебе нужно отправить <code>/register</code>, чтобы подписаться на сообщения от меня`,{parse_mode : "HTML"})
-})
-
-bot.onText(/\/register/, (msg, match) => {
-  const chatId = msg.chat.id
-  let findUserIndex = users.findIndex(userId => {
-    return userId ==chatId 
+  bot.onText(/\/start/, (msg, match) => {
+    const chatId = msg.chat.id
+    bot.sendMessage(chatId, `Привет! Я <b>чат-бот для служебной рассылки</b>\n\nТебе нужно отправить <code>/register</code>, чтобы подписаться на сообщения от меня`,{parse_mode : "HTML"})
   })
-  if (findUserIndex == -1) {
-    users.push(chatId)
-    fs.appendFile('tg_chats.txt', chatId + "\n", function (err) {
-      if (err) throw err;
-      console.log('Сохранено!');
-    });
-    bot.sendMessage(chatId, `<b>Сотрудник добавлен в рассылку</b> ✔\nЧат #${chatId}`,{parse_mode : "HTML"})
-  } else {
-    bot.sendMessage(chatId, `Прекрати! Ты уже добавлен, что ещё нужно?`)
-  }
-})
 
-bot.onText(/\/employees/, async (msg, match) => {
-  const chatId = msg.chat.id
-  let message = '<b>Список подписанных пользователей:</b>\n\n'
-let findUserIndex = users.findIndex(userId => {
-    return userId ==chatId 
-  })
-  if (findUserIndex !== -1) {
-    for (let index = 0; index < users.length; index++) {
-      const userId = users[index];
-      if (userId != "") {
-        let chatData = await bot.getChat(userId)
-        message += chatData.first_name + " " + chatData.last_name + " / " + chatData.username + " (Сhat ID: " + userId + ")" + "\n"
-      }
+  bot.onText(/\/register/, (msg, match) => {
+    const chatId = msg.chat.id
+    let findUserIndex = users.findIndex(userId => {
+      return userId ==chatId 
+    })
+    if (findUserIndex == -1) {
+      users.push(chatId)
+      fs.appendFile('tg_chats.txt', chatId + "\n", function (err) {
+        if (err) throw err;
+        console.log('Сохранено!');
+      });
+      bot.sendMessage(chatId, `<b>Сотрудник добавлен в рассылку</b> ✔\nЧат #${chatId}`,{parse_mode : "HTML"})
+    } else {
+      bot.sendMessage(chatId, `Прекрати! Ты уже добавлен, что ещё нужно?`)
     }
-    bot.sendMessage(chatId, message, { parse_mode: "HTML" });
-  } else {
-    bot.sendMessage(chatId, "<b>Вы не зарегистрированы!</b>", { parse_mode: "HTML" });
-  }
-})
+  })
+
+  bot.onText(/\/employees/, async (msg, match) => {
+    const chatId = msg.chat.id
+    let message = '<b>Список подписанных пользователей:</b>\n\n'
+  let findUserIndex = users.findIndex(userId => {
+      return userId ==chatId 
+    })
+    if (findUserIndex !== -1) {
+      for (let index = 0; index < users.length; index++) {
+        const userId = users[index];
+        if (userId != "") {
+          let chatData = await bot.getChat(userId)
+          message += chatData.first_name + " " + chatData.last_name + " / " + chatData.username + " (Сhat ID: " + userId + ")" + "\n"
+        }
+      }
+      bot.sendMessage(chatId, message, { parse_mode: "HTML" });
+    } else {
+      bot.sendMessage(chatId, "<b>Вы не зарегистрированы!</b>", { parse_mode: "HTML" });
+    }
+  })
+}
 
 const app = express();
 const port = 3000;
@@ -103,10 +102,12 @@ app.post('/api/request', async (req, res) => {
   let htmlBody = `<div><h1>ЗАЯВКА</h1></div><div><b>Имя: ${name}</b><br><b>Телефон: ${phone}</b><br><b>Email: ${email}</b><br></div>`
 
   try {
-    for (let index = 0; index < users.length; index++) {
-      const userChatId = users[index];
-       if (userChatId != "") {
-        await bot.sendMessage(userChatId, `<b>Заявка с сайта nglazkov.ru от ${formatDate(now)}</b>\n\nИмя: <b>${name}</b>\nТелефон: <b>${phone}</b>\nEmail: <b>${email}</b>`, { parse_mode: "HTML" })
+    if (process.env.TELEGRAM_ENABLE !== 'false') {
+      for (let index = 0; index < users.length; index++) {
+        const userChatId = users[index];
+        if (userChatId != "") {
+          await bot.sendMessage(userChatId, `<b>Заявка с сайта nglazkov.ru от ${formatDate(now)}</b>\n\nИмя: <b>${name}</b>\nТелефон: <b>${phone}</b>\nEmail: <b>${email}</b>`, { parse_mode: "HTML" })
+        }
       }
     }
     try {
