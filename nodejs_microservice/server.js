@@ -8,7 +8,7 @@ const nodemailer = require("nodemailer");
 
 if (process.env.TELEGRAM_ENABLE !== 'false') {
   const TelegramBot = require('node-telegram-bot-api');
-  const token = '1848742663:AAEs4TxHVrdDLebALjFHkjZ1J_PmM19lX4M';
+  const token = '1848742663:AAGCcisKnawCeMSIRSJLtmDNWVzF92BlZpI';
 
   const bot = new TelegramBot(token, {polling: true});
   let fileContent = fs.readFileSync("tg_chats.txt", "utf8");
