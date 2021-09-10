@@ -1,4 +1,4 @@
-FROM nginx:alpine
+FROM nginx:1-alpine
 
 COPY nginx/robots.txt /var/www/robots/
 COPY src/favicon/favicon.ico /var/www/robots/
